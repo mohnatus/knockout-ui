@@ -1,5 +1,5 @@
 export const template = `
-  <div class="i-period-picker-result__input" 
+  <div class="i-period-picker-result__input"
   data-bind="click: onClick">
     <input  data-bind="bAutoInput, textInput: value, attr: {
       placeholder: placeholder
@@ -7,11 +7,12 @@ export const template = `
   </div>
   <!-- ko if: clearable -->
     <!-- ko if: value -->
-      <button type="button" class="i-period-picker-result__clear" 
+      <button type="button" class="i-period-picker-result__clear"
         data-bind="click: clear">
-        <i-cross></i-cross>  
+        <c-icon params="name: 'cross', width: 16, height: 16"></c-icon>
         </button>
     <!-- /ko -->
   <!-- /ko -->
-  <i-calendar class="i-period-picker-result__icon" data-bind="click: onClick"></i-calendar>
+      <c-icon class="i-period-picker-result__icon" params="name: 'calendar', width: 24, height: 24" data-bind="click: onClick"></c-icon>
+
 `;

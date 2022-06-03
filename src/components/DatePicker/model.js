@@ -3,6 +3,7 @@ import { getUnique } from '@/utils/unique';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { ONLY_SMALL_MOBILE_MQ } from '@/constants/browser/breakpoints';
 import { getMonth } from './utils';
+import { ACTIVATE_PICKER, CLEAR_FIELD } from './events';
 import './components';
 
 /**
@@ -51,6 +52,8 @@ export function ViewModel(params, element) {
 			showCalendar(false);
 		},
 	};
+
+	console.log({resultEvents})
 
 	// dispose
 

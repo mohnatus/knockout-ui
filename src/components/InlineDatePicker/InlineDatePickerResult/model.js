@@ -1,4 +1,5 @@
 import { getElementEmitter } from "@/utils/emitEvent";
+import { ACTIVATE_PICKER, CLEAR_FIELD } from "@/components/DatePicker/events";
 
 export function ViewModel(params, element) {
   element.classList.add("i-date-picker-result");
@@ -12,11 +13,11 @@ export function ViewModel(params, element) {
     placeholder,
     value,
     onClick() {
-      emitter("activate");
+      emitter(ACTIVATE_PICKER);
     },
     clear() {
       value("");
-      emitter("clear");
+      emitter(CLEAR_FIELD);
     }
   };
 }
