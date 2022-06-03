@@ -3,12 +3,6 @@
 /**
  * b-dropdown
  * Выпадающая плашка с контентом
- *
- * valueAccessor {DropdownParams}
- *
- * allBindings:
- * - inactive {observable<boolean>|null}
- * - target {string} - selector
  */
 
 import {
@@ -27,6 +21,12 @@ import "./style.less";
 import { toJS } from "knockout";
 import { onElementDisposing } from "@/utils/engine/onElementDisposing";
 
+/**
+ * dropdown binding
+ * @param {HTMLElement} element
+ * @param {DropdownParams} valueAccessor
+ * @param {DropdownBindings} allBindings
+ */
 const handle = (
   element,
   valueAccessor,

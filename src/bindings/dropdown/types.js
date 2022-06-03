@@ -10,3 +10,9 @@
  * @property {number|null} offset
  * @property {boolean|null} hide
  */
+
+/**
+ * @typedef {Object} DropdownBindings
+ * @property {observable<boolean>|null} inactive
+ * @property {string} target- selector
+ */

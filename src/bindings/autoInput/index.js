@@ -1,11 +1,6 @@
 /**
  * b-auto-input
- *
  * Поле ввода с изменяющейся шириной
- *
- * allBindings
- * - textInput
- * - value
  */
 
 import { isObservable } from "knockout";
@@ -13,6 +8,17 @@ import { triggerEvent } from "@/utils/emitEvent";
 import { onElementDisposing } from "@/utils/engine/onElementDisposing";
 import { init as initPlugin, dispose } from "./plugin";
 
+/**
+ * @typedef {Object} autoInputBindings
+ * @property {observable<string>} textInput
+ * @property {observable<string>} value
+ */
+
+/**
+ * autoInput binding
+ * @param {HTMLElement} element
+ * @param {autoInputBindings} allBindings
+ */
 const init = function (element, valueAccessor, allBindings) {
   const onDispose = [];
 
