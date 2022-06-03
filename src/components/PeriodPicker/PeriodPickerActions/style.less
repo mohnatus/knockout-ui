@@ -1,0 +1,64 @@
+@import "../../../style/buttons.less";
+
+.c-period-picker-actions {
+  display: block;
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &.modal {
+    height: 50px;
+    .c-period-picker-actions {
+      &__wrapper {
+        position: absolute;
+
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+      &__apply,
+      &__reset {
+        height: 30px;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      &__reset {
+        border: 1px solid var(--v-color-border);
+        background: white;
+      }
+
+      &__apply {
+        background: var(--v-color-primary);
+        color: var(--v-color-primary-contrast);
+        border: none;
+      }
+    }
+  }
+
+  &:not(.modal) {
+    background: var(--v-color-bg-light);
+    margin: 10px -20px 0px;
+    padding: 20px;
+
+    .c-period-picker-actions {
+      &__wrapper {
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      &__apply {
+        .button("success");
+      }
+
+      &__reset {
+        .button("danger");
+        margin-right: 10px;
+      }
+    }
+  }
+}

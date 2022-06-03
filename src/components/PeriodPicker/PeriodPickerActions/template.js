@@ -1,0 +1,20 @@
+export const template = `
+ 
+  <div class="c-period-picker-actions__wrapper">
+    <button
+      type="button"
+      class="c-period-picker-actions__reset"
+      data-bind="click: reset"
+    >
+      Отменить
+    </button>
+    <button
+      type="button"
+      class="c-period-picker-actions__apply"
+      data-bind="click: apply"
+    >
+      Сохранить
+    </button>
+  </div>
+  
+`;

@@ -1,0 +1,22 @@
+@import "../../../style/forms.less";
+
+.c-period-picker-field {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+  max-width: 225px;
+
+  .input-block();
+
+  input {
+    .no-input();
+    flex-shrink: 1;
+    flex-grow: 1;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    color: var(--v-color-service);
+  }
+}

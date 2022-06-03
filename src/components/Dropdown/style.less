@@ -1,0 +1,44 @@
+@import "../../style/colors.less";
+@import "../../style/decoration.less";
+
+.c-dropdown-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: @maskColor;
+  cursor: pointer;
+}
+
+.c-dropdown {
+  background: white;
+  box-shadow: @shadow;
+  border-radius: @radiusLg;
+
+  &__content {
+    padding: 15px;
+  }
+
+  &.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-height: 100vh;
+
+    .c-dropdown__close {
+      position: absolute;
+      top: 7px;
+      right: 10px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .c-dropdown__content {
+      padding: 30px 20px 0;
+      max-height: 100vh;
+      overflow: auto;
+    }
+  }
+}

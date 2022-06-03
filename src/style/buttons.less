@@ -1,0 +1,112 @@
+.no-button {
+  background: transparent;
+  box-shadow: none;
+  font: inherit;
+
+  &,
+  &:focus,
+  &:hover {
+    outline: none;
+    border: none;
+  }
+}
+
+.button-style {
+  box-shadow: none;
+  font: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &,
+  &:focus,
+  &:hover {
+    outline: none;
+    text-decoration: none;
+  }
+
+  transition-property: color, background;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
+}
+
+.button-hover(@content) {
+  &:not(.disabled):not([disabled]):hover {
+    @content();
+  }
+}
+
+.button-colored(@color) when (@color = "primary") {
+  border: none;
+
+  background: var(--v-color-primary);
+  color: var(--v-color-primary-contrast);
+
+  .button-hover({
+    background: var(--v-color-primary-hover);
+  });
+}
+
+.button-colored(@color) when (@color = "danger") {
+  border: none;
+
+  background: var(--v-color-danger-light);
+  color: var(--v-color-danger);
+
+  .button-hover({
+    background: var(--v-color-danger-light-hover);
+  });
+}
+
+.button-colored(@color) when (@color = "success") {
+  border: none;
+
+  background: var(--v-color-success-light);
+  color: var(--v-color-success);
+
+  .button-hover({
+    background: var(--v-color-success-light-hover);
+  });
+}
+
+.button-colored(@color) when (default()) {
+  border: none;
+
+  background: var(--v-color-service-light);
+  color: var(--v-color-service);
+
+  .button-hover({
+    background: var(--v-color-service-light-hover);
+  });
+}
+
+.button-size(@size) when (@size = "sm") {
+  height: 32px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.button-size(@size) when (default()) {
+  height: 38px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+// Обычная кнопка
+.button (@color: "default", @size: "md") {
+  .button-style();
+  .button-colored(@color);
+  .button-size(@size);
+
+  &.disabled,
+  &[disabled] {
+    opacity: 0.5;
+    cursor: default;
+  }
+}

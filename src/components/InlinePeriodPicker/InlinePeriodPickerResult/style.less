@@ -1,0 +1,31 @@
+@import "../../../style/forms.less";
+@import "../../../style/buttons.less";
+
+.i-period-picker-result {
+  display: flex;
+  align-items: flex-end;
+
+  .input-inline();
+
+  &__input {
+    flex-grow: 1;
+    padding-bottom: 4px;
+    input {
+      .no-input();
+      border: none;
+    }
+  }
+
+  &__clear {
+    .no-button();
+    cursor: pointer;
+    color: var(--v-color-danger);
+    margin-left: 4px;
+    transform: translateY(-2px);
+  }
+
+  &__icon {
+    margin-left: 6px;
+    color: var(--v-color-service);
+  }
+}

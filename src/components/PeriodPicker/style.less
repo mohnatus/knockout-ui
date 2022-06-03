@@ -1,0 +1,184 @@
+@import "../../style/buttons.less";
+
+.c-period-picker {
+  &__tabs {
+    display: none;
+  }
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__fields,
+  &__calendars {
+    display: flex;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  &__calendars {
+    display: flex;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  &__calendar {
+    display: inline-block;
+  }
+  &__from,
+  &__to {
+    flex-grow: 1;
+
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  &__from {
+    .c-period-picker-control {
+      &__next {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+
+  &__to {
+    .c-period-picker-control {
+      &__prev {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+
+  &__ranges {
+    margin-left: 20px;
+  }
+
+  &__range {
+    min-height: 35px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4px;
+    color: var(--v-color-primary);
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+    &:hover {
+      background: var(--v-color-hover-bg);
+    }
+    &.active {
+      color: var(--v-color-text);
+    }
+  }
+}
+
+.c-period-picker-dropdown {
+  .c-dropdown__content {
+    padding: 20px 20px 0;
+  }
+  &.modal {
+    border-radius: 0;
+
+    .c-dropdown__content {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .c-period-picker {
+      &__wrapper {
+        flex-direction: column;
+      }
+      &__ranges {
+        order: 1;
+        margin-left: 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--v-color-border);
+        margin-bottom: 10px;
+
+        column-count: 2;
+      }
+      &__range {
+        padding: 0;
+        vertical-align: top;
+        &:hover {
+          background: transparent;
+        }
+      }
+
+      &__components {
+        order: 3;
+      }
+
+      &__to {
+        max-width: 255px;
+      }
+      &__from {
+        max-width: 255px;
+      }
+
+      &__fields,
+      &__calendars {
+        justify-content: center;
+      }
+
+      &__dropdown {
+        &[data-component] {
+          .c-period-picker {
+            &__tabs {
+              display: flex;
+              border-bottom: 1px solid var(--v-color-border);
+              margin: 0 -15px 10px;
+              padding: 0 15px;
+              order: 2;
+
+              button {
+                width: 50%;
+                .no-button();
+                padding: 10px;
+                cursor: pointer;
+                font-weight: 500;
+
+                &.active {
+                  color: var(--v-color-primary);
+                }
+              }
+            }
+            &__calendars {
+              .c-period-picker__to {
+                display: none;
+              }
+            }
+            &-field {
+              margin-left: auto;
+              margin-right: auto;
+            }
+            &__from {
+              .c-period-picker-control {
+                &__next {
+                  opacity: 1;
+                  visibility: visible;
+                }
+              }
+            }
+          }
+        }
+
+        &[data-component="from"] {
+          .c-period-picker__fields {
+            .c-period-picker__to {
+              display: none;
+            }
+          }
+        }
+
+        &[data-component="to"] {
+          .c-period-picker__fields {
+            .c-period-picker__from {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@import "../../../style/buttons.less";
+
+.c-period-picker-control {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--v-color-border);
+  margin-bottom: 10px;
+
+  &__month {
+    flex-grow: 1;
+    margin: 0 12px;
+    text-align: center;
+  }
+
+  &__prev,
+  &__next {
+    flex-shrink: 0;
+    .no-button();
+    color: var(--v-color-service);
+    cursor: pointer;
+    padding: 5px;
+    transform: translateY(2px);
+
+    &:hover,
+    &:focus {
+      color: var(--v-color-service-dark);
+    }
+  }
+}

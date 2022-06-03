@@ -1,0 +1,27 @@
+@import "../../../style/buttons.less";
+
+.c-date-picker-control {
+  display: flex;
+  align-items: center;
+
+  &__prev,
+  &__next {
+    flex-shrink: 0;
+    .no-button();
+    color: var(--v-color-service);
+    cursor: pointer;
+    padding: 5px;
+    transform: translateY(2px);
+
+    &:hover,
+    &:focus {
+      color: var(--v-color-service-dark);
+    }
+  }
+
+  &__month {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0 12px;
+  }
+}

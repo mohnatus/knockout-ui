@@ -1,0 +1,28 @@
+@import "@/style/css-colors.less";
+
+@import "@/style/colors.less";
+@import "@/style/typography.less";
+@import "@/style/buttons.less";
+@import "@/style/decoration.less";
+@import "@/style/forms.less";
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  color: var(--v-color-text);
+
+  &.modals-shown {
+    overflow: hidden;
+    padding-bottom: var(--v-scrollbar-width);
+  }
+}
+
+.form-group {
+  margin-bottom: 24px;
+}

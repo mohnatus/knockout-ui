@@ -1,0 +1,28 @@
+@input-height: 48px;
+@input-padding: 15px;
+@input-radius: 4px;
+
+.no-input {
+  border: none;
+  font: inherit;
+  font-size: inherit;
+  min-width: 0;
+
+  &:focus,
+  &:hover {
+    outline: none;
+  }
+}
+
+.input-block {
+  height: @input-height;
+  padding-left: @input-padding;
+  padding-right: @input-padding;
+  border-radius: @input-radius;
+  border: 1px solid var(--v-color-border);
+  font-size: 16px;
+}
+
+.input-inline {
+  font-size: 14px;
+}

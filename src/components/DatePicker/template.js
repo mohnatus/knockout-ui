@@ -1,0 +1,57 @@
+export const template = `
+    
+  <div 
+    data-bind="component: {
+        name: resultComponent,
+        
+        params: {
+          value: textValue,
+          placeholder: placeholder,
+          disabled: disabled,
+          clearable: clearable,
+        }, 
+      }, 
+      event: {
+        activate: function() {
+          showCalendar(true);
+        },
+        clear: function() {
+          showCalendar(false);
+        }
+      },
+      attr: {
+        id: _id,
+      }"></div>
+
+    <c-dropdown 
+      params="target: _id, 
+      className: 'c-date-picker-dropdown',
+      open: showCalendar, 
+      dropdownParams: dropdownParams,
+      modal: modal">
+      <div class="c-date-picker-dropdown__wrapper">
+
+      <div class="c-date-picker-dropdown__control"
+        data-bind="component: {
+            name: controlComponent,
+          
+          params: {
+            month: month,
+          }, 
+        }"></div>
+        
+        
+        <c-date-picker-calendar class="c-date-picker-dropdown__calendar"
+            params="month: month, selected: moment"
+            data-bind="
+              event: {
+                select: function (_, event) {
+                  select(event.details);
+                  showCalendar(false);
+                }
+              }
+            "
+          ></c-date-picker-calendar>
+      </div>
+    </c-dropdown>
+`;
