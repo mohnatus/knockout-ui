@@ -5,6 +5,11 @@ import * as InlineDatePickerResult from "./InlineDatePickerResult";
 registerComponent("i-date-picker-origin", DatePicker);
 registerComponent("i-date-picker-result", InlineDatePickerResult);
 
+/**
+ * @param {DatePickerParams} params
+ * @param {HTMLElement} element
+ * @returns {InlineDatePicker}
+ */
 export function ViewModel(params, element) {
   element.classList.add("i-date-picker");
   return {
