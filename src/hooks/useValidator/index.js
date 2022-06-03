@@ -1,7 +1,12 @@
-import { computed, isObservable, observable, toJS } from "knockout";
+import { computed, observable, toJS } from "knockout";
 import { formatValidators } from "./formatValidators";
 import { validateField } from "./validateField";
 
+/**
+ * useValidator
+ * @param {observable<boolean>|null} condition
+ * @returns {useValidatorHook}
+ */
 export function useValidator(condition) {
   const fields = {};
   const state = {};
@@ -21,8 +26,6 @@ export function useValidator(condition) {
     const { isValid, error } = validateField(fields[name]);
     state[name].isValid(isValid);
     state[name].error(error);
-
-    console.log("update state", toJS(state[name]));
   };
 
   const addField = (name, field, validators) => {
@@ -35,8 +38,6 @@ export function useValidator(condition) {
       isValid: observable(true),
       error: observable(null)
     };
-
-    console.log("add field", name, fields[name]);
 
     updateFieldState(name);
 

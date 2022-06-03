@@ -24,10 +24,10 @@ export function validateField(fieldConfig) {
   const fieldValue = toJS(field);
 
   for (let i = 0, count = validators.length; i < count; i++) {
-    const { validateFn, error, param } = validators[i];
+    const { validate, error, param } = validators[i];
     if (typeof validateFn !== "function") continue;
 
-    const isValid = validateFn(fieldValue, param);
+    const isValid = validate(fieldValue, param);
     if (isValid) continue;
 
     fieldState.isValid = false;

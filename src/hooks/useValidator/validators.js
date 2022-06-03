@@ -1,7 +1,6 @@
 import { getClientDate } from "@/utils/date/format";
 import {
   isValidClientDate,
-  isValidClientPeriod
 } from "@/utils/date/validate";
 
 export const VALIDATORS = {

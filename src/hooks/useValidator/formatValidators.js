@@ -1,5 +1,10 @@
 import { VALIDATORS } from "./validators";
 
+/**
+ * formatValidators
+ * @param {Validator[]} validators
+ * @returns {Validator[]}
+ */
 export function formatValidators(validators) {
   const validatorsList = Array.isArray(validators) ? validators : [validators];
   return validatorsList
@@ -18,7 +23,7 @@ export function formatValidators(validators) {
       if (!validateFn) return null;
 
       return {
-        validateFn,
+        validate: validateFn,
         error,
         param
       };
