@@ -1,5 +1,12 @@
 import { getElementEmitter } from "@/utils/emitEvent";
+import { ACTIVATE_PICKER, CLEAR_FIELD } from "../events";
 
+/**
+ * PeriodPickerResult ViewModel
+ * @param {PeriodPickerResultParams} params
+ * @param {HTMLElement} element
+ * @returns {PeriodPickerResult}
+ */
 export function ViewModel(params, element) {
   element.classList.add("c-date-picker-result");
   const emitter = getElementEmitter(element);
@@ -17,12 +24,18 @@ export function ViewModel(params, element) {
     placeholder,
     value,
 
+    /**
+     * @fires PeriodPicker#activate
+     */
     onClick() {
-      emitter("activate");
+      emitter(ACTIVATE_PICKER);
     },
+    /**
+     * @fires PeriodPicker#activate
+     */
     clear() {
       value("");
-      emitter("clear");
+      emitter(CLEAR_FIELD);
     }
   };
 }

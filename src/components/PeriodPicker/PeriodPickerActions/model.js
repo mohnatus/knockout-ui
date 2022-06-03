@@ -1,15 +1,21 @@
-import { applyBindingsToNode } from "knockout";
+import { applyBindingsToNode } from 'knockout';
 
+/**
+ * PeriodPickerActions ViewModel
+ * @param {PeriodPickerActionsParams} params
+ * @param {HTMLElement} element
+ * @returns {PeriodPickerActions}
+ */
 export function ViewModel(params, element) {
-  element.classList.add("c-period-picker-actions");
+	element.classList.add('c-period-picker-actions');
 
-  const { modal, apply, reset } = params;
+	const { modal, apply, reset } = params;
 
-  applyBindingsToNode(element, {
-    css: {
-      modal: modal
-    }
-  });
+	applyBindingsToNode(element, {
+		css: {
+			modal: modal,
+		},
+	});
 
-  return { modal, apply, reset };
+	return { modal, apply, reset };
 }
