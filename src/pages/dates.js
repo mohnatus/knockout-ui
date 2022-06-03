@@ -12,6 +12,8 @@ import { registerComponent } from "@/utils/engine/registerComponent";
 import { useDateValue } from "@/hooks/date/useDateValue";
 import { usePeriodValue } from "@/hooks/date/usePeriodValue";
 import { useValidator } from "@/hooks/useValidator";
+import { requiredDateValidator, REQUIRED_DATE_VALIDATOR } from '../constants/validators/date';
+import { requiredPeriodValidator } from '../constants/validators/period';
 
 registerComponent("date-picker", DatePicker);
 registerComponent("i-date-picker", InlineDatePicker);
@@ -29,37 +31,10 @@ const ViewModel = (() => {
 
   const { state: validator, addField } = useValidator();
 
-  const dateValidator = [
-    {
-      validate: "required",
-      error: "Обязательное поле"
-    },
-    {
-      validate: "date",
-      error: "Некорректное значение"
-    }
-  ];
-  const periodValidator = [
-    {
-      validate: "required",
-      error: "Обязательное поле"
-    },
-    {
-      validate: "period",
-      param: RANGES,
-      error: "Некорректный формат"
-    },
-    {
-      validate: "periodValue",
-      param: RANGES,
-      error: "Некорректный период"
-    }
-  ];
-
-  addField("date1", value1.textValue, dateValidator);
-  addField("date2", value2.textValue, dateValidator);
-  addField("period1", period1.textValue, periodValidator);
-  addField("period2", period2.textValue, periodValidator);
+  addField("date1", value1.textValue, requiredDateValidator());
+  addField("date2", value2.textValue, requiredDateValidator());
+  addField("period1", period1.textValue, requiredPeriodValidator());
+  addField("period2", period2.textValue, requiredPeriodValidator({ ranges: RANGES }));
 
   return {
     value1,
