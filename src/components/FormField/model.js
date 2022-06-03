@@ -11,8 +11,12 @@ export function ViewModel(params, element) {
 
 	const { state = {} } = params;
 
+  const isValid = computed(() => {
+		return toJS(state.isValid);
+	});
+
 	const isInvalid = computed(() => {
-		return !toJS(state.isValid);
+		return toJS(state.isInvalid);
 	});
 
 	const error = computed(() => {
@@ -23,6 +27,7 @@ export function ViewModel(params, element) {
 	applyBindingsToNode(element, {
 		css: {
 			invalid: isInvalid,
+      valid: isValid
 		},
 	});
 

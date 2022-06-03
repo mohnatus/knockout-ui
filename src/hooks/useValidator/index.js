@@ -5,9 +5,10 @@ import { validateField } from './validateField';
 /**
  * useValidator
  * @param {observable<boolean>|null} condition
+ * @param {boolean} showValid
  * @returns {useValidatorHook}
  */
-export function useValidator(condition) {
+export function useValidator(condition, showValid) {
 	const fields = {};
 	const state = {};
 
@@ -18,13 +19,15 @@ export function useValidator(condition) {
 
 	const updateFieldState = (name) => {
 		if (!canValidate()) {
-			state[name].isValid(true);
+			state[name].isValid(false);
+      state[name].isInvalid(false);
 			state[name].error(null);
 			return;
 		}
 
 		const { isValid, error } = validateField(fields[name]);
-		state[name].isValid(isValid);
+		state[name].isValid(showValid ? isValid : false);
+    state[name].isInvalid(!isValid)
 		state[name].error(error);
 	};
 
@@ -35,7 +38,8 @@ export function useValidator(condition) {
 		};
 
 		state[name] = {
-			isValid: observable(true),
+			isValid: observable(showValid ? true : false),
+			isInvalid: observable(true),
 			error: observable(null),
 		};
 

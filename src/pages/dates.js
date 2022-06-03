@@ -31,7 +31,7 @@ const ViewModel = (() => {
   const period3 = usePeriodValue("14.05.2022-14.06.2022");
   const period4 = usePeriodValue("last-week", RANGES);
 
-  const { state: validator, addField } = useValidator(showErrors);
+  const { state: validator, addField } = useValidator(showErrors, "showValid");
 
   addField("date1", value1.textValue, requiredDateValidator());
   addField("date2", value2.textValue, requiredDateValidator());

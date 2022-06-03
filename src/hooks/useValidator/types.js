@@ -8,6 +8,7 @@
 /**
  * @typedef {Object} FieldValidationState
  * @property {observable<boolean>} isValid
+ * @property {observable<boolean>} isInvalid
  * @property {observable<string>} error
  */
 
