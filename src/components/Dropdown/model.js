@@ -1,6 +1,12 @@
 import { useClickOutside } from "@/hooks/useClickOutside";
 import { useModal } from "@/hooks/useModal";
 
+/**
+ * Dropdown component ViewModel
+ * @param {DropdownComponentParams} params
+ * @param {HTMLElemen} element
+ * @returns {DropdownComponent} dropdown component
+ */
 export function ViewModel(params, element) {
   const { parent, target, open, dropdownParams, modal, className } = params;
   const $target = document.getElementById(target);
