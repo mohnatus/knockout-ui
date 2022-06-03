@@ -1,43 +1,49 @@
 /**
- * useClickOutside - обработка кликов вне элементов
+ * @typedef {Object} useClickOutsideHook
  *
- * addElements {function}
- * dispose {function}
+ * @property {function} addElements
+ * @property {function} dispose
  */
 
+/**
+ * useClickOutside - обработка кликов вне элементов
+ * @param {HTMLElement|HTMLElement[]} elements
+ * @param {function} callback
+ * @returns {useClickOutsideHook}
+ */
 export function useClickOutside(elements, callback) {
-  let targets = [];
+	let targets = [];
 
-  function addElements(elements) {
-    let newElements = Array.isArray(elements) ? elements : [elements];
-    targets = [
-      ...targets,
-      ...newElements.filter((el) => el instanceof HTMLElement)
-    ];
-  }
+	function addElements(elements) {
+		let newElements = Array.isArray(elements) ? elements : [elements];
+		targets = [
+			...targets,
+			...newElements.filter((el) => el instanceof HTMLElement),
+		];
+	}
 
-  function contains(element, target) {
-    if (!element || !target) return false;
-    if ("contains" in element) {
-      return element.contains(target);
-    }
-    return false;
-  }
+	function contains(element, target) {
+		if (!element || !target) return false;
+		if ('contains' in element) {
+			return element.contains(target);
+		}
+		return false;
+	}
 
-  addElements(elements);
+	addElements(elements);
 
-  const listener = (event) => {
-    const eventTarget = event.target;
-    if (!targets.some((element) => contains(element, eventTarget))) {
-      if (typeof callback === "function") callback(event);
-    }
-  };
-  document.addEventListener("click", listener);
+	const listener = (event) => {
+		const eventTarget = event.target;
+		if (!targets.some((element) => contains(element, eventTarget))) {
+			if (typeof callback === 'function') callback(event);
+		}
+	};
+	document.addEventListener('click', listener);
 
-  return {
-    addElements,
-    dispose() {
-      document.removeEventListener("click", listener);
-    }
-  };
+	return {
+		addElements,
+		dispose() {
+			document.removeEventListener('click', listener);
+		},
+	};
 }
