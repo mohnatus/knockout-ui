@@ -2,6 +2,12 @@ import { computed, observable, toJS } from "knockout";
 import { useCalendar } from "@/hooks/date/useCalendar";
 import { getElementEmitter } from "@/utils/emitEvent";
 
+/**
+ * Month Calendar ViewModel
+ * @param {MonthCalendarParams} params
+ * @param {HTMLElement} element
+ * @returns {MonthCalendar}
+ */
 export function ViewModel(params, element) {
   element.classList.add("c-month-calendar");
   const emitter = getElementEmitter(element);
