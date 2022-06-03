@@ -5,6 +5,12 @@ import * as InlinePeriodPickerResult from "./InlinePeriodPickerResult";
 registerComponent("i-period-picker-origin", PeriodPicker);
 registerComponent("i-period-picker-result", InlinePeriodPickerResult);
 
+/**
+ * Inline Period Picker ViewModel
+ * @param {PeriodPickerParams} params
+ * @param {HTMLElement} element
+ * @returns {InlinePeriodPickerParams}
+ */
 export function ViewModel(params, element) {
   element.classList.add("i-period-picker");
   return {

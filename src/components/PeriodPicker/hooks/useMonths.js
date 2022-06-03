@@ -5,6 +5,11 @@ import { TODAY } from "@/constants/date/days";
 import { getDateComponents } from "@/utils/date/format";
 import { addMonths, getStartOfMonth } from "@/utils/date/manipulations";
 
+/**
+ * getMonth
+ * @param {Date|observable<Date>} moment
+ * @returns {string}
+ */
 export function getMonthName(month) {
   const _date = toJS(month);
   if (!_date) return "";
@@ -13,6 +18,11 @@ export function getMonthName(month) {
   return `${MONTHS[monthIndex]} ${year}`;
 }
 
+/**
+ * getMonth
+ * @param {PeriodMoment|observable<PeriodMoment>} moment
+ * @returns {Date}
+ */
 export function getMonth(moment) {
   const _m = toJS(moment);
   const date = _m ? new Date(_m) : TODAY;
