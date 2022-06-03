@@ -1,6 +1,6 @@
 import './index';
 
-import { applyBindings, bindingHandlers } from "knockout";
+import { applyBindings, bindingHandlers, observable } from "knockout";
 
 import * as DatePicker from "@/components/DatePicker";
 import * as InlineDatePicker from "@/components/InlineDatePicker";
@@ -21,6 +21,8 @@ registerComponent("period-picker", PeriodPicker);
 registerComponent("i-period-picker", InlinePeriodPicker);
 
 const ViewModel = (() => {
+  const showErrors = observable(false);
+
   const value1 = useDateValue();
   const value2 = useDateValue("12.05.2022");
 
@@ -29,7 +31,7 @@ const ViewModel = (() => {
   const period3 = usePeriodValue("14.05.2022-14.06.2022");
   const period4 = usePeriodValue("last-week", RANGES);
 
-  const { state: validator, addField } = useValidator();
+  const { state: validator, addField } = useValidator(showErrors);
 
   addField("date1", value1.textValue, requiredDateValidator());
   addField("date2", value2.textValue, requiredDateValidator());
@@ -37,6 +39,7 @@ const ViewModel = (() => {
   addField("period2", period2.textValue, requiredPeriodValidator({ ranges: RANGES }));
 
   return {
+    showErrors,
     value1,
     value2,
     period1,

@@ -9,6 +9,11 @@
 
 <body>
   <div id="app">
+    <div>
+      <button data-bind="click: function() {
+        showErrors(!showErrors())
+      }">toggle</button>
+    </div>
     <c-form-field params="state: validator.date1">
       <date-picker params="value: value1, clearable: true"></date-picker>
     </c-form-field>
