@@ -3,6 +3,14 @@ import { getDateComponents } from "@/utils/date/format";
 import { MONTHS } from "@/constants/date/months";
 import { addMonths } from "@/utils/date/manipulations";
 
+
+
+/**
+ * DatePickerControl ViewModel
+ * @param {DatePickerControlParams} params
+ * @param {HTMLElement} element
+ * @returns {DatePickerControlComponent}
+ */
 export function ViewModel(params, element) {
   element.classList.add("c-date-picker-control");
 

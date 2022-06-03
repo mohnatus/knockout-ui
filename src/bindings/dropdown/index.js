@@ -4,16 +4,7 @@
  * b-dropdown
  * Выпадающая плашка с контентом
  *
- * valueAccessor:
- * - width {string|null}
- * - maxWidth {number|null}
- * - minWidth {number|null}
- * - arrow {Object|boolean|null}
- * - placement {string|null}
- * - flip {boolean|null}
- * - shift {object|null}
- * - offset {number|null}
- * - hide {boolean|null}
+ * valueAccessor {DropdownParams}
  *
  * allBindings:
  * - inactive {observable<boolean>|null}

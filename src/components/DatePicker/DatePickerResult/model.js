@@ -1,5 +1,13 @@
 import { getElementEmitter } from "@/utils/emitEvent";
 
+
+
+/**
+ * DatePickerResult ViewModel
+ * @param {DatePickerResultParams} params
+ * @param {HTMLElement} element
+ * @returns {DatePickerResultComponent}
+ */
 export function ViewModel(params, element) {
   element.classList.add("c-date-picker-result");
   const emitter = getElementEmitter(element);
@@ -10,17 +18,24 @@ export function ViewModel(params, element) {
     typeof params.placeholder === "string" ? params.placeholder : "00.00.0000";
 
   return {
+    value,
     clearable,
     disabled,
     placeholder,
-    value,
 
+    /**
+     * @fires DatePicker#activate
+     */
     onClick() {
-      emitter("activate");
+      emitter(ACTIVATE_PICKER);
     },
+
+    /**
+     * @fires DatePicker#clearField
+     */
     clear() {
       value("");
-      emitter("clear");
+      emitter(CLEAR_FIELD);
     }
   };
 }
