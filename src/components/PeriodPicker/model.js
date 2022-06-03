@@ -48,6 +48,8 @@ export function ViewModel(params, element) {
   const {
     fromInput,
     toInput,
+    fromInputValid,
+    toInputValid,
     setFromInput,
     setToInput,
     dispose: inputsDispose
@@ -146,6 +148,8 @@ export function ViewModel(params, element) {
     textValue,
     fromInput,
     toInput,
+    fromInputValid,
+    toInputValid,
     localValue,
     ranges,
     localRangeId,

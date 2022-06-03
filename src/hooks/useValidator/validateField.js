@@ -25,7 +25,7 @@ export function validateField(fieldConfig) {
 
   for (let i = 0, count = validators.length; i < count; i++) {
     const { validate, error, param } = validators[i];
-    if (typeof validateFn !== "function") continue;
+    if (typeof validate !== "function") continue;
 
     const isValid = validate(fieldValue, param);
     if (isValid) continue;

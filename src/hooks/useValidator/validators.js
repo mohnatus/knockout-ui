@@ -26,13 +26,13 @@ export const VALIDATORS = {
   date: (v) => isValidClientDate(v),
   period: (v, ranges) => {
     if (!v) return true;
-    if (ranges.find((r) => r.name === v)) return true;
+    if (ranges && ranges.find((r) => r.name === v)) return true;
     const [from, to] = v.split("-");
     return isValidClientDate(from) && (!to || isValidClientDate(to));
   },
   periodValue: (v, ranges) => {
     if (!v) return true;
-    if (ranges.find((r) => r.name === v)) return true;
+    if (ranges && ranges.find((r) => r.name === v)) return true;
     const [from, to] = v.split("-");
     const fromDate = getClientDate(from);
     const toDate = getClientDate(to);

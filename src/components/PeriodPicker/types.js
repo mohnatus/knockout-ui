@@ -59,6 +59,7 @@
 /**
  * @typedef {Object} PeriodPickerFieldParams
  * @property {observable<string>} inputValue
+ * @property {observable<boolean>} isValid
  */
 
 /**
@@ -66,6 +67,7 @@
  * @property {observable<string>} value
  * @property {boolean} clearable
  * @property {observable<boolean>} disabled
+ * @property {observable<boolean>} active
  * @property {string|observable<string>} placeholder
  */
 
@@ -96,6 +98,8 @@
 /**
  * @typedef {Object} PeriodPickerField
  * @property {observable<string>} inputValue
+ * @property {observable<boolean>} focused
+ * @property {function} dispose
  */
 
 /**
@@ -114,6 +118,8 @@
  * @property {observable<string>} textValue
  * @property {observable<string>} fromInput
  * @property {observable<string>} toInput
+ * @property {observable<boolean>} fromInputValid
+ * @property {observable<boolean>} toInputValid
  * @property {observable<PeriodMoments>} localValue
  * @property {PeriodRange[]} ranges
  * @property {observable<string|null>} localRangeId

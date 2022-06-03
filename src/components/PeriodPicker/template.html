@@ -6,6 +6,7 @@
           placeholder: placeholder,
           disabled: disabled,
           clearable: clearable,
+          active: showCalendar,
         },
       },
       event: resultEvents,
@@ -41,10 +42,10 @@
       <div class="c-period-picker__components">
         <div class="c-period-picker__fields">
           <div class="c-period-picker__from">
-            <c-period-picker-field params="inputValue: fromInput"></c-period-picker-field>
+            <c-period-picker-field params="inputValue: fromInput, isValid: fromInputValid"></c-period-picker-field>
           </div>
           <div class="c-period-picker__to">
-            <c-period-picker-field params="inputValue: toInput"></c-period-picker-field>
+            <c-period-picker-field params="inputValue: toInput, isValid: toInputValid"></c-period-picker-field>
           </div>
         </div>
 
