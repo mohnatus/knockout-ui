@@ -1,5 +1,5 @@
 import { toJS } from "knockout";
-import { TODAY } from "@/utils/date/constants";
+import { TODAY } from "@/constants/date/days";
 import { formatClientDate } from "@/utils/date/format";
 import { getStartOfMonth } from "@/utils/date/manipulations";
 

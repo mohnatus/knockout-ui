@@ -14,7 +14,7 @@
 
 import { computed, observable, toJS } from "knockout";
 import { MONTHS } from "@/constants/date/months";
-import { TODAY } from "@/utils/date/constants";
+import { TODAY } from "@/constants/date/days";
 import { getDateComponents } from "@/utils/date/format";
 import { addMonths, getStartOfMonth } from "@/utils/date/manipulations";
 

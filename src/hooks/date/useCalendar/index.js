@@ -9,7 +9,7 @@
 
 import { computed, observable } from "knockout";
 import { isToday, isWeekend } from "@/utils/date";
-import { START_OF_TODAY } from "@/utils/date/constants";
+import { START_OF_TODAY } from "@/constants/date/days";
 import { getDays, getDiffInDays } from "@/utils/date/interval";
 import {
   addDays,

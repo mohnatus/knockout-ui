@@ -1,4 +1,4 @@
-import { START_OF_TODAY } from "./constants";
+import { START_OF_TODAY } from "@/constants/date/days";
 import { getStartOfDay } from "./manipulations";
 
 export function getDate(date) {
