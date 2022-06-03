@@ -9,7 +9,7 @@ import {
 
 /**
  * @param {string|PeriodMoments} initialValue
- * @param {Array} ranges
+ * @param {PeriodRange[]} ranges
  * @returns {PeriodValue} PeriodValue
  */
 export function usePeriodValue(initialValue, ranges = []) {

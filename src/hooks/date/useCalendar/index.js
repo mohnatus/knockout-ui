@@ -1,12 +1,3 @@
-/**
- * useCalendar - дни месяца
- *
- * days {observableArray<CalendarDay[]>}
- * month {observable<moment>}
- * setMonth {function(<Moment>)}
- * dispose {function}
- */
-
 import { computed, observable } from "knockout";
 import { isToday, isWeekend } from "@/utils/date";
 import { START_OF_TODAY } from "@/constants/date/days";
@@ -59,7 +50,9 @@ function getMonthMoment(moment) {
 }
 
 /**
+ * useCalendar - дни месяца
  * @param {Moment} moment
+ * @returns {useCalendarHook}
  */
 export function useCalendar(moment) {
   const currentMonth = observable(getMonthMoment(moment));

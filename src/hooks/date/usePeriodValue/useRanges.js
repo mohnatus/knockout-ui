@@ -1,3 +1,13 @@
+/**
+ * @typedef {Object} useRangeHook
+ * @property {function} getRangeById
+ * @property {function} getRangeByName
+ */
+
+/**
+ * @param {PeriodRanges[]} ranges
+ * @returns
+ */
 export function useRanges(ranges) {
   const _ranges = Array.isArray(ranges) ? ranges : [];
   return {
