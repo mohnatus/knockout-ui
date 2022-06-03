@@ -7,10 +7,12 @@ import { useRanges } from "./hooks/useRanges";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { ONLY_MOBILE_MQ } from "@/constants/browser/breakpoints";
 import "./components";
+import { ACTIVATE_PICKER, CLEAR_FIELD } from "./events";
 
 /**
  * @param {PeriodPickerParams} params
  * @param {HTMLElement} element
+ * @returns {PeriodPicker}
  */
 export function ViewModel(params, element) {
   element.classList.add("c-period-picker");
@@ -118,6 +120,14 @@ export function ViewModel(params, element) {
   const modalDispose = useMediaQuery(ONLY_MOBILE_MQ, (match) => {
     modal(match);
   });
+  const resultEvents = {
+		[ACTIVATE_PICKER]: function () {
+			showCalendar(true);
+		},
+		[CLEAR_FIELD]: function () {
+			showCalendar(false);
+		},
+	};
 
   // dispose
   const dispose = () => {
@@ -160,6 +170,7 @@ export function ViewModel(params, element) {
       ...dropdownParams
     },
     resultComponent: resultComponentName || "c-period-picker-result",
+    resultEvents,
     dispose
   };
 }

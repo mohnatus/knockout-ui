@@ -19,6 +19,8 @@ const monthAgo = addMonths(startOfToday, -1);
 const startOfPrevMonth = getStartOfMonth(monthAgo);
 const endOfPrevMonth = getEndOfMonth(startOfPrevMonth);
 
+
+
 export const RANGES = [
   {
     name: "Сегодня",

@@ -1,26 +1,23 @@
+import { observable, toJS } from 'knockout';
+
 /**
  * useRanges - работа с готовыми интервалами
- *
- * ranges {Array} - список интервалов
- * localRangeId {observable<string|null>} - локальная копия выбранного интервала
- * rangeId {observable<string|null>} - выбранный интервал
- * dispose {function}
+ * @param {string|null|observable<string|null>} rangeId
+ * @param {Array} ranges
+ * @returns
  */
-
-import { observable, toJS } from "knockout";
-
 export function useRanges(rangeId, ranges) {
-  const localRangeId = observable(toJS(rangeId));
+	const localRangeId = observable(toJS(rangeId));
 
-  const rangeIdSb = rangeId.subscribe((v) => {
-    if (v !== localRangeId()) {
-      localRangeId(v);
-    }
-  });
+	const rangeIdSb = rangeId.subscribe((v) => {
+		if (v !== localRangeId()) {
+			localRangeId(v);
+		}
+	});
 
-  const dispose = () => {
-    rangeIdSb.dispose();
-  };
+	const dispose = () => {
+		rangeIdSb.dispose();
+	};
 
-  return { localRangeId, dispose };
+	return { localRangeId, dispose };
 }

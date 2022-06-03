@@ -1,5 +1,16 @@
 /**
- * @typedef {[number|null, number|null]} PeriodMoments
+ * @typedef {number|null} PeriodMoment
+ */
+
+/**
+ * @typedef {[PeriodMoment, PeriodMoment]} PeriodMoments
+ */
+
+/**
+ * @typedef {Object} PeriodRange
+ * @property {string} id
+ * @property {string} name
+ * @property {PeriodMoments} period
  */
 
 /**

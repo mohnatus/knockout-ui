@@ -53,8 +53,6 @@ export function ViewModel(params, element) {
 		},
 	};
 
-	console.log({resultEvents})
-
 	// dispose
 
 	const dispose = () => {

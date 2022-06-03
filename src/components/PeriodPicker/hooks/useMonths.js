@@ -1,16 +1,3 @@
-/**
- * useMonths - контроллер календарей
- *
- * month {observable<Date>} - первый календарь
- * monthName {observable<string>}
- * secondMonth {observable<Date>} - второй календарь
- * secondMonthName {observable<string>}
- * updateMonth {function} - установка активного месяца (первого)
- * prevMonth {function} - к предыдущему месяцу
- * nextMonth {function} - к следующему месяцу
- * resetMonth {function} - сброс к текущему
- * dispose {function}
- */
 
 import { computed, observable, toJS } from "knockout";
 import { MONTHS } from "@/constants/date/months";
@@ -32,6 +19,11 @@ export function getMonth(moment) {
   return getStartOfMonth(date);
 }
 
+/**
+ * useMonths - контроллер календарей
+ * @param {observable<PeriodMoments>} value
+ * @returns {useMonthsHook}
+ */
 export function useMonths(value) {
   const [from] = toJS(value);
   const month = observable(getMonth(from));
