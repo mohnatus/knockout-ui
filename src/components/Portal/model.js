@@ -1,5 +1,10 @@
 import { applyBindingsToNode } from "knockout";
 
+/**
+ * Portal ViewModel
+ * @param {PortalParams} params
+ * @param {HTMLElement} element
+ */
 export function ViewModel(params, element) {
   const { parent } = params;
 
