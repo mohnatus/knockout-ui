@@ -1,18 +1,17 @@
-
 /**
- * PeriodPickerControl ViewModel
- * @param {PeriodPickerControlParams} params
+ * PeriodPickerControl Component ViewModel
+ * @param {PeriodPickerControlComponentParams} params
  * @param {HTMLElement} element
- * @returns {PeriodPickerControl}
+ * @returns {PeriodPickerControlComponent}
  */
 export function ViewModel(params, element) {
-  element.classList.add("c-period-picker-control");
+	element.classList.add('c-period-picker-control');
 
-  const { monthName, toPrevMonth, toNextMonth } = params;
+	const { monthName, toPrevMonth, toNextMonth } = params;
 
-  return {
-    monthName,
-    toPrevMonth,
-    toNextMonth
-  };
+	return {
+		monthName,
+		toPrevMonth,
+		toNextMonth,
+	};
 }

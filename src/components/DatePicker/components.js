@@ -4,6 +4,10 @@ import * as MonthCalendar from "../MonthCalendar";
 import * as DatePickerResult from "./DatePickerResult";
 import * as DatePickerControl from "./DatePickerControl";
 
-registerComponent("c-date-picker-calendar", MonthCalendar);
-registerComponent("c-date-picker-result", DatePickerResult);
-registerComponent("c-date-picker-control", DatePickerControl);
+export const MonthCalendarComponent = 'c-date-picker-calendar';
+export const DatePickerResultComponent = 'c-date-picker-result';
+export const DatePickerControlComponent = 'c-date-picker-control';
+
+registerComponent(MonthCalendarComponent, MonthCalendar);
+registerComponent(DatePickerResultComponent, DatePickerResult);
+registerComponent(DatePickerControlComponent, DatePickerControl);

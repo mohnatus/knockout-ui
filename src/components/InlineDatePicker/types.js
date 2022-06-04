@@ -1,5 +1,5 @@
 /**
- * @typedef InlineDatePickerResultParams
+ * @typedef InlineDatePickerResultComponentParams
  * @property {observable<string>} value
  * @property {string|observable<string>} placeholder
  * @property {observable<boolean>} disabled
@@ -7,7 +7,7 @@
  */
 
 /**
- * @typedef InlineDatePickerResult
+ * @typedef InlineDatePickerResultComponent
  * @property {observable<string>} value
  * @property {boolean} clearable
  * @property {observable<boolean>} disabled
@@ -17,7 +17,7 @@
  */
 
 /**
- * @typedef InlineDatePicker
+ * @typedef InlineDatePickerComponent
  * @property {string} originComponent
  * @property {DatePickerParams} componentParams
  */

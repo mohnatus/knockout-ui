@@ -1,17 +1,17 @@
 import { applyBindingsToNode, computed, toJS } from 'knockout';
 
 /**
- * FormField ViewModel
- * @param {FormFieldParams} params
+ * FormField Component ViewModel
+ * @param {FormFieldComponentParams} params
  * @param {HTMLElement} element
- * @returns {FormField}
+ * @returns {FormFieldComponent}
  */
 export function ViewModel(params, element) {
 	element.classList.add('c-form-field');
 
 	const { state = {} } = params;
 
-  const isValid = computed(() => {
+	const isValid = computed(() => {
 		return toJS(state.isValid);
 	});
 
@@ -27,7 +27,7 @@ export function ViewModel(params, element) {
 	applyBindingsToNode(element, {
 		css: {
 			invalid: isInvalid,
-      valid: isValid
+			valid: isValid,
 		},
 	});
 
@@ -35,7 +35,7 @@ export function ViewModel(params, element) {
 		error,
 		dispose() {
 			isInvalid.dispose();
-      error.dispose();
+			error.dispose();
 		},
 	};
 }

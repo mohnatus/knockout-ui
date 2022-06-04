@@ -6,10 +6,10 @@ registerComponent("i-period-picker-origin", PeriodPicker);
 registerComponent("i-period-picker-result", InlinePeriodPickerResult);
 
 /**
- * Inline Period Picker ViewModel
- * @param {PeriodPickerParams} params
+ * InlinePeriodPicker Component ViewModel
+ * @param {PeriodPickerComponentParams} params
  * @param {HTMLElement} element
- * @returns {InlinePeriodPickerParams}
+ * @returns {InlinePeriodPickerComponent}
  */
 export function ViewModel(params, element) {
   element.classList.add("i-period-picker");

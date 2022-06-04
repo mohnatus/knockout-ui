@@ -1,5 +1,5 @@
 /**
- * @typedef {Object} IconParams
+ * @typedef {Object} IconComponentParams
  * @property {string} name
  * @property {number} width
  * @property {number} height

@@ -43,27 +43,48 @@
  */
 
 /**
- * @typedef {Object} PeriodPickerActionsParams
+ * @typedef {Object} PeriodPickerActionsComponentParams
  * @property {observable<boolean>} modal
  * @property {function} apply
  * @property {function} reset
  */
 
 /**
- * @typedef {Object} PeriodPickerControlParams
+ * @typedef {Object} PeriodPickerActionsComponent
+ * @property {observable<boolean>} modal
+ * @property {function} apply
+ * @property {function} reset
+ */
+
+/**
+ * @typedef {Object} PeriodPickerControlComponentParams
  * @property {observable<PeriodMoment>} month
  * @property {function} toPrevMonth
  * @property {function} toNextMonth
  */
 
 /**
- * @typedef {Object} PeriodPickerFieldParams
+ * @typedef {Object} PeriodPickerControlComponent
+ * @property {observable<PeriodMoment>} month
+ * @property {function} toPrevMonth
+ * @property {function} toNextMonth
+ */
+
+/**
+ * @typedef {Object} PeriodPickerFieldComponentParams
  * @property {observable<string>} inputValue
  * @property {observable<boolean>} isValid
  */
 
 /**
- * @typedef {Object} PeriodPickerResultParams
+ * @typedef {Object} PeriodPickerFieldComponent
+ * @property {observable<string>} inputValue
+ * @property {observable<boolean>} focused
+ * @property {function} dispose
+ */
+
+/**
+ * @typedef {Object} PeriodPickerResultComponentParams
  * @property {observable<string>} value
  * @property {boolean} clearable
  * @property {observable<boolean>} disabled
@@ -72,38 +93,7 @@
  */
 
 /**
- * @typedef {Object} PeriodPickerParams
- * @property {PeriodValue} value
- * @property {string|observable<string>} placeholder
- * @property {observable<boolean>} disabled
- * @property {boolean} clearable
- * @property {Object} dropdownParams
- * @property {string} resultComponentName
- */
-
-/**
- * @typedef {Object} PeriodPickerActions
- * @property {observable<boolean>} modal
- * @property {function} apply
- * @property {function} reset
- */
-
-/**
- * @typedef {Object} PeriodPickerControl
- * @property {observable<PeriodMoment>} month
- * @property {function} toPrevMonth
- * @property {function} toNextMonth
- */
-
-/**
- * @typedef {Object} PeriodPickerField
- * @property {observable<string>} inputValue
- * @property {observable<boolean>} focused
- * @property {function} dispose
- */
-
-/**
- * @typedef {Object} PeriodPickerResult
+ * @typedef {Object} PeriodPickerResultComponent
  * @property {observable<string>} value
  * @property {boolean} clearable
  * @property {observable<boolean>} disabled
@@ -113,7 +103,17 @@
  */
 
 /**
- * @typedef {Object} PeriodPicker
+ * @typedef {Object} PeriodPickerComponentParams
+ * @property {PeriodValue} value
+ * @property {string|observable<string>} placeholder
+ * @property {observable<boolean>} disabled
+ * @property {boolean} clearable
+ * @property {Object} dropdownParams
+ * @property {string} resultComponentName
+ */
+
+/**
+ * @typedef {Object} PeriodPickerComponent
  * @property {string} _id
  * @property {observable<string>} textValue
  * @property {observable<string>} fromInput

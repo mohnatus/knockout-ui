@@ -1,0 +1,32 @@
+<div data-bind="component: {
+  name: resultComponent,
+  params: {
+    itemComponent: resultItemComponent,
+    selected: selectedItems,
+  },
+  event: resultEvents,
+  attr: {
+    id: _id,
+  }
+}"></div>
+
+<c-dropdown params="target: _id,
+      className: 'c-select-dropdown',
+      open: showList,
+      dropdownParams: dropdownParams,
+      modal: modal">
+  <div class="c-select-dropdown__wrapper">
+
+    <div data-bind="component: {
+      name: listComponent,
+      params: {
+        itemComponent: listItemComponent,
+        items: filteredItems,
+        disabledItems: disabledItems,
+        selectedItems: selected
+      },
+      event: listEvents
+    }"></div>
+
+  </div>
+</c-dropdown>

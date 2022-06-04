@@ -1,48 +1,48 @@
-import { getElementEmitter } from "@/utils/emitEvent";
-import { applyBindingsToNode } from "knockout";
-import { ACTIVATE_PICKER, CLEAR_FIELD } from "../events";
+import { getElementEmitter } from '@/utils/emitEvent';
+import { applyBindingsToNode } from 'knockout';
+import { ACTIVATE_PICKER, CLEAR_FIELD } from '../events';
 
 /**
- * PeriodPickerResult ViewModel
- * @param {PeriodPickerResultParams} params
+ * PeriodPickerResult Component ViewModel
+ * @param {PeriodPickerResultComponentParams} params
  * @param {HTMLElement} element
- * @returns {PeriodPickerResult}
+ * @returns {PeriodPickerResultComponent}
  */
 export function ViewModel(params, element) {
-  element.classList.add("c-date-picker-result");
-  const emitter = getElementEmitter(element);
+	element.classList.add('c-date-picker-result');
+	const emitter = getElementEmitter(element);
 
-  const { clearable, disabled, value, active } = params;
+	const { clearable, disabled, value, active } = params;
 
-  const placeholder =
-    typeof params.placeholder === "string"
-      ? params.placeholder
-      : "00.00.0000-00.00.0000";
+	const placeholder =
+		typeof params.placeholder === 'string'
+			? params.placeholder
+			: '00.00.0000-00.00.0000';
 
-  applyBindingsToNode(element, {
-    css: {
-      active: active
-    }
-  })
+	applyBindingsToNode(element, {
+		css: {
+			active: active,
+		},
+	});
 
-  return {
-    clearable,
-    disabled,
-    placeholder,
-    value,
+	return {
+		clearable,
+		disabled,
+		placeholder,
+		value,
 
-    /**
-     * @fires PeriodPicker#activate
-     */
-    onClick() {
-      emitter(ACTIVATE_PICKER);
-    },
-    /**
-     * @fires PeriodPicker#activate
-     */
-    clear() {
-      value("");
-      emitter(CLEAR_FIELD);
-    }
-  };
+		/**
+		 * @fires PeriodPicker#activate
+		 */
+		onClick() {
+			emitter(ACTIVATE_PICKER);
+		},
+		/**
+		 * @fires PeriodPicker#activate
+		 */
+		clear() {
+			value('');
+			emitter(CLEAR_FIELD);
+		},
+	};
 }

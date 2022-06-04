@@ -6,8 +6,14 @@ import * as PeriodPickerField from "./PeriodPickerField";
 import * as PeriodPickerControl from "./PeriodPickerControl";
 import * as PeriodPickerActions from "./PeriodPickerActions";
 
-registerComponent("c-period-picker-calendar", MonthCalendar);
-registerComponent("c-period-picker-result", PeriodPickerResult);
-registerComponent("c-period-picker-field", PeriodPickerField);
-registerComponent("c-period-picker-control", PeriodPickerControl);
-registerComponent("c-period-picker-actions", PeriodPickerActions);
+export const MonthCalendarComponent = "c-period-picker-calendar";
+export const PeriodPickerResultComponent = "c-period-picker-result";
+export const PeriodPickerFieldComponent = "c-period-picker-field";
+export const PeriodPickerControlComponent = "c-period-picker-control";
+export const PeriodPickerActionsComponent = "c-period-picker-actions";
+
+registerComponent(MonthCalendarComponent, MonthCalendar);
+registerComponent(PeriodPickerResultComponent, PeriodPickerResult);
+registerComponent(PeriodPickerFieldComponent, PeriodPickerField);
+registerComponent(PeriodPickerControlComponent, PeriodPickerControl);
+registerComponent(PeriodPickerActionsComponent, PeriodPickerActions);

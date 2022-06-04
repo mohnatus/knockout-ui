@@ -1,5 +1,5 @@
 /**
- * @typedef InlinePeriodPickerResultParams
+ * @typedef InlinePeriodPickerResultComponentParams
  * @property {observable<string>} value
  * @property {string|observable<string>} placeholder
  * @property {observable<boolean>} disabled
@@ -7,7 +7,7 @@
  */
 
 /**
- * @typedef InlinePeriodPickerResult
+ * @typedef InlinePeriodPickerResultComponent
  * @property {observable<string>} value
  * @property {boolean} clearable
  * @property {observable<boolean>} disabled
@@ -17,7 +17,7 @@
  */
 
 /**
- * @typedef {Object} InlinePeriodPickerParams
+ * @typedef {Object} InlinePeriodPickerComponent
  * @property {string} originComponent
  * @property {PeriodPickerParams} componentParams
  */

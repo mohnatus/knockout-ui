@@ -1,23 +1,23 @@
-import { applyBindingsToNode } from "knockout";
+import { applyBindingsToNode } from 'knockout';
 
 /**
  * Portal ViewModel
- * @param {PortalParams} params
+ * @param {PortalComponentParams} params
  * @param {HTMLElement} element
  */
 export function ViewModel(params, element) {
-  const { parent } = params;
+	const { parent } = params;
 
-  let parentElement = document.body;
-  if (parent) {
-    let el = element.closest(parent);
-    if (el) parentElement = el;
-  }
+	let parentElement = document.body;
+	if (parent) {
+		let el = element.closest(parent);
+		if (el) parentElement = el;
+	}
 
-  applyBindingsToNode(element, {
-    descendantsComplete: () => {
-      parentElement.append(element);
-    }
-  });
-  return {};
+	applyBindingsToNode(element, {
+		descendantsComplete: () => {
+			parentElement.append(element);
+		},
+	});
+	return {};
 }

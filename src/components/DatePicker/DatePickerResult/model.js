@@ -3,8 +3,8 @@ import { applyBindingsToNode } from 'knockout';
 import { ACTIVATE_PICKER, CLEAR_FIELD } from '../events';
 
 /**
- * DatePickerResult ViewModel
- * @param {DatePickerResultParams} params
+ * DatePickerResult Component ViewModel
+ * @param {DatePickerResultComponentParams} params
  * @param {HTMLElement} element
  * @returns {DatePickerResultComponent}
  */
@@ -21,9 +21,9 @@ export function ViewModel(params, element) {
 
 	applyBindingsToNode(element, {
 		css: {
-			active: active
-		}
-	})
+			active: active,
+		},
+	});
 
 	return {
 		value,

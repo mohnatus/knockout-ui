@@ -1,10 +1,10 @@
 /**
- * @typedef {Object} FormFieldParams
+ * @typedef {Object} FormFieldComponentParams
  * @property {FieldValidationState|null} state
  */
 
 /**
- * @typedef {Object} FormField
+ * @typedef {Object} FormFieldComponent
  * @property {observable<string>} error
  * @property {function} dispose
  */

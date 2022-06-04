@@ -2,10 +2,10 @@ import { getElementEmitter } from "@/utils/emitEvent";
 import { ACTIVATE_PICKER, CLEAR_FIELD } from "@/components/DatePicker/events";
 
 /**
- *
- * @param {InlineDatePickerResultParams} params
+ * InlineDatePickerResult Component ViewModel
+ * @param {InlineDatePickerResultComponentParams} params
  * @param {HTMLElement} element
- * @returns {InlineDatePicker}
+ * @returns {InlineDatePickerResultComponent}
  */
 export function ViewModel(params, element) {
   element.classList.add("i-date-picker-result");

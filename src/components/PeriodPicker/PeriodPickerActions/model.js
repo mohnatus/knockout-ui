@@ -1,10 +1,10 @@
 import { applyBindingsToNode } from 'knockout';
 
 /**
- * PeriodPickerActions ViewModel
- * @param {PeriodPickerActionsParams} params
+ * PeriodPickerActions Component ViewModel
+ * @param {PeriodPickerActionsComponentParams} params
  * @param {HTMLElement} element
- * @returns {PeriodPickerActions}
+ * @returns {PeriodPickerActionsComponent}
  */
 export function ViewModel(params, element) {
 	element.classList.add('c-period-picker-actions');

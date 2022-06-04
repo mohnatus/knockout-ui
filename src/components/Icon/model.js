@@ -3,8 +3,8 @@ import { observable } from 'knockout';
 const cache = {};
 
 /**
- * Icon component ViewModel
- * @param {IconParams} params
+ * Icon Component ViewModel
+ * @param {IconComponentParams} params
  * @param {HTMLElement} element
  * @returns {IconComponent}
  */

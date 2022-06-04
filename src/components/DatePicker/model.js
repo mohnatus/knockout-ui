@@ -5,9 +5,14 @@ import { ONLY_SMALL_MOBILE_MQ } from '@/constants/browser/breakpoints';
 import { getMonth } from './utils';
 import { ACTIVATE_PICKER, CLEAR_FIELD } from './events';
 import './components';
+import {
+	DatePickerControlComponent,
+	DatePickerResultComponent,
+} from './components';
 
 /**
- * @param {DatePickerParams} params
+ * DatePicker Component ViewModel
+ * @param {DatePickerComponentParams} params
  * @param {HTMLElement} element
  * @returns {DatePickerComponent}
  */
@@ -78,8 +83,8 @@ export function ViewModel(params, element) {
 			flip: false,
 			...dropdownParams,
 		},
-		resultComponent: resultComponentName || 'c-date-picker-result',
-		controlComponent: controlComponentName || 'c-date-picker-control',
+		resultComponent: resultComponentName || DatePickerResultComponent,
+		controlComponent: controlComponentName || DatePickerControlComponent,
 		resultEvents,
 		dispose,
 	};

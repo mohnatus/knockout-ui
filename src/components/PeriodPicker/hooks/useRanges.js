@@ -4,7 +4,7 @@ import { observable, toJS } from 'knockout';
  * useRanges - работа с готовыми интервалами
  * @param {string|null|observable<string|null>} rangeId
  * @param {Array} ranges
- * @returns
+ * @returns {useRangesHook}
  */
 export function useRanges(rangeId, ranges) {
 	const localRangeId = observable(toJS(rangeId));

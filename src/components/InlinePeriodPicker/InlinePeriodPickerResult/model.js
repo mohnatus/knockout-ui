@@ -2,10 +2,10 @@ import { getElementEmitter } from '@/utils/emitEvent';
 import { ACTIVATE_PICKER, CLEAR_FIELD } from '@/components/PeriodPicker/events';
 
 /**
- * Inline Period Picker Result ViewModel
- * @param {InlinePeriodPickerResultParams} params
+ * InlinePeriodPickerResult Component ViewModel
+ * @param {InlinePeriodPickerResultComponentParams} params
  * @param {HTMLElement} element
- * @returns {InlinePeriodPickerResult}
+ * @returns {InlinePeriodPickerResultComponent}
  */
 export function ViewModel(params, element) {
 	element.classList.add('i-period-picker-result');
