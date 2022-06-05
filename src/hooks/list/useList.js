@@ -29,15 +29,15 @@ export function useList(
 		return items().filter((item) => searchFn(item, q));
 	});
 
-  const getById = id => {
-    return items().find(item => item.id === id);
-  }
+	const getById = (id) => {
+		return items().find((item) => item.id === id);
+	};
 
 	const load = () => {
 		if (typeof initialList === 'function') {
 			loading(true);
 			initialList().then((data) => {
-				items(data.map(itemFormatter));
+				items(data.map(itemConvertor));
 				loading(false);
 			});
 		}
@@ -48,7 +48,7 @@ export function useList(
 	};
 
 	if (Array.isArray(initialList)) {
-		items(initialList.map(itemFormatter));
+		items(initialList.map(itemConvertor));
 	} else if (typeof initialList === 'function') {
 		load();
 	}
@@ -59,6 +59,6 @@ export function useList(
 		query,
 		filteredItems,
 		update,
-    getById
+		getById,
 	};
 }

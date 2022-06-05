@@ -1,0 +1,23 @@
+<div class="c-select-result__wrapper">
+  <!-- ko foreach: { data: items, as: 'item' } -->
+  <div class="c-select-result-item">
+    <div data-bind="component: {
+      name: $parent.itemComponent,
+      params: {
+        item: item
+      }
+    }"></div>
+    <button type="button" class="c-select-result-item__remove" data-bind="click: function() {
+      $parent.remove(item);
+    }">
+      <c-icon params="name: 'cross', width: 14, height: 14"></c-icon>
+    </button>
+  </div>
+  <!-- /ko -->
+
+  <!-- ko if: searchable -->
+  <div class="c-select-result-item__search">
+    <input type="text" data-bind="bAutoInput, textInput: query">
+  </div>
+  <!-- /ko -->
+</div>

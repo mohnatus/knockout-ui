@@ -4,6 +4,14 @@
  * @type {object}
  * @property {string} id
  */
+export const ACTIVATE_SELECT = 'select/activate';
+
+/**
+ * Select event
+ * @event Select#selectItem
+ * @type {object}
+ * @property {string} id
+ */
 export const SELECT_ITEM = 'select/item/select';
 
 /**

@@ -14,9 +14,14 @@
         showErrors(!showErrors())
       }">toggle</button>
     </div>
-    selects
 
+    <c-form-field params="state: validator.select1">
+      <c-select params="list: list, value: value1"></c-select>
+    </c-form-field>
 
+    <c-form-field params="state: validator.multiple1">
+      <c-select params="list: list, value: multiple1, multiple: true"></c-select>
+    </c-form-field>
   </div>
 </body>
 

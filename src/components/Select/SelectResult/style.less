@@ -1,0 +1,45 @@
+@import '@/style/forms.less';
+@import '@/style/buttons.less';
+
+.c-select-result {
+	width: 100%;
+	display: flex;
+	align-items: center;
+
+	.input-block();
+
+  &__wrapper {
+    width: 100%;
+  }
+
+  &:not(.multiple) {
+    .c-select-result-item {
+      width: 100%;
+    }
+  }
+
+	&.multiple {
+		.c-select-result {
+			&__wrapper {
+				display: flex;
+				flex-wrap: wrap;
+			}
+		}
+	}
+
+	&.active {
+		border-color: var(--v-color-primary);
+	}
+}
+
+.invalid {
+	.c-select-result {
+		border-color: var(--v-color-danger);
+	}
+}
+
+.valid {
+	.c-select-result {
+		border-color: var(--v-color-success);
+	}
+}

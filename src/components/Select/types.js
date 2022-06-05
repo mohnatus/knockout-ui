@@ -1,42 +1,12 @@
 /**
- * @typedef {Object} SelectResultItemComponentParams
- */
-
-/**
- * @typedef {Object} SelectResultItemComponent
- */
-
-/**
- * @typedef {Object} SelectResultComponentParams
- */
-
-/**
- * @typedef {Object} SelectResultComponent
- */
-
-/**
- * @typedef {Object} SelectListItemComponentParams
- */
-
-/**
- * @typedef {Object} SelectListItemComponent
- */
-
-/**
- * @typedef {Object} SelectListComponentParams
- */
-
-/**
- * @typedef {Object} SelectListComponent
- */
-
-/**
  * @typedef {Object} SelectComponentParams
  * @property {SelectValue} value
  * @property {useListHook} list
  * @property {boolean} multiple
+ * @property {boolean} searchable
  * @property {observable<boolean>} disabled
  * @property {observableArray<string[]>} disabledItems
+ * @property {string|observable<string>} placeholder
  * @property {string} listComponentName
  * @property {string} listItemComponentName
  * @property {string} resultComponentName
@@ -48,8 +18,13 @@
  * @typedef {Object} SelectComponent
  * @property {string} _id
  * @property {observableArray<List>} filteredItems
- * @property {observableArray<List>} selectedItems
+ * @property {observable<ListItem>|observableArray<List>} selectedItems
  * @property {observableArray<string>|null} disabledItems
+ * @property {observable<boolean>} disabledItems
+ * @property {boolean} multiple
+ * @property {boolean} searchable
+ * @property {observable<string>} query
+ * @property {string|observable<string>} placeholder
  * @property {string} resultComponent
  * @property {string} resultItemComponent
  * @property {string} listComponent

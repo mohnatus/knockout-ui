@@ -20,14 +20,14 @@ export function useValidator(condition, showValid) {
 	const updateFieldState = (name) => {
 		if (!canValidate()) {
 			state[name].isValid(false);
-      state[name].isInvalid(false);
+			state[name].isInvalid(false);
 			state[name].error(null);
 			return;
 		}
 
 		const { isValid, error } = validateField(fields[name]);
 		state[name].isValid(showValid ? isValid : false);
-    state[name].isInvalid(!isValid)
+		state[name].isInvalid(!isValid);
 		state[name].error(error);
 	};
 
@@ -45,9 +45,11 @@ export function useValidator(condition, showValid) {
 
 		updateFieldState(name);
 
-		field.subscribe((v) => {
-			updateFieldState(name);
-		});
+		if (isObservable(field)) {
+			field.subscribe((v) => {
+				updateFieldState(name);
+			});
+		}
 	};
 
 	if (isObservable(condition)) {

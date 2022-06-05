@@ -5,7 +5,10 @@ import {
 	SelectResultComponent,
 	SelectResultItemComponent,
 } from './component';
-import { REMOVE_ITEM, SELECT_ITEM } from './events';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
+import { ONLY_SMALL_MOBILE_MQ } from '@/constants/browser/breakpoints';
+import { getUnique } from '@/utils/unique';
+import { ACTIVATE_SELECT, REMOVE_ITEM, SELECT_ITEM } from './events';
 
 /**
  * Select Component ViewModel
@@ -21,6 +24,8 @@ export function ViewModel(params, element) {
 		list,
 		multiple,
 		disabled,
+		searchable,
+		placeholder,
 		disabledItems,
 		listComponentName,
 		listItemComponentName,
@@ -28,7 +33,7 @@ export function ViewModel(params, element) {
 		resultItemComponentName,
 		dropdownParams,
 	} = params;
-	const { items, filteredItems } = list;
+	const { items, filteredItems, query } = list;
 	const { selected, select, remove } = value;
 
 	const showList = observable(false);
@@ -36,7 +41,14 @@ export function ViewModel(params, element) {
 	const selectedItems = computed(() => {
 		const _selected = toJS(selected);
 
-		if (_selected) return [];
+		if (!_selected) return [];
+
+		if (!multiple) {
+			const item = items().find((item) => item.id === _selected);
+			if (item) return [item];
+			return [];
+		}
+
 		if (multiple && !_selected.length) return [];
 
 		const _items = toJS(items);
@@ -48,11 +60,17 @@ export function ViewModel(params, element) {
 	});
 
 	const resultEvents = {
-		[REMOVE_ITEM]: (id) => remove(id),
+		[ACTIVATE_SELECT]: () => {
+
+			showList(true)
+		},
+		[REMOVE_ITEM]: (_, event) => remove(event.details),
 	};
 
 	const listEvents = {
-		[SELECT_ITEM]: (id) => select(id),
+		[SELECT_ITEM]: (_, event) => {
+			select(event.details);
+		}
 	};
 
 	const modal = observable(false);
@@ -71,6 +89,9 @@ export function ViewModel(params, element) {
 		filteredItems,
 		selectedItems,
 		disabledItems,
+		placeholder,
+		multiple,
+		disabled,
 
 		resultComponent: resultComponentName || SelectResultComponent,
 		resultItemComponent:
@@ -85,6 +106,7 @@ export function ViewModel(params, element) {
 		showList,
 		dropdownParams: {
 			flip: false,
+			width: 'equal',
 			...dropdownParams,
 		},
 
