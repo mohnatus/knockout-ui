@@ -17,6 +17,7 @@ export function ViewModel(params, element) {
 		selectedItems,
 		open,
 		disabled,
+		clearable,
 		placeholder,
 		multiple,
 		searchable,
@@ -31,6 +32,13 @@ export function ViewModel(params, element) {
 		if (!_value) return [];
 		if (Array.isArray(_value)) return _value;
 		return [_value];
+	});
+
+	const showSearch = computed(() => {
+		if (toJS(disabled)) return false;
+		if (multiple) return true;
+
+		return false;
 	});
 
 	const focusOnSearchField = () => {
@@ -77,7 +85,9 @@ export function ViewModel(params, element) {
 		itemComponent,
 		items,
 		disabled,
-		searchable: multiple,
+		showSearch,
+		clearable,
+		placeholder,
 		query,
 		remove,
 		dispose,

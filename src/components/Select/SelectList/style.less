@@ -1,3 +1,19 @@
 .c-select-list {
-  display: block;
+	display: block;
+
+	&__item {
+		cursor: pointer;
+		color: var(--v-color-primary);
+
+		&.selected,
+		&.disabled {
+			cursor: default;
+		}
+		&.selected {
+			color: var(--v-color-text);
+		}
+		&.disabled {
+			opacity: 0.5;
+		}
+	}
 }

@@ -4,6 +4,7 @@
  * @property {useListHook} list
  * @property {boolean} multiple
  * @property {boolean} searchable
+ * @property {boolean} clearable
  * @property {observable<boolean>} disabled
  * @property {observableArray<string[]>} disabledItems
  * @property {string|observable<string>} placeholder
@@ -22,6 +23,7 @@
  * @property {observableArray<string>|null} disabledItems
  * @property {observable<boolean>} disabledItems
  * @property {boolean} multiple
+ * @property {boolean} clearable
  * @property {boolean} searchable
  * @property {observable<string>} query
  * @property {string|observable<string>} placeholder

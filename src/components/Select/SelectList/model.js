@@ -18,6 +18,20 @@ export function ViewModel(params, element) {
 		return toJS(selectedItems).map((item) => item.id);
 	});
 
+	// checks
+
+const isSelectedItem = (item) => {
+			return selectedIds().includes(item.id);
+		};
+		const isDisabledItem = (item) => {
+			if (toJS(item.disabled)) return true;
+			const disabledIds = toJS(disabledItems);
+			if (!disabledIds) return false;
+			if (Array.isArray(disabledIds))
+				return disabledIds.includes(item.id);
+			return disabledIds === item.id;
+		};
+
 	const dispose = () => {
 		selectedIds.dispose();
 	};
@@ -26,18 +40,12 @@ export function ViewModel(params, element) {
 		itemComponent,
 		items,
 
-		isSelectedItem(item) {
-			return selectedIds().includes(item.id);
-		},
-		isDisabledItem(item) {
-			const disabledIds = toJS(disabledItems);
-			if (!disabledIds) return false;
-			if (Array.isArray(disabledIds))
-				return disabledIds.includes(item.id);
-			return disabledIds === item.id;
-		},
+		isSelectedItem,
+		isDisabledItem,
 
 		select(item) {
+			if (isSelectedItem(item)) return;
+			if (isDisabledItem(item)) return;
 			emitter(SELECT_ITEM, item.id);
 		},
 

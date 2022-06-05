@@ -25,6 +25,7 @@ export function ViewModel(params, element) {
 		multiple,
 		disabled,
 		searchable,
+		clearable,
 		placeholder,
 		disabledItems,
 		listComponentName,
@@ -96,6 +97,7 @@ export function ViewModel(params, element) {
 		disabled,
 		searchable,
 		query,
+		clearable,
 
 		resultComponent: resultComponentName || SelectResultComponent,
 		resultItemComponent:
