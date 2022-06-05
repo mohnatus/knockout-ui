@@ -1,4 +1,4 @@
-import { computed, observable, toJS } from 'knockout';
+import { applyBindingsToNode, computed, observable, toJS } from 'knockout';
 import {
 	SelectListComponent,
 	SelectListItemComponent,
@@ -82,6 +82,7 @@ export function ViewModel(params, element) {
 
 	const resultEvents = {
 		[ACTIVATE_SELECT]: () => {
+			if (toJS(disabled)) return;
 			showList(true);
 		},
 		[REMOVE_ITEM]: (_, event) => remove(event.details),
@@ -118,6 +119,12 @@ export function ViewModel(params, element) {
 		modalDispose();
 		showListSb.dispose();
 	};
+
+	applyBindingsToNode(element, {
+		css: {
+			disabled: disabled
+		}
+	})
 
 	return {
 		_id: 'c-select-' + getUnique(),

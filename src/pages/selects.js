@@ -16,7 +16,7 @@ registerComponent('c-select', Select);
 const items = [
 	{ id: 1, text: 'Option 1' },
 	{ id: 2, text: 'Option 2' },
-	{ id: 3, text: 'Option 3' },
+	{ id: 3, text: 'Option 3', disabled: true },
 	{ id: 4, text: 'Option 4' },
 	{ id: 5, text: 'Option 5' },
 ];
@@ -26,9 +26,11 @@ const ViewModel = (() => {
 
 	const list1 = useList(items);
 	const list2 = useList(items);
+	const list3 = useList(items);
 
 	const value1 = useSelectValue();
 	const multiple1 = useSelectValues();
+	const value2 = useSelectValue(2);
 
 	const { state: validator, addField } = useValidator(
 		showErrors,
@@ -42,7 +44,9 @@ const ViewModel = (() => {
 		showErrors,
 		list1,
 		list2,
+		list3,
 		value1,
+		value2,
 		multiple1,
 		validator,
 	};
