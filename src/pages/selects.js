@@ -13,16 +13,20 @@ import * as Select from '@/components/select';
 
 registerComponent('c-select', Select);
 
+const items = [
+	{ id: 1, text: 'Option 1' },
+	{ id: 2, text: 'Option 2' },
+	{ id: 3, text: 'Option 3' },
+	{ id: 4, text: 'Option 4' },
+	{ id: 5, text: 'Option 5' },
+];
+
 const ViewModel = (() => {
 	const showErrors = observable(false);
 
-	const list = useList([
-		{ id: 1, text: 'Option 1' },
-		{ id: 2, text: 'Option 2' },
-		{ id: 3, text: 'Option 3' },
-		{ id: 4, text: 'Option 4' },
-		{ id: 5, text: 'Option 5' },
-	]);
+	const list1 = useList(items);
+	const list2 = useList(items);
+
 	const value1 = useSelectValue();
 	const multiple1 = useSelectValues();
 
@@ -36,7 +40,8 @@ const ViewModel = (() => {
 
 	return {
 		showErrors,
-		list,
+		list1,
+		list2,
 		value1,
 		multiple1,
 		validator,

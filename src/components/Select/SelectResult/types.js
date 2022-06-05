@@ -4,8 +4,9 @@
  * @property {observable<ListItem>|observableArray<List>} selectedItems
  * @property {observable<boolean>} open
  * @property {observable<boolean>} disabled
+ * @property {observable<boolean>} modal
  * @property {boolean} clearable
- * @property {boolean} searchable
+ * @property {observable<boolean>} showResultSearch
  * @property {observalbe<string>} query
  * @property {boolean} multiple
  * @property {string|observable<string>} placeholder

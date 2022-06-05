@@ -22,6 +22,7 @@ export function ViewModel(params, element) {
 		multiple,
 		searchable,
 		query,
+		modal,
 	} = params;
 
 	if (multiple) element.classList.add('multiple');
@@ -34,12 +35,7 @@ export function ViewModel(params, element) {
 		return [_value];
 	});
 
-	const showSearch = computed(() => {
-		if (toJS(disabled)) return false;
-		if (multiple) return true;
 
-		return false;
-	});
 
 	const focusOnSearchField = () => {
 		setTimeout(() => {
@@ -85,7 +81,7 @@ export function ViewModel(params, element) {
 		itemComponent,
 		items,
 		disabled,
-		showSearch,
+		searchable,
 		clearable,
 		placeholder,
 		query,

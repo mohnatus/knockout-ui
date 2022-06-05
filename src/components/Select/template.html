@@ -7,7 +7,7 @@
       multiple: multiple,
       placeholder: placeholder,
       disabled: disabled,
-      searchable: searchable,
+      searchable: showResultSearch,
       clearable: clearable,
       query: query
     },
@@ -25,31 +25,39 @@
       modal: modal">
   <div class="c-select-dropdown__wrapper">
 
-    <!-- ko if: !multiple && searchable -->
+    <!-- ko if: showListSearch -->
     <div class="c-select-dropdown__search">
       <input type="text" data-bind="textInput: query">
     </div>
     <!-- /ko -->
 
     <!-- ko ifnot: filteredItems().length -->
-      <!-- ko if: query() -->
-      Ничего не найдено
-      <!-- /ko -->
-      <!-- ko ifnot: query() -->
-      Список пуст
-      <!-- /ko -->
+    <!-- ko if: query() -->
+    Ничего не найдено
+    <!-- /ko -->
+    <!-- ko ifnot: query() -->
+    Список пуст
+    <!-- /ko -->
     <!-- /ko -->
 
-    <div class="c-select-dropdow__list" data-bind="component: {
+    <div class="c-select-dropdown__list" data-bind="component: {
       name: listComponent,
       params: {
         itemComponent: listItemComponent,
         items: filteredItems,
         disabledItems: disabledItems,
-        selectedItems: selectedItems
+        selectedItems: selectedItems,
+        modal: modal
       },
 
     }, event: listEvents"></div>
+
+    <!-- ko if: modal -->
+    <div class="c-select-dropdown__actions">
+      <button type="button" data-bind="click: reset">Сбросить</button>
+      <button type="button" data-bind="click: apply">Применить</button>
+    </div>
+    <!-- /ko -->
 
   </div>
 </c-dropdown>

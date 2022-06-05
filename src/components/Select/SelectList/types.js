@@ -4,6 +4,7 @@
  * @property {observableArray<List>} items
  * @property {observableArray<List>} selectedItems
  * @property {observableArray<ListItemVar>|null} disabledItems
+ * @property {observable<boolean>} modal
  */
 
 /**

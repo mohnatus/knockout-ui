@@ -35,6 +35,10 @@
  * @property {Object} listEvents
  * @property {observable<boolean>} modal
  * @property {observable<boolean>} showList
+ * @property {observable<boolean>} showListSearch
+ * @property {observable<boolean>} showResultSearch
  * @property {DropdownParams} dropdownParams
+ * @property {function} reset
+ * @property {function} apply
  * @property {function} dispose
  */

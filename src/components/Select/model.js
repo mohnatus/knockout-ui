@@ -38,6 +38,7 @@ export function ViewModel(params, element) {
 	const { selected, select, remove } = value;
 
 	const showList = observable(false);
+	const savedValue = observable();
 
 	const selectedItems = computed(() => {
 		const _selected = toJS(selected);
@@ -60,6 +61,25 @@ export function ViewModel(params, element) {
 		});
 	});
 
+	const modal = observable(false);
+	const modalDispose = useMediaQuery(ONLY_SMALL_MOBILE_MQ, (match) => {
+		modal(match);
+	});
+
+	const showResultSearch = computed(() => {
+		if (modal()) return false;
+		if (multiple) return true;
+		return searchable;
+	});
+
+	const showListSearch = computed(() => {
+		if (modal()) {
+			return multiple || searchable;
+		}
+		if (multiple) return false;
+		return searchable;
+	});
+
 	const resultEvents = {
 		[ACTIVATE_SELECT]: () => {
 			showList(true);
@@ -69,21 +89,34 @@ export function ViewModel(params, element) {
 
 	const listEvents = {
 		[SELECT_ITEM]: (_, event) => {
-			query('');
 			select(event.details);
 
+			if (modal()) return;
+
+			query('');
 			if (!multiple) showList(false);
 		},
+		[REMOVE_ITEM]: (_, event) => remove(event.details),
 	};
 
-	const modal = observable(false);
-	const modalDispose = useMediaQuery(ONLY_SMALL_MOBILE_MQ, (match) => {
-		modal(match);
+	const showListSb = showList.subscribe((v) => {
+		savedValue(toJS(selected));
+		query('');
 	});
+
+	const reset = () => {
+		selected(toJS(savedValue));
+		showList(false);
+	};
+
+	const apply = () => {
+		showList(false);
+	};
 
 	const dispose = () => {
 		selectedItems.dispose();
 		modalDispose();
+		showListSb.dispose();
 	};
 
 	return {
@@ -99,6 +132,9 @@ export function ViewModel(params, element) {
 		query,
 		clearable,
 
+		reset,
+		apply,
+
 		resultComponent: resultComponentName || SelectResultComponent,
 		resultItemComponent:
 			resultItemComponentName || SelectResultItemComponent,
@@ -110,6 +146,8 @@ export function ViewModel(params, element) {
 
 		modal,
 		showList,
+		showListSearch,
+		showResultSearch,
 		dropdownParams: {
 			flip: false,
 			width: 'equal',
