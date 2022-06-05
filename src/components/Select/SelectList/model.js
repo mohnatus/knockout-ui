@@ -2,13 +2,19 @@ import { computed, toJS } from 'knockout';
 import { getElementEmitter } from '@/utils/emitEvent';
 import { SELECT_ITEM } from '../events';
 
+/**
+ * SelectList Component ViewModel
+ * @param {SelectListComponentParams} params
+ * @param {HTMLElement} element
+ * @returns {SelectListComponent}
+ */
 export function ViewModel(params, element) {
 	element.classList.add('c-select-list');
 	const emitter = getElementEmitter(element);
 	const { itemComponent, items, selectedItems, disabledItems } = params;
 
 	const selectedIds = computed(() => {
-		console.log(toJS(selectedItems))
+		console.log(toJS(selectedItems));
 		return toJS(selectedItems).map((item) => item.id);
 	});
 
@@ -32,7 +38,6 @@ export function ViewModel(params, element) {
 		},
 
 		select(item) {
-			console.log("select 1", item)
 			emitter(SELECT_ITEM, item.id);
 		},
 

@@ -1,6 +1,6 @@
 /**
  * @typedef {Object} SelectListItemComponentParams
- * @property {ListItem} item
+ * @property {ListItemVar} item
  */
 
 /**

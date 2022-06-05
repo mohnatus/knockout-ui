@@ -1,6 +1,6 @@
 /**
  * c-select-list-item
- * Выбранный элемент селекта (представление)
+ * Элемент списка селекта (представление)
  */
 import { ViewModel as model } from "./model";
 import template from './template.html'

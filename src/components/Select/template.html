@@ -6,7 +6,9 @@
       open: showList,
       multiple: multiple,
       placeholder: placeholder,
-      disabled: disabled
+      disabled: disabled,
+      searchable: searchable,
+      query: query
     },
 
   },
@@ -22,7 +24,22 @@
       modal: modal">
   <div class="c-select-dropdown__wrapper">
 
-    <div data-bind="component: {
+    <!-- ko if: !multiple && searchable -->
+    <div class="c-select-dropdown__search">
+      <input type="text" data-bind="textInput: query">
+    </div>
+    <!-- /ko -->
+
+    <!-- ko ifnot: filteredItems().length -->
+      <!-- ko if: query() -->
+      Ничего не найдено
+      <!-- /ko -->
+      <!-- ko ifnot: query() -->
+      Список пуст
+      <!-- /ko -->
+    <!-- /ko -->
+
+    <div class="c-select-dropdow__list" data-bind="component: {
       name: listComponent,
       params: {
         itemComponent: listItemComponent,

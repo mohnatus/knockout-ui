@@ -5,7 +5,7 @@ import { ACTIVATE_SELECT, REMOVE_ITEM } from '../events';
 /**
  * SelectResult Component ViewModel
  * @param {SelectResultComponentParams} params
- * @param {*} element
+ * @param {HTMLElement} element
  * @returns {SelectResultComponent}
  */
 export function ViewModel(params, element) {
@@ -23,17 +23,22 @@ export function ViewModel(params, element) {
 		query,
 	} = params;
 
-	if (multiple) element.classList.add('multiple')
+	if (multiple) element.classList.add('multiple');
 
 	const items = computed(() => {
 		const _value = toJS(selectedItems);
-
-		console.log("result", _value)
 
 		if (!_value) return [];
 		if (Array.isArray(_value)) return _value;
 		return [_value];
 	});
+
+	const focusOnSearchField = () => {
+		setTimeout(() => {
+			const input = element.querySelector('input');
+			if (input) input.focus();
+		});
+	};
 
 	/**
 	 * @fires Select#removeItem
@@ -45,27 +50,34 @@ export function ViewModel(params, element) {
 	applyBindingsToNode(element, {
 		css: {
 			active: open,
-			disabled: disabled
+			disabled: disabled,
 		},
 		click: (_, event) => {
-
 			const isRemoveBtn = event.target.closest('[data-remove]');
 
 			if (!isRemoveBtn) {
-				emitter(ACTIVATE_SELECT)
+				emitter(ACTIVATE_SELECT);
+				focusOnSearchField();
 			}
+		},
+	});
+
+	const openSb = open.subscribe((v) => {
+		if (v && multiple) {
+			focusOnSearchField();
 		}
 	});
 
 	const dispose = () => {
 		items.dispose();
+		openSb.dispose();
 	};
 
 	return {
 		itemComponent,
 		items,
 		disabled,
-		searchable,
+		searchable: multiple,
 		query,
 		remove,
 		dispose,

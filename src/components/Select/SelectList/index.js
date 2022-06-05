@@ -1,5 +1,10 @@
-import { ViewModel as model } from "./model";
-import template from './template.html'
-import './style.less'
+/**
+ * c-select-list
+ * Список опций для селекта
+ */
 
-export { model, template }
+import { ViewModel as model } from './model';
+import template from './template.html';
+import './style.less';
+
+export { model, template };

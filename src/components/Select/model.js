@@ -4,7 +4,7 @@ import {
 	SelectListItemComponent,
 	SelectResultComponent,
 	SelectResultItemComponent,
-} from './component';
+} from './components';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { ONLY_SMALL_MOBILE_MQ } from '@/constants/browser/breakpoints';
 import { getUnique } from '@/utils/unique';
@@ -61,16 +61,18 @@ export function ViewModel(params, element) {
 
 	const resultEvents = {
 		[ACTIVATE_SELECT]: () => {
-
-			showList(true)
+			showList(true);
 		},
 		[REMOVE_ITEM]: (_, event) => remove(event.details),
 	};
 
 	const listEvents = {
 		[SELECT_ITEM]: (_, event) => {
+			query('');
 			select(event.details);
-		}
+
+			if (!multiple) showList(false);
+		},
 	};
 
 	const modal = observable(false);
@@ -92,6 +94,8 @@ export function ViewModel(params, element) {
 		placeholder,
 		multiple,
 		disabled,
+		searchable,
+		query,
 
 		resultComponent: resultComponentName || SelectResultComponent,
 		resultItemComponent:
