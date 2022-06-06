@@ -32,9 +32,12 @@ export function useValidator(condition, showValid) {
 	};
 
 	const addField = (name, field, validators) => {
+		console.log({name, validators})
 		fields[name] = {
 			field,
-			validators: formatValidators(validators),
+			validators: formatValidators(validators, () => {
+				updateFieldState(name)
+			}),
 		};
 
 		state[name] = {

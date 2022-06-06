@@ -1,5 +1,6 @@
 import { getElementEmitter } from '@/utils/emitEvent';
 import { ACTIVATE_PICKER, CLEAR_FIELD } from '@/components/PeriodPicker/events';
+import { applyBindingsToNode } from 'knockout';
 
 /**
  * InlinePeriodPickerResult Component ViewModel
@@ -17,6 +18,12 @@ export function ViewModel(params, element) {
 		typeof params.placeholder === 'string'
 			? params.placeholder
 			: '00.00.0000-00.00.0000';
+
+	applyBindingsToNode(element, {
+		css: {
+			disabled,
+		},
+	});
 
 	return {
 		clearable,

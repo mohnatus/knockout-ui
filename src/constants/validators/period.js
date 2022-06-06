@@ -1,10 +1,11 @@
 export const requiredPeriodValidator = (config = {}) => {
-	const { ranges } = config;
+	const { ranges, onlyIf } = config;
 
 	return [
 		{
 			validate: 'required',
 			error: 'Обязательное поле',
+			onlyIf
 		},
 		{
 			validate: 'period',

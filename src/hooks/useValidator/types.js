@@ -1,6 +1,7 @@
 /**
  * @typedef {Object} Validator
  * @property {function} validate
+ * @property {function<boolean>} onlyIf
  * @property {string|function|observable<string>} error
  * @property {*} param
  */

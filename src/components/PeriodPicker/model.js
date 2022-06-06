@@ -1,4 +1,4 @@
-import { observable } from 'knockout';
+import { applyBindingsToNode, observable, toJS } from 'knockout';
 import { getUnique } from '@/utils/unique';
 import { useMonths } from './hooks/useMonths';
 import { usePeriod } from './hooks/usePeriod';
@@ -126,6 +126,7 @@ export function ViewModel(params, element) {
 	});
 	const resultEvents = {
 		[ACTIVATE_PICKER]: function () {
+			if (toJS(disabled)) return;
 			showCalendar(true);
 		},
 		[CLEAR_FIELD]: function () {
@@ -143,6 +144,12 @@ export function ViewModel(params, element) {
 		smallModalDispose();
 		modalDispose();
 	};
+
+	applyBindingsToNode(element, {
+		css: {
+			disabled,
+		},
+	});
 
 	return {
 		_id: 'c-date-picker-' + getUnique(),

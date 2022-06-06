@@ -1,4 +1,4 @@
-import { observable } from 'knockout';
+import { applyBindingsToDescendants, applyBindingsToNode, observable, toJS } from 'knockout';
 import { getUnique } from '@/utils/unique';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { ONLY_SMALL_MOBILE_MQ } from '@/constants/browser/breakpoints';
@@ -51,12 +51,19 @@ export function ViewModel(params, element) {
 
 	const resultEvents = {
 		[ACTIVATE_PICKER]: function () {
+			if (toJS(disabled)) return;
 			showCalendar(true);
 		},
 		[CLEAR_FIELD]: function () {
 			showCalendar(false);
 		},
 	};
+
+	applyBindingsToNode(element, {
+		css: {
+			disabled: disabled
+		}
+	})
 
 	// dispose
 

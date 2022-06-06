@@ -21,7 +21,8 @@ export function ViewModel(params, element) {
 
 	applyBindingsToNode(element, {
 		css: {
-			active: active,
+			active,
+			disabled
 		},
 	});
 

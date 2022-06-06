@@ -1,32 +1,43 @@
-import { VALIDATORS } from "./validators";
+import { computed, isObservable } from 'knockout';
+import { VALIDATORS } from './validators';
 
 /**
  * formatValidators
  * @param {Validator[]} validators
  * @returns {Validator[]}
  */
-export function formatValidators(validators) {
-  const validatorsList = Array.isArray(validators) ? validators : [validators];
-  return validatorsList
-    .map((validator) => {
-      if (!validator || typeof validator !== "object") return null;
-      const { validate, error, param } = validator;
+export function formatValidators(validators, onUpdate) {
+	const validatorsList = Array.isArray(validators)
+		? validators
+		: [validators];
+	return validatorsList
+		.map((validator) => {
+			if (!validator || typeof validator !== 'object') return null;
+			const { validate, error, param, onlyIf } = validator;
 
-      let validateFn;
+			let validateFn, condition;
 
-      if (typeof validate === "function") {
-        validateFn = validate;
-      } else if (validate in VALIDATORS) {
-        validateFn = VALIDATORS[validate];
-      }
+			if (typeof validate === 'function') {
+				validateFn = validate;
+			} else if (validate in VALIDATORS) {
+				validateFn = VALIDATORS[validate];
+			}
 
-      if (!validateFn) return null;
+			if (!validateFn) return null;
 
-      return {
-        validate: validateFn,
-        error,
-        param
-      };
-    })
-    .filter(Boolean);
+			if (onlyIf && typeof onlyIf === 'function') {
+				condition = computed(onlyIf);
+				condition.subscribe((v) => {
+					onUpdate();
+				});
+			}
+
+			return {
+				validate: validateFn,
+				error,
+				param,
+				onlyIf: condition,
+			};
+		})
+		.filter(Boolean);
 }

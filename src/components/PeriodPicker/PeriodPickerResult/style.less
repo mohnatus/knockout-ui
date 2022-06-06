@@ -1,46 +1,52 @@
-@import "@/style/forms.less";
-@import "@/style/buttons.less";
+@import '@/style/forms.less';
+@import '@/style/buttons.less';
 
 .c-period-picker-result {
-  width: 100%;
-  display: flex;
-  align-items: center;
+	width: 100%;
+	display: flex;
+	align-items: center;
 
-  .input-block();
+	.input-block();
 
-  &__input {
-    flex-grow: 1;
-    input {
-      width: 100%;
-      .no-input();
-    }
-  }
+	&__input {
+		flex-grow: 1;
+		input {
+			width: 100%;
+			.no-input();
+		}
+	}
 
-  &__clear {
-    .no-button();
-    cursor: pointer;
-    color: var(--v-color-danger);
-    margin-left: 12px;
-  }
+	&__clear {
+		.no-button();
+		cursor: pointer;
+		color: var(--v-color-danger);
+		margin-left: 12px;
+	}
 
-  &__icon {
-    margin-left: 12px;
-    color: var(--v-color-service);
-  }
+	&__icon {
+		margin-left: 12px;
+		color: var(--v-color-service);
+	}
 
-  &.active {
-    border-color: var(--v-color-primary)
-  }
+	&.active {
+		border-color: var(--v-color-primary);
+	}
+
+	&.disabled {
+		input {
+			pointer-events: none;
+		}
+	}
 }
 
 .invalid {
-  .c-period-picker-result {
-    border-color: var(--v-color-danger);
-  }
+	.c-period-picker-result {
+		border-color: var(--v-color-danger);
+	}
 }
 
 .valid {
-  .c-period-picker-result {
-    border-color: var(--v-color-success);
-  }
+	.c-period-picker-result:not(.disabled) {
+		border-color: var(--v-color-success);
+	}
 }
