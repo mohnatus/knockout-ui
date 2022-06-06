@@ -37,6 +37,10 @@
 
     .no-input();
   }
+
+	&.disabled {
+		pointer-events: none;
+	}
 }
 
 .invalid {
@@ -46,7 +50,7 @@
 }
 
 .valid {
-	.c-select-result {
+	.c-select-result:not(.disabled) {
 		border-color: var(--v-color-success);
 	}
 }

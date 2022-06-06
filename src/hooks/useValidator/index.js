@@ -32,13 +32,15 @@ export function useValidator(condition, showValid) {
 	};
 
 	const addField = (name, field, validators) => {
-		console.log({name, validators})
+
 		fields[name] = {
 			field,
 			validators: formatValidators(validators, () => {
 				updateFieldState(name)
 			}),
 		};
+
+		console.log({name, validators}, fields[name])
 
 		state[name] = {
 			isValid: observable(showValid ? true : false),

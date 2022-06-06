@@ -1,6 +1,10 @@
-export const requiredValidator = () => [
-	{
-		validate: 'required',
-		error: 'Обязательное поле',
-	},
-];
+export const requiredValidator = (config = {}) => {
+	const { onlyIf } = config;
+	return [
+		{
+			validate: 'required',
+			error: 'Обязательное поле',
+			onlyIf
+		},
+	];
+};

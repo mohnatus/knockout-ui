@@ -2,30 +2,110 @@
 <html>
 
 <head>
-  <title>Parcel Sandbox</title>
+  <title>Селекты</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
   <div id="app">
-    <div>
-      <button data-bind="click: function() {
-        showErrors(!showErrors())
-      }">toggle</button>
+
+    <h1>Селекты</h1>
+
+    <section>
+      <label>
+        <input type="checkbox" data-bind="checked: showErrors">
+        Включить валидацию
+      </label>
+    </section>
+
+    <h2>Выбор одного варианта</h2>
+
+    <div class="row">
+      <div class="col">
+        <section>
+          <h3>Обычный вид</h3>
+
+          <c-form-field params="state: validator.value1">
+            <c-select params="list: list1, value: value1, placeholder: 'Выберите значение'">
+            </c-select>
+          </c-form-field>
+        </section>
+      </div>
+      <div class="col">
+        <section>
+          <h3>Со сбросом значения</h3>
+
+          <c-form-field params="state: validator.value2">
+            <c-select params="list: list2, value: value2, clearable: true, placeholder: 'Выберите значение'">
+            </c-select>
+          </c-form-field>
+        </section>
+      </div>
+
+      <div class="col">
+        <section>
+          <h3>С поиском</h3>
+
+          <c-form-field params="state: validator.value3">
+            <c-select
+              params="list: list3, value: value3, clearable: true, searchable: true, placeholder: 'Выберите значение'">
+            </c-select>
+          </c-form-field>
+        </section>
+      </div>
+
+      <div class="col">
+        <section>
+          <h3>Disabled</h3>
+
+          <c-form-field params="state: validator.value4">
+            <c-select
+              params="list: list4, value: value4, clearable: true, disabled: disableValue, placeholder: 'Выберите значение'">
+            </c-select>
+          </c-form-field>
+
+          <div>
+            <label>
+              <input type="checkbox" data-bind="checked: disableValue">
+              disabled
+            </label>
+          </div>
+        </section>
+      </div>
     </div>
 
-    <c-form-field params="state: validator.select1">
-      <c-select params="list: list1, value: value1, searchable: true, clearable: true, placeholder: 'Выберите значение'"></c-select>
-    </c-form-field>
+    <h2>Выбор нескольких вариантов</h2>
 
-    <c-form-field>
-      <c-select params="list: list3, value: value2, searchable: true, clearable: true, placeholder: 'Выберите значение', disabled: true"></c-select>
-    </c-form-field>
+    <div class="row">
+      <div class="col">
+        <section>
+          <h3>Обычный вид</h3>
+          <c-form-field params="state: validator.multiple1">
+            <c-select params="list: list5, value: multiple1, multiple: true, placeholder: 'Выберите значение'">
+            </c-select>
+          </c-form-field>
+        </section>
+      </div>
 
-    <c-form-field params="state: validator.multiple1">
-      <c-select params="list: list2, value: multiple1, multiple: true, clearable: true, placeholder: 'Выберите значение'"></c-select>
-    </c-form-field>
+      <div class="col">
+        <section>
+          <h3>Disabled</h3>
+          <c-form-field params="state: validator.multiple2">
+            <c-select
+              params="list: list6, value: multiple2, multiple: true, clearable: true, placeholder: 'Выберите значение', disabled: disableMultiple">
+            </c-select>
+          </c-form-field>
+          <div>
+            <label>
+              <input type="checkbox" data-bind="checked: disableMultiple">
+              disabled
+            </label>
+          </div>
+        </section>
+      </div>
+    </div>
+
   </div>
 </body>
 

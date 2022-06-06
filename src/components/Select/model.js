@@ -68,8 +68,9 @@ export function ViewModel(params, element) {
 
 	const showResultSearch = computed(() => {
 		if (modal()) return false;
-		if (multiple) return true;
-		return searchable;
+
+		if (!multiple) return false;
+		return true;
 	});
 
 	const showListSearch = computed(() => {
@@ -122,9 +123,9 @@ export function ViewModel(params, element) {
 
 	applyBindingsToNode(element, {
 		css: {
-			disabled: disabled
-		}
-	})
+			disabled,
+		},
+	});
 
 	return {
 		_id: 'c-select-' + getUnique(),

@@ -23,6 +23,8 @@ export function validateField(fieldConfig) {
 	const { field, validators } = fieldConfig;
 	const fieldValue = toJS(field);
 
+	console.log({ fieldValue, validators })
+
 	for (let i = 0, count = validators.length; i < count; i++) {
 		const { validate, error, param, onlyIf } = validators[i];
 		if (typeof validate !== 'function') continue;

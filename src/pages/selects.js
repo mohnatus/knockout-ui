@@ -27,27 +27,75 @@ const ViewModel = (() => {
 	const list1 = useList(items);
 	const list2 = useList(items);
 	const list3 = useList(items);
+	const list4 = useList(items);
+	const list5 = useList(items);
+	const list6 = useList(items);
 
 	const value1 = useSelectValue();
-	const multiple1 = useSelectValues();
 	const value2 = useSelectValue(2);
+	const value3 = useSelectValue();
+	const value4 = useSelectValue();
+
+	const disableValue = observable(false);
+
+	const multiple1 = useSelectValues();
+	const multiple2 = useSelectValues();
+
+	const disableMultiple = observable(false);
 
 	const { state: validator, addField } = useValidator(
 		showErrors,
 		'showValid'
 	);
 
-	addField('select1', value1.selected, requiredValidator());
-	addField('multiple1', multiple1.selected, requiredValidator());
+	addField('value1', value1.selected, requiredValidator());
+	addField('value2', value2.selected, requiredValidator());
+	addField('value3', value3.selected, requiredValidator());
+	addField(
+		'value4',
+		value4.selected,
+		requiredValidator({
+			onlyIf: () => !disableValue(),
+		})
+	);
+
+	addField('multiple1', multiple1.selected, [
+		...requiredValidator(),
+		{
+			validate: 'minLength',
+			param: 2,
+			error: 'Не менее двух вариантов',
+		},
+	]);
+	addField(
+		'multiple2',
+		multiple2.selected,
+		requiredValidator({
+			onlyIf: () => !disableMultiple(),
+		})
+	);
 
 	return {
 		showErrors,
 		list1,
 		list2,
 		list3,
+		list4,
+		list5,
+		list6,
+
 		value1,
 		value2,
+		value3,
+		value4,
+
+		disableValue,
+
 		multiple1,
+		multiple2,
+
+		disableMultiple,
+
 		validator,
 	};
 })();

@@ -54,7 +54,7 @@ export function ViewModel(params, element) {
 	applyBindingsToNode(element, {
 		css: {
 			active: open,
-			disabled: disabled,
+			disabled,
 		},
 		click: (_, event) => {
 			const isRemoveBtn = event.target.closest('[data-remove]');
