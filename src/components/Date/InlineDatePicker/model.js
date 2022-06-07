@@ -1,5 +1,5 @@
 import { registerComponent } from '@/utils/engine/registerComponent';
-import * as DatePicker from '../DatePicker';
+import * as DatePicker from '@/components/Date/DatePicker';
 import * as InlineDatePickerResult from './InlineDatePickerResult';
 
 registerComponent('i-date-picker-origin', DatePicker);

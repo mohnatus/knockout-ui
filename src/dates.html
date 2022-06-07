@@ -22,7 +22,7 @@
 
     <pre>
       <code>
-        import * as DatePicker from "@/components/DatePicker";
+        import * as DatePicker from "@/components/Date/DatePicker";
         registerComponent("date-picker", DatePicker);
       </code>
     </pre>
@@ -36,19 +36,12 @@
           </c-form-field>
         </section>
       </div>
-      <div class="col">
-        <section>
-          <h3>С предустановленным значением</h3>
-          <c-form-field params="state: validator.value2">
-            <date-picker params="value: value2"></date-picker>
-          </c-form-field>
-        </section>
-      </div>
+
       <div class="col">
         <section>
           <h3>Со сбросом значения</h3>
-          <c-form-field params="state: validator.value3">
-            <date-picker params="value: value3, clearable: true"></date-picker>
+          <c-form-field params="state: validator.value2">
+            <date-picker params="value: value2, clearable: true"></date-picker>
           </c-form-field>
         </section>
       </div>
@@ -56,8 +49,8 @@
         <section>
           <h3>Disabled</h3>
 
-          <c-form-field params="state: validator.value4">
-            <date-picker params="value: value4, clearable: true, disabled: disableValue1"></date-picker>
+          <c-form-field params="state: validator.value3">
+            <date-picker params="value: value3, clearable: true, disabled: disableValue1"></date-picker>
 
 
           </c-form-field>
@@ -76,7 +69,7 @@
 
     <pre>
       <code>
-        import * as InlineDatePicker from '@/components/InlineDatePicker';
+        import * as InlineDatePicker from '@/components/Date/InlineDatePicker';
         registerComponent('i-date-picker', InlineDatePicker);
       </code>
     </pre>
@@ -84,17 +77,18 @@
     <div class="row">
       <div class="col">
         <section>
-          <h3>Обычный вид, со сбросом значения</h3>
-          <c-form-field params="state: validator.value5">
-            <i-date-picker params="value: value5, clearable: true"></i-date-picker>
+          <h3>Со сбросом значения</h3>
+          <c-form-field params="state: validator.value4">
+            <i-date-picker params="value: value4, clearable: true"></i-date-picker>
           </c-form-field>
         </section>
       </div>
+
       <div class="col">
         <section>
           <h3>Disabled</h3>
-          <c-form-field params="state: validator.value6">
-            <i-date-picker params="value: value6, clearable: true, disabled: disableValue2"></i-date-picker>
+          <c-form-field params="state: validator.value5">
+            <i-date-picker params="value: value5, clearable: true, disabled: disableValue2"></i-date-picker>
           </c-form-field>
           <div>
             <label>
@@ -108,11 +102,9 @@
     <h2>PeriodPicker</h2>
 
     <pre><code>
-      import * as PeriodPicker from '@/components/PeriodPicker';
+      import * as PeriodPicker from '@/components/Date/PeriodPicker';
       registerComponent('period-picker', PeriodPicker);
     </code></pre>
-
-
 
     <div class="row">
       <div class="col">
@@ -133,7 +125,7 @@
       </div>
       <div class="col">
         <section>
-          <h3>Со сбросом значения (предустановленное значение)</h3>
+          <h3>Со сбросом значения</h3>
           <c-form-field params="state: validator.period3">
             <period-picker params="value: period3, clearable: true"></period-picker>
           </c-form-field>
@@ -141,7 +133,7 @@
       </div>
       <div class="col">
         <section>
-          <h3>С интервалами и сбросом значения (предустановленный интервал)</h3>
+          <h3>С интервалами и сбросом значения</h3>
           <c-form-field params="state: validator.period4">
             <period-picker params="value: period4, clearable: true"></period-picker>
           </c-form-field>
@@ -167,7 +159,7 @@
     <h2>Inline PeriodPicker</h2>
 
     <pre><code>
-      import * as InlinePeriodPicker from '@/components/InlinePeriodPicker';
+      import * as InlinePeriodPicker from '@/components/Date/InlinePeriodPicker';
       registerComponent('i-period-picker', InlinePeriodPicker);
     </code></pre>
 
@@ -175,7 +167,7 @@
       <div class="col">
         <section>
           <h3>
-            Обычный вид, со сбросом значения
+            Со сбросом значения
           </h3>
           <c-form-field params="state: validator.period6">
             <i-period-picker params="value: period6, clearable: true"></i-period-picker>

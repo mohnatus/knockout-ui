@@ -1,5 +1,5 @@
 import { getElementEmitter } from '@/utils/emitEvent';
-import { ACTIVATE_PICKER, CLEAR_FIELD } from '@/components/PeriodPicker/events';
+import { ACTIVATE_PICKER, CLEAR_FIELD } from '@/components/Date/PeriodPicker/events';
 import { applyBindingsToNode } from 'knockout';
 
 /**

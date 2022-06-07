@@ -1,6 +1,6 @@
 import { registerComponent } from "@/utils/engine/registerComponent";
 
-import * as MonthCalendar from "../MonthCalendar";
+import * as MonthCalendar from "../../MonthCalendar";
 import * as DatePickerResult from "./DatePickerResult";
 import * as DatePickerControl from "./DatePickerControl";
 

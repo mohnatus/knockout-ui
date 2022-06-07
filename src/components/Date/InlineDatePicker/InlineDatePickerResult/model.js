@@ -1,5 +1,5 @@
 import { getElementEmitter } from '@/utils/emitEvent';
-import { ACTIVATE_PICKER, CLEAR_FIELD } from '@/components/DatePicker/events';
+import { ACTIVATE_PICKER, CLEAR_FIELD } from '@/components/Date/DatePicker/events';
 import { applyBindingsToNode } from 'knockout';
 
 /**
@@ -22,7 +22,7 @@ export function ViewModel(params, element) {
 			disabled,
 		},
 	});
-  
+
 	return {
 		clearable,
 		disabled,

@@ -2,10 +2,10 @@ import './index';
 
 import { applyBindings, bindingHandlers, computed, observable } from 'knockout';
 
-import * as DatePicker from '@/components/DatePicker';
-import * as InlineDatePicker from '@/components/InlineDatePicker';
-import * as PeriodPicker from '@/components/PeriodPicker';
-import * as InlinePeriodPicker from '@/components/InlinePeriodPicker';
+import * as DatePicker from '@/components/Date/DatePicker';
+import * as InlineDatePicker from '@/components/Date/InlineDatePicker';
+import * as PeriodPicker from '@/components/Date/PeriodPicker';
+import * as InlinePeriodPicker from '@/components/Date/InlinePeriodPicker';
 import { RANGES } from '@/constants/date/ranges';
 
 import { registerComponent } from '@/utils/engine/registerComponent';
@@ -28,10 +28,9 @@ const ViewModel = (() => {
 
 	const value1 = useDateValue();
 	const value2 = useDateValue('12.05.2022');
-	const value3 = useDateValue('');
+	const value3 = useDateValue(Date.now());
 	const value4 = useDateValue(Date.now());
 	const value5 = useDateValue(Date.now());
-	const value6 = useDateValue(Date.now());
 
 	const disableValue1 = observable(false);
 	const disableValue2 = observable(false);
@@ -54,18 +53,17 @@ const ViewModel = (() => {
 
 	addField('value1', value1.textValue, requiredDateValidator());
 	addField('value2', value2.textValue, requiredDateValidator());
-	addField('value3', value3.textValue, requiredDateValidator());
 	addField(
-		'value4',
-		value4.textValue,
+		'value3',
+		value3.textValue,
 		requiredDateValidator({
 			onlyIf: () => !disableValue1(),
 		})
 	);
-	addField('value5', value5.textValue, requiredDateValidator());
+	addField('value4', value4.textValue, requiredDateValidator());
 	addField(
-		'value6',
-		value6.textValue,
+		'value5',
+		value5.textValue,
 		requiredDateValidator({
 			onlyIf: () => !disableValue2(),
 		})
@@ -105,7 +103,6 @@ const ViewModel = (() => {
 		value3,
 		value4,
 		value5,
-		value6,
 		disableValue1,
 		disableValue2,
 		period1,
