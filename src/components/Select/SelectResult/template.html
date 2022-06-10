@@ -6,7 +6,7 @@
   <!-- /ko -->
 
   <!-- ko foreach: { data: items, as: 'item' } -->
-  <div class="c-select-result-item">
+  <div class="c-select-result__item">
     <div data-bind="component: {
       name: $parent.itemComponent,
       params: {
@@ -15,7 +15,7 @@
     }"></div>
     <!-- ko ifnot: $parent.disabled -->
     <!-- ko if: $parent.clearable -->
-    <button type="button" class="c-select-result-item__remove" data-bind="click: function() {
+    <button type="button" class="c-select-result__remove" data-bind="click: function() {
       $parent.remove(item);
     }" data-remove>
       <c-icon params="name: 'cross', width: 14, height: 14"></c-icon>
@@ -27,10 +27,10 @@
 
 
   <!-- ko if: searchable -->
-  <div class="c-select-result-item__search">
-    <input type="text" data-bind="textInput: query, attr: {
+  <div class="c-select-result__search">
+    <input type="text" data-bind="bAutoInput,textInput: query,
       placeholder: items().length ? '' : placeholder
-    }">
+    ">
   </div>
   <!-- /ko -->
 

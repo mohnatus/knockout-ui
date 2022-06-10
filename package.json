@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^0.5.2",
-    "knockout": "^3.5.1"
+    "knockout": "^3.5.1",
+    "perfect-scrollbar": "^1.5.5"
   }
 }

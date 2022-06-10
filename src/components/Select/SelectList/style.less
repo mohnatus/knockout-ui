@@ -4,6 +4,20 @@
 	&__item {
 		cursor: pointer;
 		color: var(--v-color-primary);
+		min-height: 30px;
+		display: flex;
+		align-items: center;
+		padding-top: 4px;
+		padding-bottom: 4px;
+		padding-left: 15px;
+		padding-right: 15px;
+
+		&:not(.disabled):not(.selected) {
+			cursor: pointer;
+			&:hover {
+				background-color: var(--v-color-bg-light);
+			}
+		}
 
 		&.selected,
 		&.disabled {

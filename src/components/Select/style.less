@@ -1,6 +1,70 @@
+@import '@/style/buttons.less';
+
+:root {
+	--c-select-max-dropdown-height: 200px;
+}
+
 .c-select {
-  &.disabled {
-    opacity: 0.5;
-    
-  }
+	&.disabled {
+		opacity: 0.5;
+	}
+}
+
+.c-select-dropdown {
+	.c-dropdown {
+		&__content {
+			padding: 0;
+		}
+	}
+
+	&__wrapper {
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		max-height: var(--c-select-max-dropdown-height);
+	}
+
+	&__scroll {
+		flex-grow: 1;
+	}
+
+	&.modal {
+		.c-dropdown {
+			&__content {
+				padding: 0;
+			}
+		}
+		.c-select-dropdown {
+			&__wrapper {
+				max-height: 100vh;
+				padding-bottom: 38px;
+			}
+			&__actions {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				display: flex;
+
+				button {
+					width: 50%;
+					height: 38px;
+					border-radius: none;
+				}
+			}
+			&__apply {
+				.button-colored('primary');
+			}
+			&__reset {
+				.button-colored('default');
+			}
+		}
+		.c-select-list__item {
+			&:last-child {
+				margin-bottom: 12px;
+			}
+		}
+	}
 }

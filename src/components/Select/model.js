@@ -9,6 +9,7 @@ import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { ONLY_SMALL_MOBILE_MQ } from '@/constants/browser/breakpoints';
 import { getUnique } from '@/utils/unique';
 import { ACTIVATE_SELECT, REMOVE_ITEM, SELECT_ITEM } from './events';
+import { HIDE_DROPDOWN } from '../Dropdown/events';
 
 /**
  * Select Component ViewModel
@@ -81,6 +82,20 @@ export function ViewModel(params, element) {
 		return searchable;
 	});
 
+	const showListSb = showList.subscribe((v) => {
+		savedValue(toJS(selected));
+		query('');
+	});
+
+	const reset = () => {
+		selected(toJS(savedValue));
+		showList(false);
+	};
+
+	const apply = () => {
+		showList(false);
+	};
+
 	const resultEvents = {
 		[ACTIVATE_SELECT]: () => {
 			if (toJS(disabled)) return;
@@ -101,19 +116,14 @@ export function ViewModel(params, element) {
 		[REMOVE_ITEM]: (_, event) => remove(event.details),
 	};
 
-	const showListSb = showList.subscribe((v) => {
-		savedValue(toJS(selected));
-		query('');
-	});
-
-	const reset = () => {
-		selected(toJS(savedValue));
-		showList(false);
+	const dropdownEvents = {
+		[HIDE_DROPDOWN]: () => {
+			console.log("hide")
+			reset();
+		},
 	};
 
-	const apply = () => {
-		showList(false);
-	};
+	const scrollbarRef = observable(null);
 
 	const dispose = () => {
 		selectedItems.dispose();
@@ -151,11 +161,13 @@ export function ViewModel(params, element) {
 
 		resultEvents,
 		listEvents,
+		dropdownEvents,
 
 		modal,
 		showList,
 		showListSearch,
 		showResultSearch,
+		scrollbarRef,
 		dropdownParams: {
 			flip: false,
 			width: 'equal',

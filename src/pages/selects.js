@@ -8,7 +8,6 @@ import { useSelectValues } from '../hooks/select/useSelectValues';
 import { requiredValidator } from '../constants/validators/required';
 import { useList } from '../hooks/list/useList';
 import { useValidator } from '../hooks/useValidator';
-
 import * as Select from '@/components/select';
 
 registerComponent('c-select', Select);
@@ -19,6 +18,12 @@ const items = [
 	{ id: 3, text: 'Option 3', disabled: true },
 	{ id: 4, text: 'Option 4' },
 	{ id: 5, text: 'Option 5' },
+	{ id: 6, text: 'Option 6' },
+	{ id: 7, text: 'Option 7' },
+	{ id: 8, text: 'Option 8' },
+	{ id: 9, text: 'Option 9' },
+	{ id: 10, text: 'Option 10' },
+	{ id: 11, text: 'Option 11' },
 ];
 
 const ViewModel = (() => {
@@ -38,7 +43,7 @@ const ViewModel = (() => {
 
 	const disableValue = observable(false);
 
-	const multiple1 = useSelectValues();
+	const multiple1 = useSelectValues([2,3]);
 	const multiple2 = useSelectValues();
 
 	const disableMultiple = observable(false);

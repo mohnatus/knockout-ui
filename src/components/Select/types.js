@@ -32,12 +32,14 @@
  * @property {string} listComponent
  * @property {string} listItemComponent
  * @property {Object} resultEvents
+ * @property {Object} dropdownEvents
  * @property {Object} listEvents
  * @property {observable<boolean>} modal
  * @property {observable<boolean>} showList
  * @property {observable<boolean>} showListSearch
  * @property {observable<boolean>} showResultSearch
  * @property {DropdownParams} dropdownParams
+ * @property {observable} scrollbarRef
  * @property {function} reset
  * @property {function} apply
  * @property {function} dispose

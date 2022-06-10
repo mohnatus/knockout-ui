@@ -3,15 +3,14 @@
  * Поле ввода с изменяющейся шириной
  */
 
-import { isObservable } from "knockout";
-import { triggerEvent } from "@/utils/emitEvent";
-import { onElementDisposing } from "@/utils/engine/onElementDisposing";
-import { init as initPlugin, dispose } from "./plugin";
+import { applyBindingsToNode, isObservable, toJS } from 'knockout';
+import { triggerEvent } from '@/utils/emitEvent';
+import { onElementDisposing } from '@/utils/engine/onElementDisposing';
+import { init as initPlugin, dispose } from './plugin';
 
 /**
  * @typedef {Object} autoInputBindings
- * @property {observable<string>} textInput
- * @property {observable<string>} value
+ * @param {observable<string>} placeholder
  */
 
 /**
@@ -20,29 +19,28 @@ import { init as initPlugin, dispose } from "./plugin";
  * @param {autoInputBindings} allBindings
  */
 const init = function (element, valueAccessor, allBindings) {
-  const onDispose = [];
+	const onDispose = [];
 
-  const textInput = allBindings.get("textInput");
-  const value = allBindings.get("value");
+	if (allBindings.has('placeholder')) {
+		element.placeholder = toJS(allBindings.get('placeholder'));
+	}
 
-  [textInput, value].forEach((f) => {
-    if (isObservable(f)) {
-      const sb = f.subscribe((v) => {
-        setTimeout(() => {
-          triggerEvent(element, "input");
-        });
-      });
-      onDispose.push(() => sb.dispose());
-    }
-  });
+	setTimeout(() => {
+		initPlugin(element, { space: 5 });
+		element.classList.add('b-auto-input');
+		onDispose.push(() => dispose(element));
+	});
 
-  setTimeout(() => {
-    initPlugin(element, { space: 5 });
-    element.classList.add("b-auto-input");
-    onDispose.push(() => dispose(element));
-  });
-
-  onElementDisposing(element, onDispose);
+	onElementDisposing(element, onDispose);
 };
 
-export { init };
+const update = (element, valueAccessor, allBindings) => {
+	if (allBindings.has('placeholder')) {
+		element.placeholder = toJS(allBindings.get('placeholder'));
+	}
+	setTimeout(() => {
+		triggerEvent(element, 'input');
+	});
+};
+
+export { init, update };

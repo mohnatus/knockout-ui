@@ -24,23 +24,23 @@
       dropdownParams: dropdownParams,
       modal: modal">
   <div class="c-select-dropdown__wrapper">
+    <div class="c-select-dropdown__scroll" data-bind="bScrollable: scrollbar">
+      <!-- ko if: showListSearch -->
+      <div class="c-select-dropdown__search">
+        <input type="text" data-bind="textInput: query">
+      </div>
+      <!-- /ko -->
 
-    <!-- ko if: showListSearch -->
-    <div class="c-select-dropdown__search">
-      <input type="text" data-bind="textInput: query">
-    </div>
-    <!-- /ko -->
+      <!-- ko ifnot: filteredItems().length -->
+      <!-- ko if: query() -->
+      Ничего не найдено
+      <!-- /ko -->
+      <!-- ko ifnot: query() -->
+      Список пуст
+      <!-- /ko -->
+      <!-- /ko -->
 
-    <!-- ko ifnot: filteredItems().length -->
-    <!-- ko if: query() -->
-    Ничего не найдено
-    <!-- /ko -->
-    <!-- ko ifnot: query() -->
-    Список пуст
-    <!-- /ko -->
-    <!-- /ko -->
-
-    <div class="c-select-dropdown__list" data-bind="component: {
+      <div class="c-select-dropdown__list" data-bind="component: {
       name: listComponent,
       params: {
         itemComponent: listItemComponent,
@@ -51,11 +51,12 @@
       },
 
     }, event: listEvents"></div>
+    </div>
 
     <!-- ko if: modal -->
     <div class="c-select-dropdown__actions">
-      <button type="button" data-bind="click: reset">Сбросить</button>
-      <button type="button" data-bind="click: apply">Применить</button>
+      <button type="button" class="c-select-dropdown__reset" data-bind="click: reset">Сбросить</button>
+      <button type="button" class="c-select-dropdown__apply" data-bind="click: apply">Применить</button>
     </div>
     <!-- /ko -->
 

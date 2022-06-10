@@ -1,5 +1,7 @@
 import { useClickOutside } from '@/hooks/useClickOutside';
 import { useModal } from '@/hooks/useModal';
+import { getElementEmitter } from '@/utils/emitEvent';
+import { HIDE_DROPDOWN, SHOW_DROPDOWN } from './events';
 
 /**
  * Dropdown Component ViewModel
@@ -8,6 +10,8 @@ import { useModal } from '@/hooks/useModal';
  * @returns {DropdownComponent} dropdown component
  */
 export function ViewModel(params, element) {
+	const emitter = getElementEmitter(element);
+
 	const { parent, target, open, dropdownParams, modal, className } = params;
 	const $target = document.getElementById(target);
 
@@ -19,9 +23,13 @@ export function ViewModel(params, element) {
 
 	const openSb = open.subscribe((v) => {
 		if (v) {
-			if (modal()) show();
+			if (modal()) {
+				show();
+				emitter(SHOW_DROPDOWN);
+			}
 		} else {
 			hide();
+			emitter(HIDE_DROPDOWN);
 		}
 	});
 
