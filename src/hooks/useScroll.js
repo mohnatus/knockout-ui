@@ -7,11 +7,7 @@ export function useYScroll(element) {
 	const onEnd = observable(false);
 
 	const update = () => {
-
-
 		if (!element) return;
-
-
 
 		const height = element.offsetHeight;
 		const scrollHeight = element.scrollHeight;

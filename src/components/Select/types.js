@@ -32,7 +32,6 @@
  * @property {string} listComponent
  * @property {string} listItemComponent
  * @property {Object} resultEvents
- * @property {Object} dropdownEvents
  * @property {Object} listEvents
  * @property {observable<boolean>} modal
  * @property {observable<boolean>} showList

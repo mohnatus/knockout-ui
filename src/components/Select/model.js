@@ -9,7 +9,6 @@ import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { ONLY_SMALL_MOBILE_MQ } from '@/constants/browser/breakpoints';
 import { getUnique } from '@/utils/unique';
 import { ACTIVATE_SELECT, REMOVE_ITEM, SELECT_ITEM } from './events';
-import { HIDE_DROPDOWN } from '../Dropdown/events';
 
 /**
  * Select Component ViewModel
@@ -39,7 +38,7 @@ export function ViewModel(params, element) {
 	const { selected, select, remove } = value;
 
 	const showList = observable(false);
-	const savedValue = observable();
+	const savedValue = observable(toJS(selected));
 
 	const selectedItems = computed(() => {
 		const _selected = toJS(selected);
@@ -67,6 +66,10 @@ export function ViewModel(params, element) {
 		modal(match);
 	});
 
+	const selectedSb = selected.subscribe((v) => {
+		if (!modal()) savedValue(v);
+	});
+
 	const showResultSearch = computed(() => {
 		if (modal()) return false;
 
@@ -83,16 +86,25 @@ export function ViewModel(params, element) {
 	});
 
 	const showListSb = showList.subscribe((v) => {
-		savedValue(toJS(selected));
+		if (v) {
+			if (modal()) {
+				savedValue(toJS(selected));
+			}
+		} else {
+			if (modal()) {
+				selected(savedValue());
+			}
+		}
+
 		query('');
 	});
 
 	const reset = () => {
-		selected(toJS(savedValue));
 		showList(false);
 	};
 
 	const apply = () => {
+		savedValue(toJS(selected));
 		showList(false);
 	};
 
@@ -116,16 +128,10 @@ export function ViewModel(params, element) {
 		[REMOVE_ITEM]: (_, event) => remove(event.details),
 	};
 
-	const dropdownEvents = {
-		[HIDE_DROPDOWN]: () => {
-			console.log("hide")
-			reset();
-		},
-	};
 
-	const scrollbarRef = observable(null);
 
 	const dispose = () => {
+		selectedSb.dispose();
 		selectedItems.dispose();
 		modalDispose();
 		showListSb.dispose();
@@ -161,13 +167,11 @@ export function ViewModel(params, element) {
 
 		resultEvents,
 		listEvents,
-		dropdownEvents,
 
 		modal,
 		showList,
 		showListSearch,
 		showResultSearch,
-		scrollbarRef,
 		dropdownParams: {
 			flip: false,
 			width: 'equal',
