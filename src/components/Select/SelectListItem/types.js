@@ -1,6 +1,7 @@
 /**
  * @typedef {Object} SelectListItemComponentParams
  * @property {ListItemVar} item
+ * @property {observable<boolean>} modal
  */
 
 /**

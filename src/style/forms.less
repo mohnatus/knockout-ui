@@ -1,30 +1,44 @@
 @input-height: 48px;
 @input-padding: 15px;
 @input-radius: 4px;
+@check-size: 20px;
 
 .no-input() {
-  border: none;
-  font: inherit;
-  font-size: inherit;
-  min-width: 0;
+	border: none;
+	font: inherit;
+	font-size: inherit;
+	min-width: 0;
 
-  &:focus,
-  &:hover {
-    outline: none;
-  }
+	&:focus,
+	&:hover {
+		outline: none;
+	}
 }
 
 .input-block() {
-  min-height: @input-height;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: @input-padding;
-  padding-right: @input-padding;
-  border-radius: @input-radius;
-  border: 1px solid var(--v-color-border);
-  font-size: 16px;
+	min-height: @input-height;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: @input-padding;
+	padding-right: @input-padding;
+	border-radius: @input-radius;
+	border: 1px solid var(--v-color-border);
+	font-size: 16px;
 }
 
 .input-inline() {
-  font-size: 14px;
+	font-size: 14px;
+}
+
+.checkbox() {
+  flex-shrink: 0;
+	width: @check-size;
+	height: @check-size;
+	border: 1px solid var(--v-color-border);
+	border-radius: 4px;
+  cursor: pointer;
+}
+.checkbox-checked() {
+	border-color: var(--v-color-primary);
+	background: var(--v-color-primary);
 }

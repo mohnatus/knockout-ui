@@ -1,15 +1,23 @@
 <!-- ko foreach: { data: items, as: 'item' } -->
+
 <div class="c-select-list__item" data-bind="click: function() {
   $parent.select(item);
 }, css: {
   selected: $parent.isSelectedItem(item),
   disabled: $parent.isDisabledItem(item)
 }">
+  <!-- ko if: $parent.multiple -->
+  <!-- ko if: $parent.modal -->
+  <div class="c-select-list__checkbox"></div>
+  <!-- /ko -->
+  <!-- /ko -->
   <div data-bind="component: {
     name: $parent.itemComponent,
     params: {
       item: item,
+      modal: $parent.modal
     }
   }"></div>
 </div>
+
 <!-- /ko -->

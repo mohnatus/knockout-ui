@@ -1,4 +1,4 @@
-import { computed, toJS } from 'knockout';
+import { applyBindingsToNode, computed, toJS } from 'knockout';
 import { getElementEmitter } from '@/utils/emitEvent';
 import { REMOVE_ITEM, SELECT_ITEM } from '../events';
 
@@ -11,7 +11,7 @@ import { REMOVE_ITEM, SELECT_ITEM } from '../events';
 export function ViewModel(params, element) {
 	element.classList.add('c-select-list');
 	const emitter = getElementEmitter(element);
-	const { itemComponent, items, selectedItems, disabledItems, modal } =
+	const { itemComponent, items, selectedItems, disabledItems, modal, multiple } =
 		params;
 
 	const selectedIds = computed(() => {
@@ -35,15 +35,23 @@ export function ViewModel(params, element) {
 		selectedIds.dispose();
 	};
 
+	applyBindingsToNode(element, {
+		css: {
+			modal,
+		},
+	});
+
 	return {
 		itemComponent,
 		items,
+		selectedIds,
+
+		multiple,
 
 		isSelectedItem,
 		isDisabledItem,
 
 		select(item) {
-			console.log(item, isSelectedItem(item), modal())
 			if (isDisabledItem(item)) return;
 
 			if (isSelectedItem(item)) {

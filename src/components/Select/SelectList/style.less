@@ -1,3 +1,5 @@
+@import '@/style/forms.less';
+
 .c-select-list {
 	display: block;
 
@@ -19,15 +21,33 @@
 			}
 		}
 
+		.c-select-list__checkbox {
+			.checkbox();
+			margin-right: 12px;
+			align-self: flex-start;
+		}
+
 		&.selected,
 		&.disabled {
 			cursor: default;
 		}
 		&.selected {
 			color: var(--v-color-text);
+
+			.c-select-list__checkbox {
+				.checkbox-checked();
+			}
 		}
 		&.disabled {
 			opacity: 0.5;
+		}
+	}
+
+	&.modal {
+		.c-select-list__item {
+			&:hover {
+				background: transparent!important;
+			}
 		}
 	}
 }

@@ -14,7 +14,7 @@ registerComponent('c-select', Select);
 
 const items = [
 	{ id: 1, text: 'Option 1' },
-	{ id: 2, text: 'Option 2' },
+	{ id: 2, text: 'Очень-очень-очень длинное название варианта, которое не влезет на одну строку совершенно точно' },
 	{ id: 3, text: 'Option 3', disabled: true },
 	{ id: 4, text: 'Option 4' },
 	{ id: 5, text: 'Option 5' },
