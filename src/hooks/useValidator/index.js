@@ -40,8 +40,6 @@ export function useValidator(condition, showValid) {
 			}),
 		};
 
-		console.log({name, validators}, fields[name])
-
 		state[name] = {
 			isValid: observable(showValid ? true : false),
 			isInvalid: observable(true),

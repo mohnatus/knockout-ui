@@ -18,8 +18,6 @@ export function ViewModel(params, element) {
 
 	const { show, hide } = useModal();
 
-	console.log('component', { dropdownParams })
-
 	const modalSb = isObservable(modal) && modal.subscribe((v) => {
 		open(false);
 	});

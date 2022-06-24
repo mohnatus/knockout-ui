@@ -14,7 +14,6 @@ export function createArrow() {
 }
 
 export function getArrowStyle(placement, position, config = {}, shift = {}) {
-	console.log({ position, placement, config, shift });
 
 	const { x, y, centerOffset } = position;
 	const { side, align } = placement;

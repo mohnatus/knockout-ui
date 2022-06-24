@@ -82,8 +82,6 @@ const handle = (
       dropdownParams.arrowParams = withArrow;
     }
 
-    console.log({ dropdownParams })
-
     const middleware = [
       dropdownParams.offset && offset(dropdownParams.offset),
       dropdownParams.flip && flip(),
@@ -142,8 +140,6 @@ const handle = (
             dropdownParams.arrowParams,
             middlewareData.shift
           );
-
-          console.log({ arrowStyle })
 
           Object.assign(dropdownParams.arrow.element.style, arrowStyle);
         }
