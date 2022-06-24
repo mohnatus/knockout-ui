@@ -7,7 +7,7 @@ import { getDateComponents } from '@/utils/date/format';
 
 /**
  * getMonth
- * @param {Date|observable<Date>} moment
+ * @param {AnyDate} moment
  * @returns {string}
  */
 export function getMonthName(month) {
@@ -20,7 +20,7 @@ export function getMonthName(month) {
 
 /**
  * getMonth
- * @param {PeriodMoment|observable<PeriodMoment>} moment
+ * @param {PeriodMoment|import('knockout').Observable<PeriodMoment>} moment
  * @returns {Date}
  */
 export function getMonth(moment) {
@@ -31,7 +31,7 @@ export function getMonth(moment) {
 
 /**
  * useMonths - контроллер календарей
- * @param {observable<PeriodMoments>} value
+ * @param {import('knockout').Observable<PeriodMoments>} value
  * @returns {useMonthsHook}
  */
 export function useMonths(value) {

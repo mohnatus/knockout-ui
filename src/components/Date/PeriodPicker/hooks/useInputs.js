@@ -5,8 +5,8 @@ import { useDateInput } from '@/hooks/date/useDateInput';
 
 /**
  * useInputs - внутренние поля пикера
- * @param {observable<PeriodMoments>} value
- * @param {function} onChange
+ * @param {import('knockout').Observable<PeriodMoments>} value
+ * @param {Function} onChange
  * @returns {useInputsHook}
  */
 export function useInputs(value, onChange) {

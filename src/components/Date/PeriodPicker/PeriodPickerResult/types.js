@@ -1,18 +1,18 @@
 /**
  * @typedef {Object} PeriodPickerResultComponentParams
- * @property {observable<string>} value
+ * @property {ObservableString} value
  * @property {boolean} clearable
- * @property {observable<boolean>} disabled
- * @property {observable<boolean>} active
- * @property {string|observable<string>} placeholder
+ * @property {ObservableBoolean} disabled
+ * @property {ObservableBoolean} active
+ * @property {AnyString} placeholder
  */
 
 /**
  * @typedef {Object} PeriodPickerResultComponent
- * @property {observable<string>} value
+ * @property {ObservableString} value
  * @property {boolean} clearable
- * @property {observable<boolean>} disabled
- * @property {string|observable<string>} placeholder
+ * @property {ObservableBoolean} disabled
+ * @property {AnyString} placeholder
  * @property {function} onClick
  * @property {function} clear
  */

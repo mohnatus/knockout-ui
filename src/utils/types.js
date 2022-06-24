@@ -32,5 +32,9 @@
  */
 
 /**
+ * @typedef {(Date|import("knockout").Observable<Date>)} AnyDate
+ */
+
+/**
  * @typedef {import("knockout").ObservableArray<any[]>} ObservableArray
  */

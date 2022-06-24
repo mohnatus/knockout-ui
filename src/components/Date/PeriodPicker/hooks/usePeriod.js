@@ -4,7 +4,7 @@ import { useSubscriptions } from '@/hooks/useSubscriptions';
 
 /**
  * usePeriod - работа с оригинальным значением контрола
- * @param {observable<PeriodMoments>} value
+ * @param {import('knockout').Observable<PeriodMoments>} value
  * @returns {usePeriodHook}
  */
 export function usePeriod(value) {

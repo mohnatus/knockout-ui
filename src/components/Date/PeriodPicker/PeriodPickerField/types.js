@@ -1,12 +1,12 @@
 /**
  * @typedef {Object} PeriodPickerFieldComponentParams
- * @property {observable<string>} inputValue
- * @property {observable<boolean>} isValid
+ * @property {ObservableString} inputValue
+ * @property {ObservableBoolean} isValid
  */
 
 /**
  * @typedef {Object} PeriodPickerFieldComponent
- * @property {observable<string>} inputValue
- * @property {observable<boolean>} focused
- * @property {function} dispose
+ * @property {ObservableString} inputValue
+ * @property {ObservableBoolean} focused
+ * @property {Function} dispose
  */

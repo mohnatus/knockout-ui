@@ -1,13 +1,13 @@
 /**
  * @typedef {Object} PeriodPickerActionsComponentParams
- * @property {observable<boolean>} modal
- * @property {function} apply
- * @property {function} reset
+ * @property {ObservableBoolean} modal
+ * @property {Function} apply
+ * @property {Function} reset
  */
 
 /**
  * @typedef {Object} PeriodPickerActionsComponent
- * @property {observable<boolean>} modal
- * @property {function} apply
- * @property {function} reset
+ * @property {ObservableBoolean} modal
+ * @property {Function} apply
+ * @property {Function} reset
  */

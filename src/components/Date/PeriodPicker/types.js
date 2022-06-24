@@ -1,50 +1,46 @@
-
-
-
-
 /**
  * @typedef {Object} PeriodPickerComponentParams
  * @property {PeriodValue} value
- * @property {string|observable<string>} placeholder
- * @property {observable<boolean>} disabled
+ * @property {AnyString} placeholder
+ * @property {ObservableBoolean} disabled
  * @property {boolean} clearable
- * @property {Object} dropdownParams
+ * @property {DropdownParams} dropdownParams
  * @property {string} resultComponentName
  */
 
 /**
  * @typedef {Object} PeriodPickerComponent
  * @property {string} _id
- * @property {observable<string>} textValue
- * @property {observable<string>} fromInput
- * @property {observable<string>} toInput
- * @property {observable<boolean>} fromInputValid
- * @property {observable<boolean>} toInputValid
- * @property {observable<PeriodMoments>} localValue
- * @property {observable<PeriodMoment>} hoverDay
+ * @property {ObservableString} textValue
+ * @property {ObservableString} fromInput
+ * @property {ObservableString} toInput
+ * @property {ObservableBoolean} fromInputValid
+ * @property {ObservableBoolean} toInputValid
+ * @property {import("knockout").Observable<PeriodMoments>} localValue
+ * @property {import("knockout").Observable<PeriodMoment>} hoverDay
  * @property {PeriodRange[]} ranges
- * @property {observable<string|null>} localRangeId
- * @property {observable<Date>} month
- * @property {observable<Date>} secondMonth
- * @property {observable<string>} monthName
- * @property {observable<string>} secondMonthName
- * @property {function} prevMonth
- * @property {function} nextMonth
+ * @property {(ObservableString|import("knockout").Observable<null>)} localRangeId
+ * @property {ObservableDate} month
+ * @property {ObservableDate} secondMonth
+ * @property {ObservableString} monthName
+ * @property {ObservableString} secondMonthName
+ * @property {Function} prevMonth
+ * @property {Function} nextMonth
  * @property {boolean} clearable
- * @property {observable<boolean>} disabled
- * @property {string|observable<string>} placeholder
- * @property {function} select
- * @property {function} reset
- * @property {function} save
- * @property {function} setRange
- * @property {function} toggleComponent
+ * @property {ObservableBoolean} disabled
+ * @property {AnyString} placeholder
+ * @property {Function} select
+ * @property {Function} reset
+ * @property {Function} save
+ * @property {Function} setRange
+ * @property {Function} toggleComponent
  * @property {boolean} withRanges
- * @property {observable<boolean>} showCalendar
- * @property {observable<boolean>} modal
- * @property {observable<boolean>} smallModal
- * @property {observable<string|null>} visibleComponent
+ * @property {ObservableBoolean} showCalendar
+ * @property {ObservableBoolean} modal
+ * @property {ObservableBoolean} smallModal
+ * @property {(ObservableString|import("knockout").Observable<null>)} visibleComponent
  * @property {DropdownParams} dropdownParams
  * @property {string} resultComponent
  * @property {Object} resultEvents
- * @property {function} dispose
+ * @property {Function} dispose
  */

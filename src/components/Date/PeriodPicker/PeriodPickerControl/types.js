@@ -1,13 +1,13 @@
 /**
  * @typedef {Object} PeriodPickerControlComponentParams
- * @property {observable<PeriodMoment>} month
- * @property {function} toPrevMonth
- * @property {function} toNextMonth
+ * @property {import("knockout").Observable<PeriodMoment>} month
+ * @property {Function} toPrevMonth
+ * @property {Function} toNextMonth
  */
 
 /**
  * @typedef {Object} PeriodPickerControlComponent
- * @property {observable<PeriodMoment>} month
- * @property {function} toPrevMonth
- * @property {function} toNextMonth
+ * @property {import("knockout").Observable<PeriodMoment>} month
+ * @property {Function} toPrevMonth
+ * @property {Function} toNextMonth
  */
