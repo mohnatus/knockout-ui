@@ -6,7 +6,7 @@
 import { applyBindingsToNode, isObservable, toJS } from 'knockout';
 import { triggerEvent } from '@/utils/emitEvent';
 import { onElementDisposing } from '@/utils/engine/onElementDisposing';
-import { init as initPlugin, dispose } from './plugin';
+import { dispose, init as initPlugin } from './plugin';
 
 /**
  * @typedef {Object} autoInputBindings

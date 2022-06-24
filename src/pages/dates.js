@@ -13,8 +13,8 @@ import { useDateValue } from '@/hooks/date/useDateValue';
 import { usePeriodValue } from '@/hooks/date/usePeriodValue';
 import { useValidator } from '@/hooks/useValidator';
 import {
-	requiredDateValidator,
 	REQUIRED_DATE_VALIDATOR,
+	requiredDateValidator,
 } from '../constants/validators/date';
 import { requiredPeriodValidator } from '../constants/validators/period';
 

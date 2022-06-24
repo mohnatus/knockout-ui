@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "watch": "webpack --watch",
-    "start": "webpack serve --open"
+    "start": "webpack serve --open",
+    "lint": "eslint --ext .js --fix src/"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
     "@babel/preset-env": "^7.18.2",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
+    "eslint": "^8.18.0",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
     "less": "^4.1.2",

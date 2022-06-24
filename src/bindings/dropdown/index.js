@@ -6,16 +6,16 @@
  */
 
 import {
-  computePosition,
-  flip,
-  shift,
-  hide,
-  offset,
   arrow,
   autoUpdate,
+  computePosition,
+  flip,
+  hide,
+  offset,
+  shift,
   size
 } from "@floating-ui/dom";
-import { getPlacement, createArrow, getArrowStyle } from "./utils";
+import { createArrow, getArrowStyle, getPlacement } from "./utils";
 
 import "./style.less";
 import { toJS } from "knockout";
