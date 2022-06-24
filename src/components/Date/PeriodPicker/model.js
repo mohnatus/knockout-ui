@@ -166,6 +166,8 @@ export function ViewModel(params, element) {
 		disabled,
 		placeholder,
 
+		hoverDay: observable(null),
+
 		select,
 		reset,
 		save,

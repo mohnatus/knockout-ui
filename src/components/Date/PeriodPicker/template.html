@@ -1,6 +1,5 @@
 <div data-bind="component: {
         name: resultComponent,
-
         params: {
           value: textValue,
           placeholder: placeholder,
@@ -39,7 +38,7 @@
                   active: visibleComponent() === 'to'
                 }">Конец периода</button>
         </div>
-  
+
         <div class="c-period-picker__components">
           <div class="c-period-picker__fields">
             <div class="c-period-picker__from">
@@ -49,14 +48,14 @@
               <c-period-picker-field params="inputValue: toInput, isValid: toInputValid"></c-period-picker-field>
             </div>
           </div>
-  
+
           <div class="c-period-picker__calendars">
             <div class="c-period-picker__from">
               <c-period-picker-control params="monthName: monthName, toPrevMonth: prevMonth, toNextMonth: nextMonth">
               </c-period-picker-control>
-  
+
               <div class="c-period-picker__calendar">
-                <c-period-picker-calendar params="month: month, selectedPeriod: localValue" data-bind="
+                <c-period-picker-calendar params="month: month, selectedPeriod: localValue, hoverDay: hoverDay" data-bind="
                         event: {
                           select: function (_, event) {
                             select(event.details);
@@ -65,15 +64,15 @@
                       "></c-period-picker-calendar>
               </div>
             </div>
-  
+
             <div class="c-period-picker__to">
-  
+
               <c-period-picker-control
                 params="monthName: secondMonthName, toPrevMonth: prevMonth, toNextMonth: nextMonth">
               </c-period-picker-control>
-  
+
               <div class="c-period-picker__calendar">
-                <c-period-picker-calendar params="month: secondMonth, selectedPeriod: localValue" data-bind="
+                <c-period-picker-calendar params="month: secondMonth, selectedPeriod: localValue, hoverDay: hoverDay" data-bind="
                         event: {
                           select: function (_, event) {
                             select(event.details);
@@ -84,7 +83,7 @@
             </div>
           </div>
         </div>
-  
+
         <!-- ko if: withRanges -->
         <div class="c-period-picker__ranges">
           <!-- ko foreach: { data: ranges, as: 'range' } -->
@@ -94,7 +93,7 @@
                   active: $parent.localRangeId() === range.id
                 }"></div>
           <!-- /ko -->
-  
+
           <div class="c-period-picker__range" data-bind="click: function() { setRange(null) },
                 css: {
                   active: !localRangeId()

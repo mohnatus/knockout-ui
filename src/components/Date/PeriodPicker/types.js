@@ -21,6 +21,7 @@
  * @property {observable<boolean>} fromInputValid
  * @property {observable<boolean>} toInputValid
  * @property {observable<PeriodMoments>} localValue
+ * @property {observable<PeriodMoment>} hoverDay
  * @property {PeriodRange[]} ranges
  * @property {observable<string|null>} localRangeId
  * @property {observable<Date>} month

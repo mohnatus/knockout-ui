@@ -3,6 +3,7 @@
  * @property {observable<PeriodMoment>} month
  * @property {observable<PeriodMoment>} selected
  * @property {observable<PeriodMoments>} selectedPeriod
+ * @property {observable<PeriodMoment>} hoverDay
  */
 
 /**

@@ -1,4 +1,4 @@
-import { computed, observable, toJS } from 'knockout';
+import { computed, isObservable, observable, toJS } from 'knockout';
 import { useCalendar } from '@/hooks/date/useCalendar';
 import { getElementEmitter } from '@/utils/emitEvent';
 
@@ -15,7 +15,7 @@ export function ViewModel(params, element) {
 	const { month, selected, selectedPeriod } = params;
 	const { days, setMonth, dispose: disposeCalendar } = useCalendar(month());
 
-	const hoverDay = observable(null);
+	const hoverDay = isObservable(params.hoverDay) ? params.hoverDay : observable(null);
 
 	const periodStart = computed(() => {
 		if (!selectedPeriod) return null;
@@ -49,6 +49,7 @@ export function ViewModel(params, element) {
 		if (_to && _to < _from) return false;
 
 		if (day.moment === _to) return true;
+
 		if (day.moment > _from && day.moment < _to) return true;
 
 		return false;
