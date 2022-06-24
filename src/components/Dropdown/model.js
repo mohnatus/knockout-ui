@@ -1,6 +1,7 @@
 import { useClickOutside } from '@/hooks/useClickOutside';
 import { useModal } from '@/hooks/useModal';
 import { getElementEmitter } from '@/utils/emitEvent';
+import { isObservable } from 'knockout';
 import { HIDE_DROPDOWN, SHOW_DROPDOWN } from './events';
 
 /**
@@ -17,11 +18,13 @@ export function ViewModel(params, element) {
 
 	const { show, hide } = useModal();
 
-	const modalSb = modal.subscribe((v) => {
+	console.log('component', { dropdownParams })
+
+	const modalSb = isObservable(modal) && modal.subscribe((v) => {
 		open(false);
 	});
 
-	const openSb = open.subscribe((v) => {
+	const openSb = isObservable(open) && open.subscribe((v) => {
 		if (v) {
 			if (modal()) {
 				show();
@@ -54,8 +57,8 @@ export function ViewModel(params, element) {
 			addElements([el, $target]);
 		},
 		dispose() {
-			modalSb.dispose();
-			openSb.dispose();
+			modalSb && modalSb.dispose();
+			openSb && openSb.dispose();
 			disposeClickOutside();
 		},
 	};

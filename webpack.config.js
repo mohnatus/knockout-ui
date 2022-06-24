@@ -11,7 +11,8 @@ module.exports = {
 	},
 	entry: {
 		dates: './src/pages/dates.js',
-		selects: './src/pages/selects.js'
+		selects: './src/pages/selects.js',
+		dropdowns: './src/pages/dropdowns.js'
 	},
 	output: {
 		filename: '[name].js',
@@ -85,6 +86,13 @@ module.exports = {
 			filename: 'selects.html',
 			inject: 'body',
 			chunks: ['selects']
+		}),
+		new HtmlWebpackPlugin({
+			title: 'Knockout UI - Dropdowns',
+			template: 'src/dropdowns.html',
+			filename: 'dropdowns.html',
+			inject: 'body',
+			chunks: ['dropdowns']
 		}),
 	],
 	devServer: {

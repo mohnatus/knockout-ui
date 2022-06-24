@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .ref {
+      display: block;
+      width: 100px;
+      height: 40px;
+      border: 1px solid;
+      border-radius: 8px;
+    }
+
+    .dropdown {
+      width: 200px;
+      height: 100px;
+      background: lightblue;
+    }
+
+    .dropdown.ex-2 {
+      background: lightgreen;
+    }
+    .dropdown.ex-3 {
+      background: lightcoral;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .col {
+      width: auto !important;
+    }
+
+    .block {
+      width: 300px;
+      height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <body id="app">
+    <section>
+      <h2>bottom</h2>
+
+      <div class="row">
+        <div class="col ">
+          <h3>bottom-start</h3>
+          <pre>
+            <code>
+              dropdownParams: {
+                placement: 'bottom-start',
+                flip: false
+              }
+            </code>
+          </pre>
+
+          <div class="block">
+
+            <div class="ref" id="target-1"></div>
+
+            <c-dropdown params="target: 'target-1',
+            className: 'test-dropdown',
+            open: true,
+            dropdownParams: {
+              placement: 'bottom-start',
+              flip: false
+            },">
+              <div class="dropdown ex-1"></div>
+            </c-dropdown>
+
+          </div>
+        </div>
+
+        <div class="col ">
+          <h3>bottom</h3>
+          <pre>
+            <code>
+              dropdownParams: {
+                placement: 'bottom',
+                flip: false
+              }
+            </code>
+          </pre>
+
+          <div class="block">
+
+            <div class="ref" id="target-2"></div>
+
+            <c-dropdown params="target: 'target-2',
+            className: 'test-dropdown',
+            open: true,
+            dropdownParams: {
+              placement: 'bottom',
+              flip: false
+            },">
+              <div class="dropdown ex-2"></div>
+            </c-dropdown>
+          </div>
+        </div>
+
+        <div class="col ">
+          <h3>bottom-end</h3>
+          <pre>
+            <code>
+              dropdownParams: {
+                placement: 'bottom-end',
+                flip: false
+              }
+            </code>
+          </pre>
+
+          <div class="block">
+
+            <div class="ref" id="target-3"></div>
+
+            <c-dropdown params="target: 'target-3',
+            className: 'test-dropdown',
+            open: true,
+            dropdownParams: {
+              placement: 'bottom-end',
+              flip: false
+            },">
+              <div class="dropdown ex-3"></div>
+            </c-dropdown>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+  </body>
+</body>
+
+</html>

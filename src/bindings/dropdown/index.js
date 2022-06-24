@@ -70,19 +70,26 @@ const handle = (
       ...otherParams
     };
 
+
+
     if (withArrow) {
       const arrowElement = createArrow();
       element.appendChild(arrowElement);
-      dropdownParams.arrow = arrowElement;
+      dropdownParams.arrow = {
+        element: arrowElement,
+        padding: withArrow.offset || 15
+      };
       dropdownParams.arrowParams = withArrow;
     }
+
+    console.log({ dropdownParams })
 
     const middleware = [
       dropdownParams.offset && offset(dropdownParams.offset),
       dropdownParams.flip && flip(),
       dropdownParams.shift && shift(dropdownParams.shift),
       dropdownParams.hide && hide(),
-      dropdownParams.arrow && arrow({ element: dropdownParams.arrow }),
+      dropdownParams.arrow && arrow(dropdownParams.arrow),
 
       size({
         apply({ availableWidth, availableHeight, elements, rects }) {
@@ -132,10 +139,13 @@ const handle = (
           const arrowStyle = getArrowStyle(
             dropdownPlacement,
             middlewareData.arrow,
-            dropdownParams.arrowParams
+            dropdownParams.arrowParams,
+            middlewareData.shift
           );
 
-          Object.assign(dropdownParams.arrow.style, arrowStyle);
+          console.log({ arrowStyle })
+
+          Object.assign(dropdownParams.arrow.element.style, arrowStyle);
         }
       });
     });
