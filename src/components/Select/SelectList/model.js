@@ -1,6 +1,7 @@
 import { applyBindingsToNode, computed, toJS } from 'knockout';
-import { getElementEmitter } from '@/utils/emitEvent';
+
 import { REMOVE_ITEM, SELECT_ITEM } from '../events';
+import { getElementEmitter } from '@/utils/emitEvent';
 
 /**
  * SelectList Component ViewModel
@@ -11,8 +12,15 @@ import { REMOVE_ITEM, SELECT_ITEM } from '../events';
 export function ViewModel(params, element) {
 	element.classList.add('c-select-list');
 	const emitter = getElementEmitter(element);
-	const { itemComponent, items, selectedItems, disabledItems, modal, multiple, formatter } =
-		params;
+	const {
+		itemComponent,
+		items,
+		selectedItems,
+		disabledItems,
+		modal,
+		multiple,
+		formatter,
+	} = params;
 
 	const selectedIds = computed(() => {
 		return toJS(selectedItems).map((item) => item.id);

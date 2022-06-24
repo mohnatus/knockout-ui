@@ -1,16 +1,9 @@
 import './index';
 
-import { applyBindings, bindingHandlers, computed, observable } from 'knockout';
-
-
-import { registerComponent } from '@/utils/engine/registerComponent';
-
+import { applyBindings } from 'knockout';
 
 const ViewModel = (() => {
-
-	return {
-		
-	};
+	return {};
 })();
 
 const root = document.getElementById('app');

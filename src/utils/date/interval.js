@@ -1,25 +1,25 @@
-import { cloneDate } from ".";
-import { MS_IN_DAY } from "./constants";
-import { addDays, getStartOfDay } from "./manipulations";
+import { addDays, getStartOfDay } from './manipulations';
+import { MS_IN_DAY } from './constants';
+import { cloneDate } from '.';
 
 /**
  * @param {Date} date
  * @returns {Date[]}
  */
 export function getDays(from, to) {
-  const days = [];
+	const days = [];
 
-  let startOfInterval = getStartOfDay(from);
-  let endOfInterval = getStartOfDay(to);
+	let startOfInterval = getStartOfDay(from);
+	let endOfInterval = getStartOfDay(to);
 
-  let _current = cloneDate(startOfInterval);
+	let _current = cloneDate(startOfInterval);
 
-  while (+_current <= +endOfInterval) {
-    days.push(_current);
-    _current = addDays(_current, 1);
-  }
+	while (+_current <= +endOfInterval) {
+		days.push(_current);
+		_current = addDays(_current, 1);
+	}
 
-  return days;
+	return days;
 }
 
 /**
@@ -28,10 +28,10 @@ export function getDays(from, to) {
  * @returns {Number}
  */
 export function getDiffInDays(date1, date2) {
-  const _d1 = +getStartOfDay(date1);
-  const _d2 = +getStartOfDay(date2);
+	const _d1 = +getStartOfDay(date1);
+	const _d2 = +getStartOfDay(date2);
 
-  const diff = _d2 - _d1;
+	const diff = _d2 - _d1;
 
-  return diff / MS_IN_DAY;
+	return diff / MS_IN_DAY;
 }

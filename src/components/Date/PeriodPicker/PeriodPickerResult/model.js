@@ -1,6 +1,7 @@
-import { getElementEmitter } from '@/utils/emitEvent';
 import { applyBindingsToNode } from 'knockout';
+
 import { ACTIVATE_PICKER, CLEAR_FIELD } from '../events';
+import { getElementEmitter } from '@/utils/emitEvent';
 
 /**
  * PeriodPickerResult Component ViewModel
@@ -22,7 +23,7 @@ export function ViewModel(params, element) {
 	applyBindingsToNode(element, {
 		css: {
 			active,
-			disabled
+			disabled,
 		},
 	});
 

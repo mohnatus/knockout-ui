@@ -1,13 +1,15 @@
-import { registerBinding } from '@/utils/engine/registerBinding';
+import { registerBindings } from '../utils/engine/registerBinding';
 
-import * as Dropdown from './dropdown';
-import * as Log from './log';
-import * as AutoInput from './autoInput';
-import * as Scrollable from './scrollable';
-import * as Element from './element';
+import * as bAutoInput from './autoInput';
+import * as bDropdown from './dropdown';
+import * as bElement from './element';
+import * as bLog from './log';
+import * as bScrollable from './scrollable';
 
-registerBinding('bDropdown', Dropdown);
-registerBinding('bLog', Log);
-registerBinding('bAutoInput', AutoInput);
-registerBinding('bScrollable', Scrollable);
-registerBinding('bElement', Element);
+registerBindings({
+	bAutoInput,
+	bDropdown,
+	bElement,
+	bLog,
+	bScrollable,
+});

@@ -1,10 +1,13 @@
-import { registerComponent } from "../utils/engine/registerComponent";
-import * as Portal from "./Portal";
-import * as Dropdown from "./Dropdown";
-import * as Icon from "./Icon";
-import * as FormField from "./FormField";
+import { registerComponents } from '../utils/engine/registerComponent';
 
-registerComponent("c-portal", Portal);
-registerComponent("c-dropdown", Dropdown);
-registerComponent("c-icon", Icon);
-registerComponent("c-form-field", FormField);
+import * as Dropdown from './Dropdown';
+import * as FormField from './FormField';
+import * as Icon from './Icon';
+import * as Portal from './Portal';
+
+registerComponents({
+	'c-portal': Portal,
+	'c-dropdown': Dropdown,
+	'c-icon': Icon,
+	'c-form-field': FormField,
+});

@@ -1,15 +1,14 @@
+import { applyBindings, observable } from 'knockout';
+
 import './index';
-
-import { applyBindings, bindingHandlers, observable, observableArray } from 'knockout';
-
+import * as Select from '@/components/select';
 import { registerComponent } from '@/utils/engine/registerComponent';
+import { requiredValidator } from '../constants/validators/required';
+import { useGrouppedSelect } from '../hooks/select/useGrouppedSelect';
+import { useList } from '../hooks/list/useList';
 import { useSelectValue } from '../hooks/select/useSelectValue';
 import { useSelectValues } from '../hooks/select/useSelectValues';
-import { requiredValidator } from '../constants/validators/required';
-import { useList } from '../hooks/list/useList';
 import { useValidator } from '../hooks/useValidator';
-import * as Select from '@/components/select';
-import { useGrouppedSelect } from '../hooks/select/useGrouppedSelect';
 
 registerComponent('c-select', Select);
 
@@ -88,9 +87,10 @@ const ViewModel = (() => {
 
 	const grouppedList2 = useList(itemsTree);
 	const grouppedValue2 = useSelectValues();
-	const { disabledOptions: treeDisabled } = useGrouppedSelect(grouppedList2, grouppedValue2)
-
-	
+	const { disabledOptions: treeDisabled } = useGrouppedSelect(
+		grouppedList2,
+		grouppedValue2
+	);
 
 	const grouppedResultFormatter2 = (item) => {
 		const items = (item.parents || []).map((p) => `<span>${p}</span>`);

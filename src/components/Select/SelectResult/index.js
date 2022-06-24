@@ -3,8 +3,9 @@
  * Выбранные элементы селекта
  */
 
-import { ViewModel as model } from "./model";
-import template from './template.html'
-import './style.less'
+import { ViewModel as model } from './model';
+import template from './template.html';
 
-export { model, template }
+import './style.less';
+
+export { model, template };

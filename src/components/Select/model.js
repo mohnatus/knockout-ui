@@ -1,14 +1,15 @@
 import { applyBindingsToNode, computed, observable, toJS } from 'knockout';
+
+import { ACTIVATE_SELECT, REMOVE_ITEM, SELECT_ITEM } from './events';
 import {
 	SelectListComponent,
 	SelectListItemComponent,
 	SelectResultComponent,
 	SelectResultItemComponent,
 } from './components';
-import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { ONLY_SMALL_MOBILE_MQ } from '@/constants/browser/breakpoints';
 import { getUnique } from '@/utils/unique';
-import { ACTIVATE_SELECT, REMOVE_ITEM, SELECT_ITEM } from './events';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 /**
  * Select Component ViewModel
@@ -72,7 +73,6 @@ export function ViewModel(params, element) {
 		if (!modal()) savedValue(v);
 	});
 
-
 	const showListSearch = computed(() => {
 		return searchable || toJS(items).length > 10;
 	});
@@ -119,8 +119,6 @@ export function ViewModel(params, element) {
 		},
 		[REMOVE_ITEM]: (_, event) => remove(event.details),
 	};
-
-
 
 	const dispose = () => {
 		selectedSb.dispose();

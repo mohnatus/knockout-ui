@@ -1,6 +1,7 @@
 import { observable, toJS } from 'knockout';
-import { useDateInput } from '@/hooks/date/useDateInput';
+
 import { getDate } from '../utils';
+import { useDateInput } from '@/hooks/date/useDateInput';
 
 /**
  * useInputs - внутренние поля пикера

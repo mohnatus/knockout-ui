@@ -1,7 +1,8 @@
 import { computed } from 'knockout';
-import { getDateComponents } from '@/utils/date/format';
+
 import { MONTHS } from '@/constants/date/months';
 import { addMonths } from '@/utils/date/manipulations';
+import { getDateComponents } from '@/utils/date/format';
 
 /**
  * DatePickerControl Component ViewModel

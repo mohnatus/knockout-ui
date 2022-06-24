@@ -1,6 +1,7 @@
 import { applyBindingsToNode, computed, toJS } from 'knockout';
-import { getElementEmitter } from '@/utils/emitEvent';
+
 import { ACTIVATE_SELECT, REMOVE_ITEM } from '../events';
+import { getElementEmitter } from '@/utils/emitEvent';
 
 /**
  * SelectResult Component ViewModel
@@ -22,7 +23,7 @@ export function ViewModel(params, element) {
 		multiple,
 		query,
 		modal,
-		formatter
+		formatter,
 	} = params;
 
 	if (multiple) element.classList.add('multiple');
@@ -34,8 +35,6 @@ export function ViewModel(params, element) {
 		if (Array.isArray(_value)) return _value;
 		return [_value];
 	});
-
-
 
 	const focusOnSearchField = () => {
 		setTimeout(() => {

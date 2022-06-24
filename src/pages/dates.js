@@ -1,27 +1,26 @@
 import './index';
 
-import { applyBindings, bindingHandlers, computed, observable } from 'knockout';
+import { applyBindings, observable } from 'knockout';
 
 import * as DatePicker from '@/components/Date/DatePicker';
 import * as InlineDatePicker from '@/components/Date/InlineDatePicker';
-import * as PeriodPicker from '@/components/Date/PeriodPicker';
 import * as InlinePeriodPicker from '@/components/Date/InlinePeriodPicker';
+import * as PeriodPicker from '@/components/Date/PeriodPicker';
 import { RANGES } from '@/constants/date/ranges';
+import { requiredDateValidator } from '../constants/validators/date';
+import { requiredPeriodValidator } from '../constants/validators/period';
 
-import { registerComponent } from '@/utils/engine/registerComponent';
+import { registerComponents } from '@/utils/engine/registerComponent';
 import { useDateValue } from '@/hooks/date/useDateValue';
 import { usePeriodValue } from '@/hooks/date/usePeriodValue';
 import { useValidator } from '@/hooks/useValidator';
-import {
-	REQUIRED_DATE_VALIDATOR,
-	requiredDateValidator,
-} from '../constants/validators/date';
-import { requiredPeriodValidator } from '../constants/validators/period';
 
-registerComponent('date-picker', DatePicker);
-registerComponent('i-date-picker', InlineDatePicker);
-registerComponent('period-picker', PeriodPicker);
-registerComponent('i-period-picker', InlinePeriodPicker);
+registerComponents({
+	'date-picker': DatePicker,
+	'i-date-picker': InlineDatePicker,
+	'period-picker': PeriodPicker,
+	'i-period-picker': InlinePeriodPicker,
+});
 
 const ViewModel = (() => {
 	const showErrors = observable(false);
@@ -76,9 +75,13 @@ const ViewModel = (() => {
 		requiredPeriodValidator({ ranges: RANGES })
 	);
 	addField('period3', period3.textValue, requiredPeriodValidator());
-	addField('period4', period4.textValue, requiredPeriodValidator({
-		ranges: RANGES
-	}));
+	addField(
+		'period4',
+		period4.textValue,
+		requiredPeriodValidator({
+			ranges: RANGES,
+		})
+	);
 	addField(
 		'period5',
 		period5.textValue,
@@ -92,7 +95,7 @@ const ViewModel = (() => {
 		period7.textValue,
 		requiredPeriodValidator({
 			onlyIf: () => !disablePeriod2(),
-			ranges: RANGES
+			ranges: RANGES,
 		})
 	);
 

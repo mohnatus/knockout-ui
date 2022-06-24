@@ -1,9 +1,12 @@
-import { registerComponent } from '@/utils/engine/registerComponent';
+import { registerComponents } from '@/utils/engine/registerComponent';
+
 import * as DatePicker from '@/components/Date/DatePicker';
 import * as InlineDatePickerResult from './InlineDatePickerResult';
 
-registerComponent('i-date-picker-origin', DatePicker);
-registerComponent('i-date-picker-result', InlineDatePickerResult);
+registerComponents({
+	'i-date-picker-origin': DatePicker,
+	'i-date-picker-result': InlineDatePickerResult,
+});
 
 /**
  * InlineDatePicker Component ViewModel

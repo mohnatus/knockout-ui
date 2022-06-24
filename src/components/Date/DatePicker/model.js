@@ -1,10 +1,11 @@
-import { applyBindingsToDescendants, applyBindingsToNode, observable, toJS } from 'knockout';
-import { getUnique } from '@/utils/unique';
-import { useMediaQuery } from '@/hooks/useMediaQuery';
+import { applyBindingsToNode, observable, toJS } from 'knockout';
+
+import { ACTIVATE_PICKER, CLEAR_FIELD } from './events';
 import { ONLY_SMALL_MOBILE_MQ } from '@/constants/browser/breakpoints';
 import { getMonth } from './utils';
-import { ACTIVATE_PICKER, CLEAR_FIELD } from './events';
-import './components';
+import { getUnique } from '@/utils/unique';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
+
 import {
 	DatePickerControlComponent,
 	DatePickerResultComponent,
@@ -61,9 +62,9 @@ export function ViewModel(params, element) {
 
 	applyBindingsToNode(element, {
 		css: {
-			disabled: disabled
-		}
-	})
+			disabled: disabled,
+		},
+	});
 
 	// dispose
 

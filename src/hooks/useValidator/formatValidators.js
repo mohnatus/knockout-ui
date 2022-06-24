@@ -1,4 +1,5 @@
-import { computed, isObservable } from 'knockout';
+import { computed } from 'knockout';
+
 import { VALIDATORS } from './validators';
 
 /**

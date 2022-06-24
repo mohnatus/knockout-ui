@@ -15,11 +15,12 @@ import {
   shift,
   size
 } from "@floating-ui/dom";
+import { toJS } from "knockout";
+
 import { createArrow, getArrowStyle, getPlacement } from "./utils";
+import { onElementDisposing } from "@/utils/engine/onElementDisposing";
 
 import "./style.less";
-import { toJS } from "knockout";
-import { onElementDisposing } from "@/utils/engine/onElementDisposing";
 
 /**
  * dropdown binding

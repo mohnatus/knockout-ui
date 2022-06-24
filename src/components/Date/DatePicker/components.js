@@ -1,13 +1,15 @@
-import { registerComponent } from "@/utils/engine/registerComponent";
+import { registerComponents } from '../../../utils/engine/registerComponent';
 
-import * as MonthCalendar from "../../MonthCalendar";
-import * as DatePickerResult from "./DatePickerResult";
-import * as DatePickerControl from "./DatePickerControl";
+import * as DatePickerControl from './DatePickerControl';
+import * as DatePickerResult from './DatePickerResult';
+import * as MonthCalendar from '../../MonthCalendar';
 
 export const MonthCalendarComponent = 'c-date-picker-calendar';
 export const DatePickerResultComponent = 'c-date-picker-result';
 export const DatePickerControlComponent = 'c-date-picker-control';
 
-registerComponent(MonthCalendarComponent, MonthCalendar);
-registerComponent(DatePickerResultComponent, DatePickerResult);
-registerComponent(DatePickerControlComponent, DatePickerControl);
+registerComponents({
+	[MonthCalendarComponent]: MonthCalendar,
+	[DatePickerControlComponent]: DatePickerControl,
+	[DatePickerResultComponent]: DatePickerResult,
+});

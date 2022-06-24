@@ -1,5 +1,6 @@
 import { applyBindingsToNode, isObservable } from 'knockout';
 import PerfectScrollbar from 'perfect-scrollbar';
+
 import { useYScroll } from '../../hooks/useScroll';
 
 import 'perfect-scrollbar/css/perfect-scrollbar.css';
@@ -34,16 +35,6 @@ function init(element, valueAccessor) {
 			'y-end': onEnd,
 		},
 	});
-
-	// if (isObservable(valueAccessor)) {
-	// 	valueAccessor({
-	//     el: scrollableElement,
-	// 		scroll,
-	// 		onStart,
-	// 		onEnd,
-	// 		hasScroll,
-	// 	});
-	// }
 }
 
 export { init };

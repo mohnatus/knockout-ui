@@ -1,4 +1,5 @@
 import { computed, isObservable, observable, toJS } from 'knockout';
+
 import { formatValidators } from './formatValidators';
 import { validateField } from './validateField';
 

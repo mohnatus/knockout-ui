@@ -4,8 +4,10 @@
  */
 
 import { applyBindingsToNode, isObservable, toJS } from 'knockout';
-import { triggerEvent } from '@/utils/emitEvent';
+
 import { onElementDisposing } from '@/utils/engine/onElementDisposing';
+import { triggerEvent } from '@/utils/emitEvent';
+
 import { dispose, init as initPlugin } from './plugin';
 
 /**

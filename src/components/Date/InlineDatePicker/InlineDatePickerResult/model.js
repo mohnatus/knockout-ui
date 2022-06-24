@@ -1,6 +1,7 @@
-import { getElementEmitter } from '@/utils/emitEvent';
-import { ACTIVATE_PICKER, CLEAR_FIELD } from '@/components/Date/DatePicker/events';
 import { applyBindingsToNode } from 'knockout';
+
+import { ACTIVATE_PICKER, CLEAR_FIELD } from '@/components/Date/DatePicker/events';
+import { getElementEmitter } from '@/utils/emitEvent';
 
 /**
  * InlineDatePickerResult Component ViewModel

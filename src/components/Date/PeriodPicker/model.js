@@ -1,14 +1,14 @@
 import { applyBindingsToNode, observable, toJS } from 'knockout';
+
+import { ACTIVATE_PICKER, CLEAR_FIELD } from './events';
+import { ONLY_MOBILE_MQ } from '@/constants/browser/breakpoints';
+import { PeriodPickerResultComponent } from './components';
 import { getUnique } from '@/utils/unique';
+import { useInputs } from './hooks/useInputs';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { useMonths } from './hooks/useMonths';
 import { usePeriod } from './hooks/usePeriod';
-import { useInputs } from './hooks/useInputs';
 import { useRanges } from './hooks/useRanges';
-import { useMediaQuery } from '@/hooks/useMediaQuery';
-import { ONLY_MOBILE_MQ } from '@/constants/browser/breakpoints';
-import './components';
-import { ACTIVATE_PICKER, CLEAR_FIELD } from './events';
-import { PeriodPickerResultComponent } from './components';
 
 /**
  * PeriodPicker Component ViewModel

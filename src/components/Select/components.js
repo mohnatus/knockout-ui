@@ -1,4 +1,4 @@
-import { registerComponent } from '@/utils/engine/registerComponent';
+import { registerComponents } from '@/utils/engine/registerComponent';
 
 import * as SelectList from './SelectList';
 import * as SelectListItem from './SelectListItem';
@@ -10,7 +10,9 @@ export const SelectListItemComponent = 'c-select-list-item';
 export const SelectResultComponent = 'c-select-result';
 export const SelectResultItemComponent = 'c-select-result-item';
 
-registerComponent(SelectListComponent, SelectList);
-registerComponent(SelectListItemComponent, SelectListItem);
-registerComponent(SelectResultComponent, SelectResult);
-registerComponent(SelectResultItemComponent, SelectResultItem);
+registerComponents({
+	[SelectListComponent]: SelectList,
+	[SelectListItemComponent]: SelectListItem,
+	[SelectResultComponent]: SelectResult,
+	[SelectResultItemComponent]: SelectResultItem,
+});
