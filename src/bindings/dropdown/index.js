@@ -32,8 +32,6 @@ const handle = (
   element,
   valueAccessor,
   allBindings,
-  viewModel,
-  bindingContext
 ) => {
   const config = valueAccessor() || {};
   element.classList.add("b-dropdown");
@@ -91,7 +89,7 @@ const handle = (
       dropdownParams.arrow && arrow(dropdownParams.arrow),
 
       size({
-        apply({ availableWidth, availableHeight, elements, rects }) {
+        apply({ rects }) {
           const style = {};
 
           if (width) {

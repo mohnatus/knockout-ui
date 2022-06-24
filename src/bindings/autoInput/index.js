@@ -3,7 +3,7 @@
  * Поле ввода с изменяющейся шириной
  */
 
-import { applyBindingsToNode, isObservable, toJS } from 'knockout';
+import { toJS } from 'knockout';
 
 import { onElementDisposing } from '@/utils/engine/onElementDisposing';
 import { triggerEvent } from '@/utils/emitEvent';

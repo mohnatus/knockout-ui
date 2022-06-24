@@ -1,12 +1,12 @@
-import { applyBindingsToNode, isObservable } from 'knockout';
 import PerfectScrollbar from 'perfect-scrollbar';
+import { applyBindingsToNode } from 'knockout';
 
 import { useYScroll } from '../../hooks/useScroll';
 
 import 'perfect-scrollbar/css/perfect-scrollbar.css';
 import './style.less';
 
-function init(element, valueAccessor) {
+function init(element) {
 	element.classList.add('b-scrollable');
 	element.classList.add('ps--focus');
 	const ps = new PerfectScrollbar(element, {
@@ -26,7 +26,7 @@ function init(element, valueAccessor) {
 	});
 
 
-	const { scrollPosition, onStart, onEnd, hasScroll } = useYScroll(element);
+	const { onStart, onEnd, hasScroll } = useYScroll(element);
 
 	applyBindingsToNode(element, {
 		css: {

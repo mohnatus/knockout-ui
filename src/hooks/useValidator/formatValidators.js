@@ -28,7 +28,7 @@ export function formatValidators(validators, onUpdate) {
 
 			if (onlyIf && typeof onlyIf === 'function') {
 				condition = computed(onlyIf);
-				condition.subscribe((v) => {
+				condition.subscribe(() => {
 					onUpdate();
 				});
 			}

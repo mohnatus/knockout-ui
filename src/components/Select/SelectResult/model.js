@@ -22,7 +22,6 @@ export function ViewModel(params, element) {
 		placeholder,
 		multiple,
 		query,
-		modal,
 		formatter,
 	} = params;
 

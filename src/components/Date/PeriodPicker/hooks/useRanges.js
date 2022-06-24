@@ -6,7 +6,7 @@ import { observable, toJS } from 'knockout';
  * @param {Array} ranges
  * @returns {useRangesHook}
  */
-export function useRanges(rangeId, ranges) {
+export function useRanges(rangeId) {
 	const localRangeId = observable(toJS(rangeId));
 
 	const rangeIdSb = rangeId.subscribe((v) => {

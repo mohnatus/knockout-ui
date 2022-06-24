@@ -21,7 +21,7 @@ export function ViewModel(params, element) {
 
 	const modalSb =
 		isObservable(modal) &&
-		modal.subscribe((v) => {
+		modal.subscribe(() => {
 			open(false);
 		});
 

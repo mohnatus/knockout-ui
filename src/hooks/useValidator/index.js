@@ -50,14 +50,14 @@ export function useValidator(condition, showValid) {
 		updateFieldState(name);
 
 		if (isObservable(field)) {
-			field.subscribe((v) => {
+			field.subscribe(() => {
 				updateFieldState(name);
 			});
 		}
 	};
 
 	if (isObservable(condition)) {
-		condition.subscribe((v) => {
+		condition.subscribe(() => {
 			Object.keys(fields).forEach((name) => updateFieldState(name));
 		});
 	}

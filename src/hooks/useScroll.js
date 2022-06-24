@@ -1,4 +1,4 @@
-import { isObservable, observable, toJS } from 'knockout';
+import {  observable } from 'knockout';
 
 export function useYScroll(element) {
 	const hasScroll = observable(false);

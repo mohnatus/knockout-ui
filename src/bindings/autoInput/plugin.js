@@ -51,7 +51,7 @@ class AutosizeInput {
 
     document.body.appendChild(this._mirror);
 
-    this.updateHandler = (e) => this.update();
+    this.updateHandler = () => this.update();
     events.forEach((event) => {
       this._input.addEventListener(event, this.updateHandler);
     });

@@ -60,7 +60,7 @@ export function ViewModel(params, element) {
 	});
 
 	// subscriptions
-	onPeriodChange((component, componentValue, periodValue) => {
+	onPeriodChange((component, componentValue) => {
 		if (component === 'from') {
 			updateMonth(componentValue);
 			setFromInput(componentValue);
