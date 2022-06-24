@@ -10,3 +10,8 @@
  * @property {function} onSelect
  * @property {function} onRemove
  */
+
+/**
+ * @typedef {Object} GrouppedSelect
+ * @property {observableArray<Array>} disabledOptions array of ids
+ */

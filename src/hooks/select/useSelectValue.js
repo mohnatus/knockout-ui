@@ -2,7 +2,7 @@ import { observable } from 'knockout';
 import { useSubscriptions } from '@/hooks/useSubscriptions';
 
 /**
- * useSelectValue
+ * useSelectValue Hook
  * @param {string|number} initialValue
  * @returns {SelectValue}
  */

@@ -2,7 +2,7 @@ import { observableArray } from 'knockout';
 import { useSubscriptions } from '@/hooks/useSubscriptions';
 
 /**
- * useSelectValues
+ * useSelectValues Hook
  * @param {string[]|number[]|null} initialValue
  * @returns {SelectValue}
  */

@@ -1,5 +1,11 @@
 import { observableArray } from 'knockout';
 
+/**
+ * useGrouppedSelect Hook
+ * @param {List} list
+ * @param {SelectValue} value
+ * @returns {GrouppedSelect}
+ */
 export function useGrouppedSelect(list, value) {
 	const disabledOptions = observableArray([]);
 
@@ -23,8 +29,6 @@ export function useGrouppedSelect(list, value) {
 			children.push(currentItem.id);
 			currentIndex++;
 		}
-
-		console.log({ items, itemId, children });
 
 		return children;
 	}
