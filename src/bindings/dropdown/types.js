@@ -1,18 +1,18 @@
 /**
  * @typedef {Object} DropdownParams
- * @property {string|null} width
- * @property {number|null} maxWidth
- * @property {number|null} minWidth
- * @property {Object|boolean|null} arrow
- * @property {string|null} placement
- * @property {boolean|null} flip
- * @property {object|null} shift
- * @property {number|null} offset
- * @property {boolean|null} hide
+ * @property {string} [width]
+ * @property {number} [maxWidth]
+ * @property {number} [minWidth]
+ * @property {*} [arrow]
+ * @property {string} [placement]
+ * @property {boolean} [flip]
+ * @property {*} [shift]
+ * @property {number} [offset]
+ * @property {boolean} [hide]
  */
 
 /**
  * @typedef {Object} DropdownBindings
- * @property {observable<boolean>|null} inactive
- * @property {string} target- selector
+ * @property {(import("knockout").Observable<boolean>|null)} inactive
+ * @property {string} target - selector
  */

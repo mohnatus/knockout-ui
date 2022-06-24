@@ -12,7 +12,7 @@ import { dispose, init as initPlugin } from './plugin';
 
 /**
  * @typedef {Object} autoInputBindings
- * @param {observable<string>} placeholder
+ * @property {import('knockout').Observable<string>} placeholder
  */
 
 /**
