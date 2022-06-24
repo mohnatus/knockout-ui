@@ -24,6 +24,8 @@ export function ViewModel(params, element) {
 		list,
 		multiple,
 		disabled,
+		itemFormatter,
+		resultFormatter,
 		searchable,
 		clearable,
 		placeholder,
@@ -70,19 +72,9 @@ export function ViewModel(params, element) {
 		if (!modal()) savedValue(v);
 	});
 
-	const showResultSearch = computed(() => {
-		if (modal()) return false;
-
-		if (!multiple) return false;
-		return true;
-	});
 
 	const showListSearch = computed(() => {
-		if (modal()) {
-			return multiple || searchable;
-		}
-		if (multiple) return false;
-		return searchable;
+		return searchable || toJS(items).length > 10;
 	});
 
 	const showListSb = showList.subscribe((v) => {
@@ -152,9 +144,11 @@ export function ViewModel(params, element) {
 		placeholder,
 		multiple,
 		disabled,
-		searchable,
 		query,
 		clearable,
+
+		itemFormatter,
+		resultFormatter,
 
 		reset,
 		apply,
@@ -171,7 +165,6 @@ export function ViewModel(params, element) {
 		modal,
 		showList,
 		showListSearch,
-		showResultSearch,
 		dropdownParams: {
 			flip: false,
 			width: 'equal',

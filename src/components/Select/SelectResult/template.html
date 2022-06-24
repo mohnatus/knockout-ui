@@ -1,16 +1,17 @@
 <div class="c-select-result__wrapper">
-  <!-- ko ifnot: searchable -->
+
   <!-- ko ifnot: items().length -->
   <div class="c-select-result__placeholder" data-bind="text: placeholder"></div>
   <!-- /ko -->
-  <!-- /ko -->
+
 
   <!-- ko foreach: { data: items, as: 'item' } -->
   <div class="c-select-result__item">
     <div data-bind="component: {
       name: $parent.itemComponent,
       params: {
-        item: item
+        item: item,
+        formatter: $parent.formatter
       }
     }"></div>
     <!-- ko ifnot: $parent.disabled -->
@@ -26,12 +27,5 @@
   <!-- /ko -->
 
 
-  <!-- ko if: searchable -->
-  <div class="c-select-result__search">
-    <input type="text" data-bind="bAutoInput,textInput: query,
-      placeholder: items().length ? '' : placeholder
-    ">
-  </div>
-  <!-- /ko -->
 
 </div>

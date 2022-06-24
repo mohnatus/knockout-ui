@@ -6,6 +6,7 @@
  * @property {observableArray<ListItemVar>|null} disabledItems
  * @property {observable<boolean>} modal
  * @property {boolean} multiple
+ * @property {Function} formatter
  */
 
 /**
@@ -16,4 +17,5 @@
  * @property {function} isDisabled
  * @property {function} select
  * @property {function} dispose
+ * @property {Function} formatter
  */

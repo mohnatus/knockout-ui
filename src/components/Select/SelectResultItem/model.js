@@ -1,4 +1,9 @@
 /**
+ * @type SelectListItemFormatter
+ */
+const defaultFormatter = (item) => item.text;
+
+/**
  * SelectResultItem Component ViewModel
  * @param {SelectResultItemComponentParams} params
  * @param {HTMLElement} element
@@ -6,9 +11,9 @@
  */
 export function ViewModel(params, element) {
 	element.classList.add('c-select-result-item');
-	const { item } = params;
+	const { item, formatter = defaultFormatter } = params;
 
-	const { text } = item;
+	const text = formatter(item);
 
 	return {
 		text,

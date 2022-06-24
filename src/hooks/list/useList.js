@@ -7,7 +7,7 @@ const defaultSearchFn = (item, query) => {
 };
 
 /**
- *
+ * useList Hook
  * @param {Array} initialList
  * @param {ListItemConvertor|null} itemConvertor
  * @param {function|null} searchFn
@@ -20,6 +20,7 @@ export function useList(
 ) {
 	const loading = observable(false);
 	const items = observableArray([]);
+
 	const query = observable('');
 	const normalizedQuery = computed(() => {
 		return query().trim().toLowerCase();

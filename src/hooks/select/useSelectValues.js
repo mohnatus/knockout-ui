@@ -15,13 +15,13 @@ export function useSelectValues(initialValue = []) {
 	const select = (id) => {
 		if (!selected().includes(id)) {
       selected.push(id);
-      selectSubscriptions.trigger();
+      selectSubscriptions.trigger(id);
     }
 	};
 
 	const remove = (id) => {
 		selected.remove(id);
-    selectSubscriptions.trigger();
+    removeSubscriptions.trigger(id);
 	};
 
 	return {

@@ -7,8 +7,8 @@
       multiple: multiple,
       placeholder: placeholder,
       disabled: disabled,
-      searchable: showResultSearch,
       clearable: clearable || multiple,
+      formatter: resultFormatter,
       query: query
     },
 
@@ -48,7 +48,8 @@
         disabledItems: disabledItems,
         selectedItems: selectedItems,
         modal: modal,
-        multiple: multiple
+        multiple: multiple,
+        formatter: itemFormatter
       },
 
     }, event: listEvents"></div>

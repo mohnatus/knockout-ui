@@ -106,6 +106,29 @@
       </div>
     </div>
 
+    <h2>Группировка элементов списка</h2>
+
+    <div class="row">
+      <div class="col">
+        <section>
+          <h3>С категориями</h3>
+          <c-form-field params="">
+            <c-select params="list: grouppedList1, value: grouppedValue1, multiple: true, placeholder: 'Выберите значение', resultFormatter: grouppedResultFormatter1">
+            </c-select>
+          </c-form-field>
+        </section>
+      </div>
+       <div class="col">
+        <section>
+          <h3>Дерево элементов</h3>
+          <c-form-field params="">
+            <c-select params="list: grouppedList2, value: grouppedValue2, multiple: true, placeholder: 'Выберите значение', resultFormatter: grouppedResultFormatter2, disabledItems: treeDisabled">
+            </c-select>
+          </c-form-field>
+        </section>
+      </div>
+    </div>
+
   </div>
 </body>
 

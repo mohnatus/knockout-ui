@@ -5,6 +5,8 @@
  * @property {boolean} multiple
  * @property {boolean} searchable
  * @property {boolean} clearable
+ * @property {Function} itemFormatter
+ * @property {Function} resultFormatter
  * @property {observable<boolean>} disabled
  * @property {observableArray<string[]>} disabledItems
  * @property {string|observable<string>} placeholder
@@ -24,7 +26,6 @@
  * @property {observable<boolean>} disabledItems
  * @property {boolean} multiple
  * @property {boolean} clearable
- * @property {boolean} searchable
  * @property {observable<string>} query
  * @property {string|observable<string>} placeholder
  * @property {string} resultComponent
@@ -33,10 +34,11 @@
  * @property {string} listItemComponent
  * @property {Object} resultEvents
  * @property {Object} listEvents
+ * @property {Function} itemFormatter
+ * @property {Function} resultFormatter
  * @property {observable<boolean>} modal
  * @property {observable<boolean>} showList
  * @property {observable<boolean>} showListSearch
- * @property {observable<boolean>} showResultSearch
  * @property {DropdownParams} dropdownParams
  * @property {observable} scrollbarRef
  * @property {function} reset

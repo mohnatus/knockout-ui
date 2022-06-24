@@ -20,9 +20,9 @@ export function ViewModel(params, element) {
 		clearable,
 		placeholder,
 		multiple,
-		searchable,
 		query,
 		modal,
+		formatter
 	} = params;
 
 	if (multiple) element.classList.add('multiple');
@@ -81,10 +81,10 @@ export function ViewModel(params, element) {
 		itemComponent,
 		items,
 		disabled,
-		searchable,
 		clearable,
 		placeholder,
 		query,
+		formatter,
 		remove,
 		dispose,
 	};

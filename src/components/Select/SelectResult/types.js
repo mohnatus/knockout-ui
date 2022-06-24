@@ -10,6 +10,7 @@
  * @property {observalbe<string>} query
  * @property {boolean} multiple
  * @property {string|observable<string>} placeholder
+ * @property {Function} formatter
  */
 
 /**
@@ -23,4 +24,5 @@
  * @property {observable<string>} placeholderText
  * @property {function} remove
  * @property {function} dispose
+ * @property {Function} formatter
  */

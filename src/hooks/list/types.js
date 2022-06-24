@@ -2,10 +2,13 @@
  * @typedef {Object} ListItemVar
  * @property {String} id  - идентификатор элемента
  * @property {String} text
+ * @property {Number} level
+ * @property {Boolean} disabled
+ * @property {Boolean} group
  */
 
 /**
- * @typedef {ListItemVar[]} List
+ * @typedef {ListItem[]} List
  */
 
 /**

@@ -11,7 +11,7 @@ import { REMOVE_ITEM, SELECT_ITEM } from '../events';
 export function ViewModel(params, element) {
 	element.classList.add('c-select-list');
 	const emitter = getElementEmitter(element);
-	const { itemComponent, items, selectedItems, disabledItems, modal, multiple } =
+	const { itemComponent, items, selectedItems, disabledItems, modal, multiple, formatter } =
 		params;
 
 	const selectedIds = computed(() => {
@@ -45,6 +45,7 @@ export function ViewModel(params, element) {
 		itemComponent,
 		items,
 		selectedIds,
+		formatter,
 
 		multiple,
 

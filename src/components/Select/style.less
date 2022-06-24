@@ -1,7 +1,10 @@
 @import '@/style/buttons.less';
+@import '@/style/forms.less';
 
 :root {
 	--c-select-max-dropdown-height: 200px;
+	--c-select-item-level-offset: 15px;
+	--c-select-item-offset: 15px;
 }
 
 .c-select {
@@ -14,6 +17,16 @@
 	.c-dropdown {
 		&__content {
 			padding: 0;
+		}
+	}
+
+	&__search {
+		padding-left: var(--c-select-item-offset);
+		padding-right: var(--c-select-item-offset);
+		.input-block();
+
+		input {
+			.no-input();
 		}
 	}
 

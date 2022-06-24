@@ -1,6 +1,6 @@
 import './index';
 
-import { applyBindings, bindingHandlers, observable } from 'knockout';
+import { applyBindings, bindingHandlers, observable, observableArray } from 'knockout';
 
 import { registerComponent } from '@/utils/engine/registerComponent';
 import { useSelectValue } from '../hooks/select/useSelectValue';
@@ -9,12 +9,16 @@ import { requiredValidator } from '../constants/validators/required';
 import { useList } from '../hooks/list/useList';
 import { useValidator } from '../hooks/useValidator';
 import * as Select from '@/components/select';
+import { useGrouppedSelect } from '../hooks/select/useGrouppedSelect';
 
 registerComponent('c-select', Select);
 
 const items = [
 	{ id: 1, text: 'Option 1' },
-	{ id: 2, text: 'Очень-очень-очень длинное название варианта, которое не влезет на одну строку совершенно точно' },
+	{
+		id: 2,
+		text: 'Очень-очень-очень длинное название варианта, которое не влезет на одну строку совершенно точно',
+	},
 	{ id: 3, text: 'Option 3', disabled: true },
 	{ id: 4, text: 'Option 4' },
 	{ id: 5, text: 'Option 5' },
@@ -24,6 +28,34 @@ const items = [
 	{ id: 9, text: 'Option 9' },
 	{ id: 10, text: 'Option 10' },
 	{ id: 11, text: 'Option 11' },
+];
+
+const grouppedItems = [
+	{ id: 1, group: true, text: 'Group 1', level: 0 },
+	{ id: 2, text: 'Option 1', level: 1, groupName: 'Group 1' },
+	{ id: 3, text: 'Option 2', level: 1, groupName: 'Group 1' },
+	{ id: 4, group: true, text: 'Group 2', level: 0 },
+	{ id: 5, text: 'Option 3', level: 1, groupName: 'Group 2' },
+	{ id: 6, text: 'Option 4', level: 1, groupName: 'Group 2' },
+];
+
+const itemsTree = [
+	{ id: 1, text: 'Folder 1', level: 0 },
+	{ id: 2, text: 'Folder 1.1', level: 1, parents: ['Folder 1'] },
+	{
+		id: 3,
+		text: 'Folder 1.1.1',
+		level: 2,
+		parents: ['Folder 1', 'Folder 1.1.'],
+	},
+	{
+		id: 4,
+		text: 'Folder 1.1.2',
+		level: 2,
+		parents: ['Folder 1', 'Folder 1.1.'],
+	},
+	{ id: 5, text: 'Folder 2', level: 0 },
+	{ id: 6, text: 'Folder 2.1', level: 1, parents: ['Folder 2'] },
 ];
 
 const ViewModel = (() => {
@@ -43,10 +75,28 @@ const ViewModel = (() => {
 
 	const disableValue = observable(false);
 
-	const multiple1 = useSelectValues([2,3]);
+	const multiple1 = useSelectValues([2, 3]);
 	const multiple2 = useSelectValues();
 
 	const disableMultiple = observable(false);
+
+	const grouppedList1 = useList(grouppedItems);
+	const grouppedValue1 = useSelectValues();
+	const grouppedResultFormatter1 = (item) => {
+		return `<span>${item.groupName}</span>/${item.text}`;
+	};
+
+	const grouppedList2 = useList(itemsTree);
+	const grouppedValue2 = useSelectValues();
+	const { disabledOptions: treeDisabled } = useGrouppedSelect(grouppedList2, grouppedValue2)
+
+	
+
+	const grouppedResultFormatter2 = (item) => {
+		const items = (item.parents || []).map((p) => `<span>${p}</span>`);
+		items.push(item.text);
+		return items.join('/');
+	};
 
 	const { state: validator, addField } = useValidator(
 		showErrors,
@@ -100,6 +150,16 @@ const ViewModel = (() => {
 		multiple2,
 
 		disableMultiple,
+
+		grouppedList1,
+		grouppedList2,
+
+		grouppedValue1,
+		grouppedValue2,
+		treeDisabled,
+
+		grouppedResultFormatter1,
+		grouppedResultFormatter2,
 
 		validator,
 	};

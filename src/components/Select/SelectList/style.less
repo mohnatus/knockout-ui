@@ -1,7 +1,19 @@
 @import '@/style/forms.less';
 
+
 .c-select-list {
 	display: block;
+
+	&__group {
+		color: var(--v-color-text);
+		min-height: 30px;
+		display: flex;
+		align-items: center;
+		padding-top: 4px;
+		padding-bottom: 4px;
+		padding-left: var(--c-select-item-offset);
+		padding-right: var(--c-select-item-offset);
+	}
 
 	&__item {
 		cursor: pointer;
@@ -11,8 +23,8 @@
 		align-items: center;
 		padding-top: 4px;
 		padding-bottom: 4px;
-		padding-left: 15px;
-		padding-right: 15px;
+		padding-left: calc(var(--c-select-item-level, 0) * var(--c-select-item-level-offset) + var(--c-select-item-offset));
+		padding-right: var(--c-select-item-offset);
 
 		&:not(.disabled):not(.selected) {
 			cursor: pointer;
