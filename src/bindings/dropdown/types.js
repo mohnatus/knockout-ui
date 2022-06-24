@@ -13,6 +13,6 @@
 
 /**
  * @typedef {Object} DropdownBindings
- * @property {(import("knockout").Observable<boolean>|null)} inactive
+ * @property {ObservableBoolean} [inactive]
  * @property {string} target - selector
  */

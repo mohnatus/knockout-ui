@@ -1,17 +1,17 @@
 /**
  * @typedef InlineDatePickerResultComponentParams
- * @property {observable<string>} value
- * @property {string|observable<string>} placeholder
- * @property {observable<boolean>} disabled
+ * @property {ObservableString} value
+ * @property {AnyString} placeholder
+ * @property {ObservableBoolean} disabled
  * @property {boolean} clearable
  */
 
 /**
  * @typedef InlineDatePickerResultComponent
- * @property {observable<string>} value
+ * @property {ObservableString} value
  * @property {boolean} clearable
- * @property {observable<boolean>} disabled
- * @property {string|observable<string>} placeholder
- * @property {function} onClick
- * @property {function} clear
+ * @property {ObservableBoolean} disabled
+ * @property {AnyString} placeholder
+ * @property {Function} onClick
+ * @property {Function} clear
  */

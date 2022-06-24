@@ -1,5 +1,5 @@
 /**
  * @typedef InlineDatePickerComponent
  * @property {string} originComponent
- * @property {DatePickerParams} componentParams
+ * @property {DatePickerComponentParams} componentParams
  */

@@ -6,7 +6,7 @@ import { getStartOfMonth } from "@/utils/date/manipulations";
 
 /**
  * getInputValue
- * @param {number|observable<number>} value
+ * @param {AnyNumber} value
  * @returns {string} client-date formatted string
  */
 export function getInputValue(value) {
@@ -19,7 +19,7 @@ export function getInputValue(value) {
 
 /**
  * getMonth
- * @param {number|observable<number>} moment
+ * @param {AnyNumber} moment
  * @returns {Date} start of month date
  */
 export function getMonth(moment) {

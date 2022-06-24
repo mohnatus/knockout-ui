@@ -5,8 +5,8 @@
 
 /**
  * @typedef {Object} DatePickerControlComponent
- * @property {computed<string>} monthName
- * @property {function} prevMonth
- * @property {function} nextMonth
- * @property {function} dispose
+ * @property {import("knockout").Computed<string>} monthName
+ * @property {Function} prevMonth
+ * @property {Function} nextMonth
+ * @property {Function} dispose
  */
