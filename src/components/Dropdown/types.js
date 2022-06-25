@@ -3,9 +3,9 @@
  * @property {string} parent - id
  * @property {string} target - id
  * @property {string} className
- * @property {boolean|observable<boolean>} open
+ * @property {ObservableBoolean} open
  * @property {DropdownParams} dropdownParams
- * @property {observable<boolean>} modal
+ * @property {ObservableBoolean} modal
  */
 
 /**
@@ -14,8 +14,8 @@
  * @property {string} className
  * @property {string} parent - id
  * @property {string} target - id
- * @property {observable<boolean>} open
- * @property {observable<boolean>} modal
- * @property {function} onRender
- * @property {function} dispose
+ * @property {ObservableBoolean} open
+ * @property {ObservableBoolean} modal
+ * @property {Function} onRender
+ * @property {Function} dispose
  */

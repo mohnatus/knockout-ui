@@ -1,19 +1,19 @@
 /**
  * @typedef {Object} MonthCalendarComponentParams
- * @property {observable<PeriodMoment>} month
- * @property {observable<PeriodMoment>} selected
- * @property {observable<PeriodMoments>} selectedPeriod
- * @property {observable<PeriodMoment>} hoverDay
+ * @property {import("knockout").Observable<PeriodMoment>} month
+ * @property {import("knockout").Observable<PeriodMoment>} selected
+ * @property {import("knockout").Observable<PeriodMoments>} selectedPeriod
+ * @property {obseimport("knockout").Observablervable<PeriodMoment>} hoverDay
  */
 
 /**
  * @typedef {Object} MonthCalendarComponent
  * @property {CalendarDay[]} days
- * @property {function} isSelected
- * @property {function} isInRange
- * @property {function} isFirstDay
- * @property {function} isLastDay
- * @property {function} onClick
- * @property {function} onHover
- * @property {function} dispose
+ * @property {Function} isSelected
+ * @property {Function} isInRange
+ * @property {Function} isFirstDay
+ * @property {Function} isLastDay
+ * @property {Function} onClick
+ * @property {Function} onHover
+ * @property {Function} dispose
  */

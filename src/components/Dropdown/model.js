@@ -8,7 +8,7 @@ import { useModal } from '@/hooks/useModal';
 /**
  * Dropdown Component ViewModel
  * @param {DropdownComponentParams} params
- * @param {HTMLElemen} element
+ * @param {HTMLElement} element
  * @returns {DropdownComponent} dropdown component
  */
 export function ViewModel(params, element) {

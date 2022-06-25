@@ -7,7 +7,7 @@
 
 /**
  * @typedef {Object} IconComponent
- * @property {observable<string>} href
+ * @property {ObservableString} href
  * @property {number} width
  * @property {number} height
  */
