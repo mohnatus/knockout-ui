@@ -35,13 +35,6 @@ export function ViewModel(params, element) {
 		return [_value];
 	});
 
-	const focusOnSearchField = () => {
-		setTimeout(() => {
-			const input = element.querySelector('input');
-			if (input) input.focus();
-		});
-	};
-
 	/**
 	 * @fires Select#removeItem
 	 */
@@ -59,20 +52,12 @@ export function ViewModel(params, element) {
 
 			if (!isRemoveBtn) {
 				emitter(ACTIVATE_SELECT);
-				focusOnSearchField();
 			}
 		},
 	});
 
-	const openSb = open.subscribe((v) => {
-		if (v && multiple) {
-			focusOnSearchField();
-		}
-	});
-
 	const dispose = () => {
 		items.dispose();
-		openSb.dispose();
 	};
 
 	return {

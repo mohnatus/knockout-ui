@@ -5,9 +5,9 @@ import { getElementEmitter } from '@/utils/emitEvent';
 
 /**
  * InlineDatePickerResult Component ViewModel
- * @param {InlineDatePickerResultComponentParams} params
+ * @param {DatePickerResultComponentParams} params
  * @param {HTMLElement} element
- * @returns {InlineDatePickerResultComponent}
+ * @returns {DatePickerResultComponent}
  */
 export function ViewModel(params, element) {
 	element.classList.add('i-date-picker-result');

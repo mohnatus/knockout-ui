@@ -1,7 +1,8 @@
 import { applyBindings, observable } from 'knockout';
 
 import './index';
-import * as Select from '@/components/select';
+import * as BlockSelect from '@/components/Select/BlockSelect';
+import * as InlineSelect from '@/components/Select/InlineSelect';
 import { registerComponent } from '@/utils/engine/registerComponent';
 import { requiredValidator } from '../constants/validators/required';
 import { useGrouppedSelect } from '../hooks/select/useGrouppedSelect';
@@ -10,7 +11,8 @@ import { useSelectValue } from '../hooks/select/useSelectValue';
 import { useSelectValues } from '../hooks/select/useSelectValues';
 import { useValidator } from '../hooks/useValidator';
 
-registerComponent('c-select', Select);
+registerComponent('c-select', BlockSelect);
+registerComponent('i-select', InlineSelect);
 
 const items = [
 	{ id: 1, text: 'Option 1' },
@@ -66,16 +68,20 @@ const ViewModel = (() => {
 	const list4 = useList(items);
 	const list5 = useList(items);
 	const list6 = useList(items);
+	const list7 = useList(items);
+	const list8 = useList(items);
 
 	const value1 = useSelectValue();
 	const value2 = useSelectValue(2);
 	const value3 = useSelectValue();
 	const value4 = useSelectValue();
+	const value7 = useSelectValue();
 
 	const disableValue = observable(false);
 
 	const multiple1 = useSelectValues([2, 3]);
 	const multiple2 = useSelectValues();
+	const multiple8 = useSelectValues([]);
 
 	const disableMultiple = observable(false);
 
@@ -138,16 +144,20 @@ const ViewModel = (() => {
 		list4,
 		list5,
 		list6,
+		list7,
+		list8,
 
 		value1,
 		value2,
 		value3,
 		value4,
+		value7,
 
 		disableValue,
 
 		multiple1,
 		multiple2,
+		multiple8,
 
 		disableMultiple,
 

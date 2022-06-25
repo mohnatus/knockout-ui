@@ -27,8 +27,11 @@
           <h3>Обычный вид</h3>
 
           <c-form-field params="state: validator.value1">
-            <c-select params="list: list1, value: value1, placeholder: 'Выберите значение'">
+            <c-select
+               params="list: list1, value: value1, placeholder: 'Выберите значение'">
             </c-select>
+
+
           </c-form-field>
         </section>
       </div>
@@ -113,19 +116,32 @@
         <section>
           <h3>С категориями</h3>
           <c-form-field params="">
-            <c-select params="list: grouppedList1, value: grouppedValue1, multiple: true, placeholder: 'Выберите значение', resultFormatter: grouppedResultFormatter1">
+            <c-select
+              params="list: grouppedList1, value: grouppedValue1, multiple: true, placeholder: 'Выберите значение', resultFormatter: grouppedResultFormatter1">
             </c-select>
           </c-form-field>
         </section>
       </div>
-       <div class="col">
+      <div class="col">
         <section>
           <h3>Дерево элементов</h3>
           <c-form-field params="">
-            <c-select params="list: grouppedList2, value: grouppedValue2, multiple: true, placeholder: 'Выберите значение', resultFormatter: grouppedResultFormatter2, disabledItems: treeDisabled">
+            <c-select
+              params="list: grouppedList2, value: grouppedValue2, multiple: true, placeholder: 'Выберите значение', resultFormatter: grouppedResultFormatter2, disabledItems: treeDisabled">
             </c-select>
           </c-form-field>
         </section>
+      </div>
+    </div>
+
+
+    <h2>Инлайн-селект</h2>
+
+    <div class="row">
+      <div class="col">
+        <c-form-field>
+          <i-select params="list: list7, value: value7, placeholder: 'Выберите значение', clearable: true"></i-select>
+        </c-form-field>
       </div>
     </div>
 
