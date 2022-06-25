@@ -1,6 +1,6 @@
 import { applyBindingsToNode, computed, toJS } from 'knockout';
 
-import { REMOVE_ITEM, SELECT_ITEM } from '../events';
+import { REMOVE_ITEM, SELECT_ITEM } from '@/components/Select/events';
 import { getElementEmitter } from '@/utils/emitEvent';
 
 /**

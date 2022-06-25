@@ -2,10 +2,10 @@ import './index';
 
 import { applyBindings, observable } from 'knockout';
 
-import * as DatePicker from '@/components/Date/DatePicker';
-import * as InlineDatePicker from '@/components/Date/InlineDatePicker';
-import * as InlinePeriodPicker from '@/components/Date/InlinePeriodPicker';
-import * as PeriodPicker from '@/components/Date/PeriodPicker';
+import * as DatePicker from '@/components/DatePicker/DatePicker';
+import * as InlineDatePicker from '@/components/DatePicker/InlineDatePicker';
+import * as InlinePeriodPicker from '@/components/PeriodPicker/InlinePeriodPicker';
+import * as PeriodPicker from '@/components/PeriodPicker/PeriodPicker';
 import { RANGES } from '@/constants/date/ranges';
 import { requiredDateValidator } from '../constants/validators/date';
 import { requiredPeriodValidator } from '../constants/validators/period';

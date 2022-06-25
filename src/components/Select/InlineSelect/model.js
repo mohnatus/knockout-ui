@@ -1,6 +1,6 @@
 import { registerComponents } from '@/utils/engine/registerComponent';
 
-import * as BlockSelect from '@/components/Select/BlockSelect';
+import * as BlockSelect from '@/components/Select/Select';
 import * as InlineSelectResult from './InlineSelectResult';
 
 registerComponents({

@@ -4,13 +4,12 @@ import { ACTIVATE_SELECT, REMOVE_ITEM } from '../events';
 import { getElementEmitter } from '@/utils/emitEvent';
 
 /**
- * SelectResult Component ViewModel
+ * useSelectResult Hook
  * @param {SelectResultComponentParams} params
  * @param {HTMLElement} element
  * @returns {SelectResultComponent}
  */
-export function ViewModel(params, element) {
-	element.classList.add('c-select-result');
+export function useSelectResult(params, element) {
 	const emitter = getElementEmitter(element);
 
 	const {

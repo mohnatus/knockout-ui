@@ -1,7 +1,7 @@
 import { registerComponent } from '@/utils/engine/registerComponent';
 
 import * as InlinePeriodPickerResult from './InlinePeriodPickerResult';
-import * as PeriodPicker from '../PeriodPicker';
+import * as PeriodPicker from '@/components/PeriodPicker/PeriodPicker';
 
 registerComponent('i-period-picker-origin', PeriodPicker);
 registerComponent('i-period-picker-result', InlinePeriodPickerResult);

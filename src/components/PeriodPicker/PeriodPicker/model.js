@@ -1,6 +1,6 @@
 import { applyBindingsToNode, observable, toJS } from 'knockout';
 
-import { ACTIVATE_PICKER, CLEAR_FIELD } from './events';
+import { ACTIVATE_PICKER, CLEAR_FIELD } from '@/components/PeriodPicker/events';
 import { ONLY_MOBILE_MQ } from '@/constants/browser/breakpoints';
 import { PeriodPickerResultComponent } from './components';
 import { getUnique } from '@/utils/unique';

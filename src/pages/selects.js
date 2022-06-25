@@ -1,7 +1,7 @@
 import { applyBindings, observable } from 'knockout';
 
 import './index';
-import * as BlockSelect from '@/components/Select/BlockSelect';
+import * as BlockSelect from '@/components/Select/Select';
 import * as InlineSelect from '@/components/Select/InlineSelect';
 import { registerComponent } from '@/utils/engine/registerComponent';
 import { requiredValidator } from '../constants/validators/required';

@@ -27,6 +27,7 @@
 		background: var(--v-color-bg);
 		color: var(--v-color-danger);
 		cursor: pointer;
+		flex-shrink: 0;
 	}
 
 	&:not(.multiple) {
@@ -56,12 +57,6 @@
 		border-color: var(--v-color-primary);
 	}
 
-	&__search {
-		margin-right: -5px;
-		input {
-			.no-input();
-		}
-	}
 
 	&.disabled {
 		pointer-events: none;

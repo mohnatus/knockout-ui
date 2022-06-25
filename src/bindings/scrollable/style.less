@@ -5,11 +5,21 @@
 		&__rail-y {
 			display: block !important;
 
-			opacity: 0.6;
+			opacity: 1;
 			position: absolute;
+
+			&:hover, &:focus, &.ps--clicking {
+				background: transparent;
+				
+				.ps__thumb-y {
+					width: 6px;
+					background: var(--v-color-primary);
+				}
+			}
 		}
 
 		&__thumb-y {
+			width: 6px;
 			background: var(--v-color-primary);
 		}
 	}

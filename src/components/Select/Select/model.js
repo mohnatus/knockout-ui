@@ -1,6 +1,6 @@
 import { applyBindingsToNode, computed, observable, toJS } from 'knockout';
 
-import { ACTIVATE_SELECT, REMOVE_ITEM, SELECT_ITEM } from './events';
+import { ACTIVATE_SELECT, REMOVE_ITEM, SELECT_ITEM } from '@/components/Select/events';
 import {
 	SelectListComponent,
 	SelectListItemComponent,

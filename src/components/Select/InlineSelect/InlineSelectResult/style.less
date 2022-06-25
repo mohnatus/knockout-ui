@@ -4,4 +4,38 @@
 .i-select-result {
   display: inline-flex;
   align-items: flex-end;
+
+  &__item {
+		display: flex;
+		align-items: center;
+
+	}
+
+	&__remove {
+		.no-button();
+		margin-left: 10px;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background: var(--v-color-bg);
+		color: var(--v-color-danger);
+		cursor: pointer;
+	}
+
+  &.multiple {
+		.i-select-result {
+			&__wrapper {
+				display: flex;
+				flex-wrap: wrap;
+			}
+			&__item {
+				background: var(--v-color-bg-light);
+				padding-left: 12px;
+				padding-right: 12px;
+				padding-top: 4px;
+				padding-bottom: 4px;
+				border-radius: 10px;
+			}
+		}
+	}
 }
