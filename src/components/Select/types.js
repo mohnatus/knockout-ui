@@ -7,9 +7,9 @@
  * @property {boolean} clearable
  * @property {Function} itemFormatter
  * @property {Function} resultFormatter
- * @property {observable<boolean>} disabled
- * @property {observableArray<string[]>} disabledItems
- * @property {string|observable<string>} placeholder
+ * @property {ObservableBoolean} disabled
+ * @property {import("knockout").ObservableArray<string[]>} disabledItems
+ * @property {AnyString} placeholder
  * @property {string} listComponentName
  * @property {string} listItemComponentName
  * @property {string} resultComponentName
@@ -20,14 +20,14 @@
 /**
  * @typedef {Object} SelectComponent
  * @property {string} _id
- * @property {observableArray<List>} filteredItems
- * @property {observable<ListItem>|observableArray<List>} selectedItems
- * @property {observableArray<string>|null} disabledItems
- * @property {observable<boolean>} disabledItems
+ * @property {import("knockout").ObservableArray<List>} filteredItems
+ * @property {import("knockout").Observable<ListItem>|import("knockout").ObservableArray<List>} selectedItems
+ * @property {import("knockout").ObservableArray<string>} [disabledItems]
+ * @property {ObservableBoolean} disabledItems
  * @property {boolean} multiple
  * @property {boolean} clearable
- * @property {observable<string>} query
- * @property {string|observable<string>} placeholder
+ * @property {ObservableString} query
+ * @property {AnyString} placeholder
  * @property {string} resultComponent
  * @property {string} resultItemComponent
  * @property {string} listComponent
@@ -36,12 +36,12 @@
  * @property {Object} listEvents
  * @property {Function} itemFormatter
  * @property {Function} resultFormatter
- * @property {observable<boolean>} modal
- * @property {observable<boolean>} showList
- * @property {observable<boolean>} showListSearch
+ * @property {ObservableBoolean} modal
+ * @property {ObservableBoolean} showList
+ * @property {ObservableBoolean} showListSearch
  * @property {DropdownParams} dropdownParams
- * @property {observable} scrollbarRef
- * @property {function} reset
- * @property {function} apply
- * @property {function} dispose
+ * @property {import("knockout").Observable} scrollbarRef
+ * @property {Function} reset
+ * @property {Function} apply
+ * @property {Function} dispose
  */

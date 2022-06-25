@@ -16,10 +16,10 @@
 /**
  * @typedef {Object} PeriodValue
  *
- * @property {observable<string>} textValue
- * @property {observable<PeriodMoments>} period
- * @property {observable<string|null>} rangeId
+ * @property {ObservableString} textValue
+ * @property {import("knockout").Observable<PeriodMoments>} period
+ * @property {import("knockout").Observable<string|null>} rangeId
  * @property {Array} ranges
  *
- * @property {function} dispose
+ * @property {Function} dispose
  */

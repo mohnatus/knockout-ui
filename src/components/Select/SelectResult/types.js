@@ -1,28 +1,28 @@
 /**
  * @typedef {Object} SelectResultComponentParams
  * @property {string} itemComponent
- * @property {observable<ListItem>|observableArray<List>} selectedItems
- * @property {observable<boolean>} open
- * @property {observable<boolean>} disabled
- * @property {observable<boolean>} modal
+ * @property {import("knockout").Observable<ListItem>|import("knockout").ObservableArray<List>} selectedItems
+ * @property {ObservableBoolean} open
+ * @property {ObservableBoolean} disabled
+ * @property {ObservableBoolean} modal
  * @property {boolean} clearable
- * @property {observable<boolean>} showResultSearch
- * @property {observalbe<string>} query
+ * @property {ObservableBoolean} showResultSearch
+ * @property {ObservableString} query
  * @property {boolean} multiple
- * @property {string|observable<string>} placeholder
+ * @property {AnyString} placeholder
  * @property {Function} formatter
  */
 
 /**
  * @typedef {Object} SelectResultComponent
  * @property {string} itemComponent
- * @property {observableArray<List>} items
- * @property {observable<boolean>} disabled
+ * @property {import("knockout").ObservableArray<List>} items
+ * @property {ObservableBoolean} disabled
  * @property {boolean} clearable
- * @property {observable<boolean>} showSearch
- * @property {observable<string>} query
- * @property {observable<string>} placeholderText
- * @property {function} remove
- * @property {function} dispose
+ * @property {ObservableBoolean} showSearch
+ * @property {ObservableString} query
+ * @property {ObservableString} placeholderText
+ * @property {Function} remove
+ * @property {Function} dispose
  * @property {Function} formatter
  */

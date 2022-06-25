@@ -5,8 +5,8 @@ let modals = [];
 /**
  * @typedef useModalHook
  * @property {number} id
- * @property {function} show
- * @property {function} hide
+ * @property {Function} show
+ * @property {Function} hide
  */
 
 /**

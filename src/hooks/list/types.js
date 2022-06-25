@@ -13,12 +13,12 @@
 
 /**
  * @typedef {Object} useListHook
- * @property {observableArray<List>} items
- * @property {observableArray<List>} filteredItems
- * @property {observable<boolean>} loading
- * @property {observable<string>} query
- * @property {function} getById
- * @property {function} update
+ * @property {import("knockout").ObservableArray<List>} items
+ * @property {import("knockout").ObservableArray<List>} filteredItems
+ * @property {ObservableBoolean} loading
+ * @property {ObservableString} query
+ * @property {Function} getById
+ * @property {Function} update
  */
 
 /**

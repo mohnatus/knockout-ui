@@ -1,8 +1,8 @@
 /**
  * @typedef {Object} DateValue
  *
- * @property {observable<string>} textValue
- * @property {observable<number|null>} moment
+ * @property {ObservableString} textValue
+ * @property {(ObservableNumber|import("knockout").Observable<null>)} moment
  *
- * @property {function} dispose
+ * @property {Function} dispose
  */

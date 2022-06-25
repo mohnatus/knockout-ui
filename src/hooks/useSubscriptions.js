@@ -1,8 +1,8 @@
 /**
  * @typedef {Object} useSubsciptionsHook
- * @property {function} subscribe - добавление коллбэка
- * @property {function} trigger - вызов добавленных коллбэков
- * @property {function} dispose
+ * @property {Function} subscribe - добавление коллбэка
+ * @property {Function} trigger - вызов добавленных коллбэков
+ * @property {Function} dispose
  */
 
 /**

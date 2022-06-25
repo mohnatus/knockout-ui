@@ -10,7 +10,7 @@ const defaultSearchFn = (item, query) => {
  * useList Hook
  * @param {Array} initialList
  * @param {ListItemConvertor|null} itemConvertor
- * @param {function|null} searchFn
+ * @param {Function} [searchFn]
  * @returns {useListHook}
  */
 export function useList(

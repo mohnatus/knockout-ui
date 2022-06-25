@@ -8,9 +8,14 @@
  */
 
 /**
+ * @typedef {Function} setMonth
+ * @returns {PeriodMoment}
+ */
+
+/**
  * @typedef {Object} useCalendarHook
- * @property {observableArray<CalendarDay[]>} days
- * @property {observable<PeriodMoment>} month
- * @property {function(<PeriodMoment>)} setMonth
- * @property {function} dispose
+ * @property {import("knockout").ObservableArray<CalendarDay[]>} days
+ * @property {import("knockout").Observable<PeriodMoment>} month
+ * @property {setMonth} setMonth
+ * @property {Function} dispose
  */

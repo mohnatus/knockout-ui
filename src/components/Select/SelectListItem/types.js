@@ -7,7 +7,7 @@
 /**
  * @typedef {Object} SelectListItemComponentParams
  * @property {ListItemVar} item
- * @property {observable<boolean>} modal
+ * @property {ObservableBoolean} modal
  * @property {SelectListItemFormatter} formatter
  */
 

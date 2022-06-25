@@ -1,10 +1,10 @@
 /**
  * @typedef {Object} SelectListComponentParams
  * @property {string} itemComponent
- * @property {observableArray<List>} items
- * @property {observableArray<List>} selectedItems
- * @property {observableArray<ListItemVar>|null} disabledItems
- * @property {observable<boolean>} modal
+ * @property {import("knockout").ObservableArray<List>} items
+ * @property {import("knockout").ObservableArray<List>} selectedItems
+ * @property {import("knockout").ObservableArray<ListItemVar>} [disabledItems]
+ * @property {ObservableBoolean} modal
  * @property {boolean} multiple
  * @property {Function} formatter
  */
@@ -12,10 +12,10 @@
 /**
  * @typedef {Object} SelectListComponent
  * @property {string} itemComponent
- * @property {observableArray<List>} items
- * @property {function} isSelected
- * @property {function} isDisabled
- * @property {function} select
- * @property {function} dispose
+ * @property {import("knockout").ObservableArray<List>} items
+ * @property {Function} isSelected
+ * @property {Function} isDisabled
+ * @property {Function} select
+ * @property {Function} dispose
  * @property {Function} formatter
  */

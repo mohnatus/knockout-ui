@@ -1,14 +1,14 @@
 /**
  * @typedef {Object} useClickOutsideHook
  *
- * @property {function} addElements
- * @property {function} dispose
+ * @property {Function} addElements
+ * @property {Function} dispose
  */
 
 /**
  * useClickOutside - обработка кликов вне элементов
  * @param {HTMLElement|HTMLElement[]} elements
- * @param {function} callback
+ * @param {Function} callback
  * @returns {useClickOutsideHook}
  */
 export function useClickOutside(elements, callback) {

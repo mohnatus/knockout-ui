@@ -1,17 +1,17 @@
 /**
- * @typedef {string|number} SelectedItem
+ * @typedef {(string|number)} SelectedItem
  */
 
 /**
  * @typedef {Object} SelectValue
- * @property {observable<SelectedItem>|observableArray<SelectedItem[]>} selected
- * @property {function} select
- * @property {function} remove
- * @property {function} onSelect
- * @property {function} onRemove
+ * @property {(import("knockout").Observable<SelectedItem>|import("knockout").ObservableArray<SelectedItem[]>)} selected
+ * @property {Function} select
+ * @property {Function} remove
+ * @property {Function} onSelect
+ * @property {Function} onRemove
  */
 
 /**
  * @typedef {Object} GrouppedSelect
- * @property {observableArray<Array>} disabledOptions array of ids
+ * @property {import("knockout").ObservableArray} disabledOptions array of ids
  */

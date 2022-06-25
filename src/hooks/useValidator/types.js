@@ -1,16 +1,16 @@
 /**
  * @typedef {Object} Validator
- * @property {function} validate
- * @property {function<boolean>} onlyIf
- * @property {string|function|observable<string>} error
+ * @property {Function} validate
+ * @property {Function<boolean>} onlyIf
+ * @property {(Function|AnyString)} error
  * @property {*} param
  */
 
 /**
  * @typedef {Object} FieldValidationState
- * @property {observable<boolean>} isValid
- * @property {observable<boolean>} isInvalid
- * @property {observable<string>} error
+ * @property {ObservableBoolean} isValid
+ * @property {ObservableBoolean} isInvalid
+ * @property {ObservableString} error
  */
 
 /**
@@ -19,6 +19,6 @@
 
 /**
  * @typedef {Object} useValidatorHook
- * @property {function} addField
+ * @property {Function} addField
  * @property {ValidationState} state
  */
